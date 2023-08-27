@@ -1,0 +1,7 @@
+solutions/*
+teaching-materials/*
+derivation-notes/*
+.Rproj.user
+.DS_Store
+/.quarto/
+.Rhistory

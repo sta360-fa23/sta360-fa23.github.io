@@ -1,0 +1,53 @@
+---
+title: "Chapter summaries"
+mainfont: Lato
+format: 
+  html:
+    toc: true
+---
+
+### Chapter 2
+
+*Axioms of probability*
+
+For all sets $F$, $G$ and $H$,
+
+- $0 = Pr(\neg H | H) \leq Pr(F | H) \leq Pr(H | H) = 1$
+- $Pr(F \cup G | H) = Pr(F|H) + Pr(G|H) \text{ if } F \cap G = \emptyset$
+- $Pr(F \cap G | H) = Pr(G | H) Pr(F | G \cap H)$
+
+*Partitions and probability*
+
+Suppose $\{ H_1, \ldots, H_K\}$ is a partition of $\mathcal{H}$, $Pr(\mathcal{H}) = 1$ and $E$ is some specific event. From the axioms of probability one may prove:
+
+- *Rule of total probability*: 
+
+\begin{equation}
+\sum_{k = 1}^K Pr(H_k) = 1
+\end{equation}
+
+- *Rule of marginal probability*:
+
+\begin{equation}
+\begin{aligned} 
+Pr(E) &= \sum_{k = 1}^K Pr(E \cap H_k)\\ &= \sum_{k = 1}^K Pr(E | H_k) Pr(H_k) 
+\end{aligned}
+\end{equation}
+
+- *Bayes' theorem*: 
+
+\begin{equation}
+Pr(H_j | E) = \frac{Pr(E|H_j) Pr(H_j)}{Pr(E)}
+\end{equation}
+
+Note it is often useful to replace the denominator, $Pr(E)$, using the rule of marginal probability.
+
+*Independence*
+
+Two events $F$ and $G$ are conditionally independent given $H$ if $Pr(F \cap G |H) = Pr(F|H) Pr(G|H)$.
+
+
+### Additional related content (Ch2)
+
+- *Law of total expectation* $E(X) = E(E(X|Y))$ 
+- *Law of total variance* $Var(X) = E(Var(X|Y) + Var(E(X|Y))$
