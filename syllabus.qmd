@@ -1,5 +1,5 @@
 ---
-title: "STA 360"
+title: "STA 360: Bayesian methods and modern statistics"
 subtitle: "Fall 2023"
 mainfont: Lato
 format: 
@@ -8,7 +8,7 @@ format:
     toc: true
 ---
 
-# Syllabus 
+# Syllabus
 
 ### Course description
 
@@ -67,7 +67,7 @@ A $>= 93$, A- $< 93$, B+ $< 90$, B $< 87$, B- $< 83$, C+ $<80$, C $< 77$, C- $< 
 
 ::: {.callout-note}
 # A note on quizzes
-On random class days, there will be a brief quiz on the previous lectures. If you score  $>60\%$ on quizzes, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
+On random class days, there will be a brief quiz on the previous lectures. If you score  $>60\%$ cumulatively on your final quiz grade, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
 :::
 
 ::: {.callout-note}

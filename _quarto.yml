@@ -9,9 +9,11 @@ website:
     background: "#2774AE"
     left:
       - href: index.qmd
-        text: Schedule
+        text: schedule
       - href: syllabus.qmd
-        text: Syllabus
+        text: syllabus
+      - href: links.qmd
+        text: links
 
 format:
   html:

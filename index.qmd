@@ -1,5 +1,5 @@
 ---
-title: "STA 360"
+title: "Bayesian methods and modern statistics"
 subtitle: "Fall 2023"
 mainfont: Lato
 format: 
