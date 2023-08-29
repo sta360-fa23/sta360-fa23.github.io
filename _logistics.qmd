@@ -3,7 +3,7 @@
 |                      | Contact                                             | Office hours       | Location      |
 |---------------|---------------|---------------|---------------|
 | Dr. Alexander Fisher | [aaf29\@duke.edu](aaf29@duke.edu)                   | Tu: 11:30pm-1:30pm | Old Chem 207  |
-| Carol Wang           | [zhuoqun.wang\@duke.edu](zhuoqun.wang@duke.edu)     | TBD    | Zoom          |
+| Carol Wang           | [zhuoqun.wang\@duke.edu](zhuoqun.wang@duke.edu)     | Mo: 6:00pm-8:00pm    | Zoom          |
 | Manny Mokel          | [emmanuel.mokel\@duke.edu](emmanuel.mokel@duke.edu) | Th: 3:00pm-5:00pm  | Old Chem 203B |
 | Caitrin Murphy       | [caitrin.murphy\@duke.edu](caitrin.murphy@duke.edu) | We: 4:30pm-6:30pm  | Old Chem 025  |
 
