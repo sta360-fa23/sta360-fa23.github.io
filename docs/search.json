@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Bayesian methods and modern statistics",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, probability\nCh. 2\n\n\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n\n\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\n\n\n\n\n\n\n\nThu Sep 07\n\n\n\n\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\n\n\n\n\n\n\n\nThu Sep 14\n\n\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\n\n\n\n\n\n\n\nThu Sep 21\n\n\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\n\n\n\n\n\n\n\nThu Sep 28\n\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\n\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, probability\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n\n\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\n\n\n\n\n\n\n\nThu Sep 07\n\n\n\n\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\n\n\n\n\n\n\n\nThu Sep 14\n\n\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\n\n\n\n\n\n\n\nThu Sep 21\n\n\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\n\n\n\n\n\n\n\nThu Sep 28\n\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\n\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
   },
   {
     "objectID": "hw01.html",
@@ -187,5 +187,103 @@
     "title": "Links",
     "section": "",
     "text": "RStudio containers\n\nResources\n\nSakai website\n\nlectures and solutions uploaded here under “Resources” tab on the left hand side\n\nGradescope\n\nTextbook\n\nA First Course in Bayesian Statistical Methods by Peter Hoff\nErrata to the textbook"
+  },
+  {
+    "objectID": "hw/hw00.html",
+    "href": "hw/hw00.html",
+    "title": "Homework 0",
+    "section": "",
+    "text": "This math assessment is meant to help both you and the instructor identify gaps in background knowledge both at the class and individual level."
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-1",
+    "href": "hw/hw00.html#exercise-1",
+    "title": "Homework 0",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSimplify\n\\[\n\\log(e^{a_1} e^{a_2} e^{a_3} \\cdots e^{a_n})\n\\]"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-2",
+    "href": "hw/hw00.html#exercise-2",
+    "title": "Homework 0",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFind the derivative.\n\\[\n\\frac{d}{dx} \\left( \\frac{x}{\\log x} \\right)\n\\]"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-3",
+    "href": "hw/hw00.html#exercise-3",
+    "title": "Homework 0",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWhat is the ordinary least squares estimator of \\(\\beta\\) (1-dimensional) in the linear regression \\(y = x \\beta + \\epsilon\\) with iid errors?"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-4",
+    "href": "hw/hw00.html#exercise-4",
+    "title": "Homework 0",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nWhat is the ordinary least squares estimator of \\(\\beta\\) (p-dimensional) in the linear regression \\(y = X \\beta + \\epsilon\\) with iid errors?"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-5",
+    "href": "hw/hw00.html#exercise-5",
+    "title": "Homework 0",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nIn linear regression with p-dimensional β, what is the interpretation of the estimate for the jth coefficient?"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-6",
+    "href": "hw/hw00.html#exercise-6",
+    "title": "Homework 0",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nCompute the integral,\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2} dx\n\\]"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-7",
+    "href": "hw/hw00.html#exercise-7",
+    "title": "Homework 0",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\\(X \\sim N(\\mu, \\sigma^2)\\) reads “X is normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\nLet\n\\[\n\\begin{aligned}\nX &\\sim N(0, 1),\\\\\nY &\\sim N(3, 2),\\\\\nZ &= X + Y\n\\end{aligned}\n\\]\nWhat is the distribution of \\(Z\\)? What is \\(\\mathbb{E}[Z]\\) and \\(Var(Z)\\)?"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-8",
+    "href": "hw/hw00.html#exercise-8",
+    "title": "Homework 0",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nIn your own words, the “support” of random variable is…"
+  },
+  {
+    "objectID": "hw/hw00.html#exercise-9",
+    "href": "hw/hw00.html#exercise-9",
+    "title": "Homework 0",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nTRUE/FALSE: The product of two uniform[0, 1] random variables is uniform[0, 1]."
+  },
+  {
+    "objectID": "hw/hw01.html#exercise-2",
+    "href": "hw/hw01.html#exercise-2",
+    "title": "Homework 1",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n2.2 from Hoff"
+  },
+  {
+    "objectID": "hw/hw01.html#exercise-3",
+    "href": "hw/hw01.html#exercise-3",
+    "title": "Homework 1",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\n2.3 from Hoff"
+  },
+  {
+    "objectID": "hw/hw01.html#exercise-4",
+    "href": "hw/hw01.html#exercise-4",
+    "title": "Homework 1",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\n2.6 from Hoff"
+  },
+  {
+    "objectID": "hw/hw01.html#exercise-5",
+    "href": "hw/hw01.html#exercise-5",
+    "title": "Homework 1",
+    "section": "Exercise 5",
+    "text": "Exercise 5\n\n2.6 from Hoff"
   }
 ]

@@ -1,5 +1,6 @@
 ---
 title: "Homework 1"
+subtitle: "Due Thursday September 7th at 5:00pm"
 mainfont: Lato
 format: 
   html:
@@ -17,3 +18,15 @@ $$
 $$
 Corr(X_i, X_j) \geq 0.
 $$
+
+## Exercise 2
+
+- 2.2 from Hoff
+
+## Exercise 3
+
+- 2.3 from Hoff
+
+## Exercise 4
+
+- 2.6 from Hoff
