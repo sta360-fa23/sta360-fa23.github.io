@@ -1,6 +1,6 @@
 ---
 title: "Homework 1"
-subtitle: "Due Thursday September 7th at 5:00pm"
+subtitle: "Due Friday September 8th at 5:00pm"
 mainfont: Lato
 format: 
   html:

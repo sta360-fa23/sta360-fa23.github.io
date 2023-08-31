@@ -52,7 +52,7 @@ schedule %>%
 |:-----|:-----------|:----------------------------------|-----|:------:|:-----------|
 | 1    | Mon Aug 28 | welcome                     |         | [💻](/slides/lab0-welcome.html)       | [hello R](/labs/lab0.html)           |
 |      | Tue Aug 29 | intro, history, notation          | Ch. 2   |       | [hw 0](/hw/hw00.html)            |
-|      | Thu Aug 31 | probability, exchangeability | Ch. 2   |       |            |
+|      | Thu Aug 31 | probability, exchangeability | Ch. 2   |[💻](/notes/probability.html)       |  [hw 1](/hw/hw01.html)          |
 | 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
 |      | Tue Sep 05 | single parameter models                             | Ch. 3        |       |            |
 |      | Thu Sep 07 | conjugacy                             | Ch. 3         |       |            |

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA360 - Homework 1</title>
+<title>STA360 - Probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,10 +99,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#review-set-theory" id="toc-review-set-theory" class="nav-link active" data-scroll-target="#review-set-theory">Review: set theory</a></li>
+  <li><a href="#axioms-of-probability-in-words" id="toc-axioms-of-probability-in-words" class="nav-link" data-scroll-target="#axioms-of-probability-in-words">Axioms of probability (in words)</a></li>
   </ul>
 </nav>
     </div>
@@ -111,8 +109,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
-<p class="subtitle lead">Due Friday September 8th at 5:00pm</p>
+<h1 class="title">Probability</h1>
 </div>
 
 
@@ -127,33 +124,123 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Let <span class="math inline">\(X_i \in \mathcal{X}\)</span> for all <span class="math inline">\(i \in \{1, 2, \ldots\}\)</span> and suppose our belief model for <span class="math inline">\(\mathbf{X} = \{ X_1, \ldots X_n \}\)</span> is exchangeable for all <span class="math inline">\(n\)</span>. Show, using de Finetti’s theorem, that for all <span class="math inline">\(i \neq j\)</span>,</p>
-<p><span class="math display">\[
-Cov(X_i, X_j) \geq 0 \text{ and }
-\]</span></p>
-<p><span class="math display">\[
-Corr(X_i, X_j) \geq 0.
-\]</span></p>
-</section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<section id="review-set-theory" class="level2">
+<h2 class="anchored" data-anchor-id="review-set-theory">Review: set theory</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>set</strong>: a collection of elements, denoted by {}</p>
+<p>Example</p>
 <ul>
-<li>2.2 from Hoff</li>
+<li><span class="math inline">\(\phi\)</span> = {} “the empty set”</li>
+<li>A = {1, 2, 3}</li>
+<li>B = {taken STA199, has not taken STA199}</li>
+<li>C = {{1,2,3}, {4, 5}}</li>
 </ul>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>subset</strong>: denoted by <span class="math inline">\(\subset\)</span>, <span class="math inline">\(A \subset B\)</span> iff <span class="math inline">\(a \in A \implies a \in B\)</span></p>
+<p>Example</p>
+<p>Using the previously examples of A, B and C above,</p>
 <ul>
-<li>2.3 from Hoff</li>
+<li><span class="math inline">\(A \subset C\)</span></li>
+<li><span class="math inline">\(A \not\subset B\)</span></li>
 </ul>
-</section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+</div>
+</div>
+<p>Recall:</p>
 <ul>
-<li>2.6 from Hoff</li>
+<li><span class="math inline">\(\cup\)</span> means “union”, “or”</li>
+<li><span class="math inline">\(\cap\)</span> means “intersection”, “and”</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>partition</strong>: {<span class="math inline">\(H_1, H_2, ... H_n\)</span>} = <span class="math inline">\(\{H_i\}_{i = 1}^n\)</span> is a partition of <span class="math inline">\(\mathcal{H}\)</span> if</p>
+<ol type="1">
+<li><p>the union of sets is <span class="math inline">\(\mathcal{H}\)</span> i.e.&nbsp;<span class="math inline">\(\cup_{i = 1}^n H_i = \mathcal{H}\)</span></p></li>
+<li><p>the sets are disjoint i.e.&nbsp;<span class="math inline">\(H_i \cap H_j = \phi\)</span> for all <span class="math inline">\(i \neq j\)</span></p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>sample space</strong>: <span class="math inline">\(\mathcal{H}\)</span>, the set of all possible data sets (outcomes)</p>
+<p><strong>event</strong>: a set of one or more outcomes</p>
+<p>Note: p(<span class="math inline">\(\mathcal{H}\)</span>) = 1</p>
+<p>Example</p>
+<ul>
+<li>Roll a six-sided die once. The sample space <span class="math inline">\(\mathcal{H} = \{1, 2, 3, 4, 5, 6\}\)</span>.</li>
+<li>Let <span class="math inline">\(A\)</span> be the event that the die lands on an even number. <span class="math inline">\(A = \{2, 4, 6 \}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="axioms-of-probability-in-words" class="level2">
+<h2 class="anchored" data-anchor-id="axioms-of-probability-in-words">Axioms of probability (in words)</h2>
+<p>P1. Probabilities are between 0 and 1, importantly p(<span class="math inline">\(\neg\)</span>H|H) = 0 and p(H|H) = 1.</p>
+<p>P2. If two events A and B are disjoint, then p(A or B) = p(A) + p(B)</p>
+<p>P3. The joint probability of two events may be broken down stepwise: p(A,B) = p(A|B)p(B)</p>
+<p>–</p>
+<p>It follows that</p>
+<ul>
+<li>for any partition <span class="math inline">\(\{H_i\}_{i = 1}^n\)</span>, <span class="math inline">\(\sum_{i=1}^n p(H_i) = 1\)</span> (rule of total probability)
+<ul>
+<li>note simplest partition: <span class="math inline">\(p(A) + p(\neg A) = 1\)</span></li>
+</ul></li>
+<li><span class="math inline">\(p(A) = \sum_{i=1}^n p(A, H_i)\)</span> (rule of marginal probability)
+<ul>
+<li>note: P3 implies that equivalently, <span class="math inline">\(p(A) = \sum_{i=1}^n p(A | H_i) p(H_i)\)</span></li>
+</ul></li>
+<li>p(A|B) = p(A,B) / p(B) when p(B) <span class="math inline">\(\neq 0\)</span></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Derive Bayes’ rule:</p>
+<p><span class="math inline">\(p(H_i|B) = \frac{p(B|H_i)p(H_i)}{\sum_i p(B|H_i)p(H_i)}\)</span></p>
+<p>using the axioms of probability.</p>
+</div>
+</div>
 
 
 </section>
