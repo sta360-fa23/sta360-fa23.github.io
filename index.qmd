@@ -54,17 +54,17 @@ schedule %>%
 |      | Tue Aug 29 | intro, history, notation          | Ch. 2   |       | [hw 0](/hw/hw00.html)            |
 |      | Thu Aug 31 | probability, exchangeability | Ch. 2   |[💻](/notes/probability.html)       |  [hw 1](/hw/hw01.html)          |
 | 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
-|      | Tue Sep 05 | single parameter models                             | Ch. 3        |       |            |
-|      | Thu Sep 07 | conjugacy                             | Ch. 3         |       |            |
+|      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻]() |       |            |
+|      | Thu Sep 07 | conjugacy                             | Ch. 3         |        | hw 2           |
 | 3    | Mon Sep 11 |                              |         |       |            |
-|      | Tue Sep 12 |                              |         |       |            |
-|      | Thu Sep 14 |                              |         |       |            |
+|      | Tue Sep 12 | Monte Carlo integration                             | Ch. 4        |       |            |
+|      | Thu Sep 14 |  the normal model                            | Ch. 5        |       |            |
 | 4    | Mon Sep 18 |                              |         |       |            |
-|      | Tue Sep 19 |                              |         |       |            |
-|      | Thu Sep 21 |                              |         |       |            |
+|      | Tue Sep 19 | two parameter estimation                             | Ch. 5        |       |            |
+|      | Thu Sep 21 | Gibbs sampling                            | Ch. 6        |       |            |
 | 5    | Mon Sep 25 |                              |         |       |            |
-|      | Tue Sep 26 |                              |         |       |            |
-|      | Thu Sep 28 |                              |         |       |            |
+|      | Tue Sep 26 | catch up / review                            |         |       |            |
+|      | Thu Sep 28 | Exam I                             |         |       |            |
 | 6    | Mon Oct 02 |                              |         |       |            |
 |      | Tue Oct 03 |                              |         |       |            |
 |      | Thu Oct 05 |                              |         |       |            |
@@ -85,7 +85,7 @@ schedule %>%
 |      | Thu Nov 09 |                              |         |       |            |
 | 12   | Mon Nov 13 |                              |         |       |            |
 |      | Tue Nov 14 |                              |         |       |            |
-|      | Thu Nov 16 |                              |         |       |            |
+|      | Thu Nov 16 |  Exam II                            |         |       |            |
 | 13   | Mon Nov 20 |                              |         |       |            |
 |      | Tue Nov 21 |                              |         |       |            |
 |      | Thu Nov 23 | NO CLASS                     |         |       |            |

@@ -1,136 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Bayesian methods and modern statistics",
-    "section": "",
-    "text": "Schedule\n\n\n\nWeek\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter models\nCh. 3\n\n\n\n\n\nThu Sep 07\nconjugacy\nCh. 3\n\n\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\n\n\n\n\n\n\n\nThu Sep 14\n\n\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\n\n\n\n\n\n\n\nThu Sep 21\n\n\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\n\n\n\n\n\n\n\nThu Sep 28\n\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\n\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
-  },
-  {
-    "objectID": "hw01.html",
-    "href": "hw01.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Let \\(X_i \\in \\mathcal{X}\\) for all \\(i \\in \\{1, 2, \\ldots\\}\\) and suppose our belief model for \\(\\mathbf{X} = \\{ X_1, \\ldots X_n \\}\\) is exchangeable for all \\(n\\). Show, using de Finetti’s theorem, that for all \\(i \\neq j\\),\n\\[\nCov(X_i, X_j) \\geq 0 \\text{ and }\n\\]\n\\[\nCorr(X_i, X_j) \\geq 0.\n\\]"
-  },
-  {
-    "objectID": "solutions/hw01s.html",
-    "href": "solutions/hw01s.html",
-    "title": "Homework 1 solutions",
-    "section": "",
-    "text": "By definition of covariance,\n\\[\nCov(X_i, X_j) = \\mathbb{E}~X_i X_j - \\mathbb{E}~X_i ~\\mathbb{E}~X_j\n\\]\nBy the law of total expectation,\n\\[\n= \\mathbb{E}~[\\mathbb{E}~X_i X_j| \\theta] -\n\\mathbb{E}~[\\mathbb{E}~X_i | \\theta]\n\\mathbb{E}~[\\mathbb{E}~X_j | \\theta]\n\\]\nBy de Finetti’s theorem, exchangeability of \\(X_i\\) and \\(X_j\\) implies the two variables are conditionally iid relative to \\(\\theta\\). Therefore,\n\\[\n\\begin{aligned}\n\\mathbb{E}~[\\mathbb{E} ~ X_i X_j| \\theta] &= \\mathbb{E}~\n\\left[\n\\int \\int x_i~x_j~p(x_i, x_j |\\theta) dx_i~dx_j\n\\right]\\\\\n&=\\mathbb{E}~\n\\left[\n\\int x_i~p(x_i |\\theta) dx_i \\cdot \\int x_j~p(x_j |\\theta) dx_j\n\\right]\\\\\n&=\n\\mathbb{E}\n\\left[\n\\mathbb{E}~ X_i | \\theta \\cdot\n\\mathbb{E}~ X_j | \\theta\n\\right]\n\\end{aligned}\n\\]\nSimilarly,\n\\[\n\\mathbb{E}~\nX_i | \\theta\n=\n\\mathbb{E}\nX_j | \\theta\n\\]\nso that in total,\n\\[\nCov(X_i, X_j) =\n\\mathbb{E}~\n\\left[\n\\left(\n\\mathbb{E}~X_i | \\theta\n\\right)^2\n\\right]\n-\n\\left(\n\\mathbb{E}~\n\\left[\n\\mathbb{E}~\nX_i | \\theta\n\\right]\n\\right)^2\n\\]\nNote that \\(\\mathbb{E}~X_i | \\theta\\) is some function of \\(\\theta\\), say \\(g(\\theta)\\). It is easy to see\n\\[\nCov(X_i, X_j) = Var(g(\\theta)) \\geq 0\n\\]\n\nExplicit detail:\nBy de Finetti’s theorem exchangeability of \\(X_i\\) and \\(X_j\\) implies\n\\[\np(x_i, x_j) = \\int p(x_i | \\theta) p(x_j | \\theta) p(\\theta) d\\theta\n\\]\nRecall \\(p(x_i, x_j) = \\int p(x_i, x_j, \\theta) d\\theta\\) and therefore \\(p(x_i, x_j) = \\int p(x_i, x_j | \\theta) p(\\theta) d\\theta\\). By comparison to the above, notice\n\\[\np(x_i, x_j | \\theta) = p(x_i | \\theta) p(x_j|\\theta).\n\\]\nIn words, \\(x_i\\) and \\(x_j\\) are conditionally independent given \\(\\theta\\)."
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "STA 360: Bayesian methods and modern statistics",
-    "section": "",
-    "text": "Syllabus\n\nCourse description\nThis course introduces Bayesian modeling and inference, motivated by real world examples. Course topics include Bayes’ theorem, exchangeability, conjugate priors, Markov chain Monte Carlo (MCMC) approximation, Gibbs sampling, hierarchical modeling, Bayesian regression and generalized linear models. We compare and contrast Bayesian methods to the frequentist paradigm. By the end of this course students should feel comfortable (1) writing Bayesian models and, when appropriate, (2) sampling from the posterior using MCMC to make inference.\n\n\nLogistics\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nTu: 11:30am-1:30pm\nOld Chem 207\n\n\nCarol Wang\nzhuoqun.wang@duke.edu\nMo: 6:00pm-8:00pm\nZoom\n\n\nManny Mokel\nemmanuel.mokel@duke.edu\nTh: 3:00pm-5:00pm\nOld Chem 203B\n\n\nCaitrin Murphy\ncaitrin.murphy@duke.edu\nWe: 4:30pm-6:30pm\nOld Chem 025\n\n\n\n\n\nMeetings\n\n\n\nLecture\nTu/Th 10:05 - 11:20am\nOld Chemistry 116\n\n\nLab 01\nM 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nM 4:40pm - 5:55pm\nSocial Sciences 124\n\n\n\nCourse website: sta360-fa23.github.io\n\n\n\n\n\n\n\n\n\nCourse material\n\nA First Course in Bayesian Statistical Methods. As a Duke student, an electronic version of the book is freely available to you on Springer link. Check the errata at the link above.\nChapter summaries. I compile major take-away points from each section. Review these to help prepare for exams.\nWe will use the statistical software package R on homework asignments in this course. R is freely available at http://www.r-project.org/. RStudio, the popular IDE for R, is freely available at https://posit.co/downloads/.\n\n\n\nSchedule of topics\nPart I: The Bayesian modeling toolkit\n\nReview of probability\nConjugate statistical models\nSemi-conjugate models and Gibbs sampling\n\nPart II: Statistical model building and analysis\n\nMultilevel models\nLinear regression\nGeneralized linear models\nDensity estimation and classification\n\n\n\nEvaluation\n\n\n\n\n\n\n\nAssignment\nDescription\n\n\n\n\nHomework (40%)\nIndividual take-home assignments, submitted to Gradescope.\n\n\nMidterms (30%)\nTwo in-class exams.\n\n\nFinal exam (25%)\nCumulative final during final’s week.\n\n\nQuizzes (5%)\nIn-class pop quizzes.\n\n\n\nA \\(&gt;= 93\\), A- \\(&lt; 93\\), B+ \\(&lt; 90\\), B \\(&lt; 87\\), B- \\(&lt; 83\\), C+ \\(&lt;80\\), C \\(&lt; 77\\), C- \\(&lt; 73\\), D+ \\(&lt; 70\\), D \\(&lt; 67\\), D- \\(&lt; 63\\), F \\(&lt; 60\\)\n\n\n\n\n\n\nA note on quizzes\n\n\n\nOn random class days, there will be a brief quiz on the previous lectures. If you score \\(&gt;60\\%\\) cumulatively on your final quiz grade, you will receive full participation credit. Your lowest two quizzes will also be dropped.\n\n\n\n\n\n\n\n\nA note on exams\n\n\n\nIf you miss either midterm 1 or midterm 2, and have an excused absence, your missing midterm grade will be replaced by your final exam grade. You must take at least 1 midterm and the final exam to pass the course.\n\n\n\n\n\n\n\n\nPolicies\nAcademic integrity\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations of academic integrity will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action. For the Exams and Quizzes, students are required to work alone. For the Homework assignments, students may work with a study group but each student must write up and submit their own answers.\nLate work\nLate homework may be submitted with 48 hours of the assignment deadline. Late homework submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nErrors in grading\nErrors in grading must be brought to the attention of the TA or instructor during office hours within 1 week of receiving the grade."
-  },
-  {
-    "objectID": "chapterSummaries.html",
-    "href": "chapterSummaries.html",
-    "title": "Chapter summaries",
-    "section": "",
-    "text": "Chapter 2\nAxioms of probability\nFor all sets \\(F\\), \\(G\\) and \\(H\\),\n\n\\(0 = Pr(\\neg H | H) \\leq Pr(F | H) \\leq Pr(H | H) = 1\\)\n\\(Pr(F \\cup G | H) = Pr(F|H) + Pr(G|H) \\text{ if } F \\cap G = \\emptyset\\)\n\\(Pr(F \\cap G | H) = Pr(G | H) Pr(F | G \\cap H)\\)\n\nPartitions and probability\nSuppose \\(\\{ H_1, \\ldots, H_K\\}\\) is a partition of \\(\\mathcal{H}\\), \\(Pr(\\mathcal{H}) = 1\\) and \\(E\\) is some specific event. From the axioms of probability one may prove:\n\nRule of total probability:\n\n\\[\\begin{equation}\n\\sum_{k = 1}^K Pr(H_k) = 1\n\\end{equation}\\]\n\nRule of marginal probability:\n\n\\[\\begin{equation}\n\\begin{aligned}\nPr(E) &= \\sum_{k = 1}^K Pr(E \\cap H_k)\\\\ &= \\sum_{k = 1}^K Pr(E | H_k) Pr(H_k)\n\\end{aligned}\n\\end{equation}\\]\n\nBayes’ theorem:\n\n\\[\\begin{equation}\nPr(H_j | E) = \\frac{Pr(E|H_j) Pr(H_j)}{Pr(E)}\n\\end{equation}\\]\nNote it is often useful to replace the denominator, \\(Pr(E)\\), using the rule of marginal probability.\nIndependence\nTwo events \\(F\\) and \\(G\\) are conditionally independent given \\(H\\) if \\(Pr(F \\cap G |H) = Pr(F|H) Pr(G|H)\\).\n\n\nAdditional related content (Ch2)\n\nLaw of total expectation \\(E(X) = E(E(X|Y))\\)\nLaw of total variance \\(Var(X) = E(Var(X|Y) + Var(E(X|Y))\\)"
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#introductions",
-    "href": "slides/lab0-welcome.html#introductions",
-    "title": "Welcome to Lab",
-    "section": "Introductions",
-    "text": "Introductions\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta360-fa23.github.io\nBookmark this! It’s the course website."
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#what-to-expect-in-labs",
-    "href": "slides/lab0-welcome.html#what-to-expect-in-labs",
-    "title": "Welcome to Lab",
-    "section": "What to expect in labs",
-    "text": "What to expect in labs\n\nDiscussion\nPractice problems\nAssistance on computing portion of homeworks"
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#tips",
-    "href": "slides/lab0-welcome.html#tips",
-    "title": "Welcome to Lab",
-    "section": "Tips",
-    "text": "Tips\n\nShow up.\nMake use of office hours. Before you need help!"
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#beginnings",
-    "href": "slides/lab0-welcome.html#beginnings",
-    "title": "Welcome to Lab",
-    "section": "Beginnings",
-    "text": "Beginnings\nWhile this is not a computing class, computers are the workhorse of Bayesian statistics and we will use R to both enhance understanding of fundamental course material as well as to implement models to learn about real data sets."
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#demo-setting-up",
-    "href": "slides/lab0-welcome.html#demo-setting-up",
-    "title": "Welcome to Lab",
-    "section": "Demo: setting up",
-    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo."
-  },
-  {
-    "objectID": "hw/hw01.html",
-    "href": "hw/hw01.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Let \\(X_i \\in \\mathcal{X}\\) for all \\(i \\in \\{1, 2, \\ldots\\}\\) and suppose our belief model for \\(\\mathbf{X} = \\{ X_1, \\ldots X_n \\}\\) is exchangeable for all \\(n\\). Show, using de Finetti’s theorem, that for all \\(i \\neq j\\),\n\\[\nCov(X_i, X_j) \\geq 0 \\text{ and }\n\\]\n\\[\nCorr(X_i, X_j) \\geq 0.\n\\]"
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#set-up-rstudio",
-    "href": "slides/lab0-welcome.html#set-up-rstudio",
-    "title": "Welcome to Lab",
-    "section": "Set up RStudio",
-    "text": "Set up RStudio\nOption 1 (easiest): RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick RStudio to log into the Docker container. You should now see the RStudio environment.\n\nIf you haven’t previously done so, you will need to reserve a container for RStudio first."
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#set-up-rstudio-1",
-    "href": "slides/lab0-welcome.html#set-up-rstudio-1",
-    "title": "Welcome to Lab",
-    "section": "Set up RStudio",
-    "text": "Set up RStudio\nOption 2: RStudio on your computer\n\nDownload R from http://www.r-project.org/.\nDownload RStudio, the popular IDE for R, from https://posit.co/downloads/.\n(optionally) download Quarto from https://quarto.org/docs/get-started/"
-  },
-  {
-    "objectID": "slides/lab0-welcome.html#demo",
-    "href": "slides/lab0-welcome.html#demo",
-    "title": "Welcome to Lab",
-    "section": "Demo",
-    "text": "Demo\nNext, check your familarity with R/RStudio fundamentals here. You can also find a link to this from the course schedule under “Assignment”."
-  },
-  {
     "objectID": "labs/lab0.html",
     "href": "labs/lab0.html",
     "title": "Hello R.",
     "section": "",
     "text": "This ‘lab 0’ will introduce you to the course computing workflow. The main goal of today is to get you setup in RStudio and play around with a few fundamental skills."
-  },
-  {
-    "objectID": "labs/lab0.html#log-in-to-rstudio",
-    "href": "labs/lab0.html#log-in-to-rstudio",
-    "title": "Lab 0: Hello R.",
-    "section": "Log in to RStudio",
-    "text": "Log in to RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA323 to log into the Docker container. You should now see the RStudio environment.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you haven’t yet done so, you will need to reserve a container for STA323 first."
-  },
-  {
-    "objectID": "labs/lab0.html#set-up-your-ssh-key",
-    "href": "labs/lab0.html#set-up-your-ssh-key",
-    "title": "Lab 0: Hello R.",
-    "section": "Set up your SSH key",
-    "text": "Set up your SSH key\nYou will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nType credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta323).\n\nYou can find more detailed instructions here if you’re interested."
-  },
-  {
-    "objectID": "labs/lab0.html#configure-git",
-    "href": "labs/lab0.html#configure-git",
-    "title": "Lab 0: Hello R.",
-    "section": "Configure Git",
-    "text": "Configure Git\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package. (And we also need to install a package called gert just for this step.)\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\ndevtools::install_github(\"r-lib/gert\")\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n  )\n\nFor example, mine would be\n\ndevtools::install_github(\"r-lib/gert\")\n\nusethis::use_git_config(\n  user.name = \"Alexander Fisher\", \n  user.email = \"alexander.fisher@duke.edu\"\n  )\n\nYou are now ready interact with GitHub via RStudio!"
-  },
-  {
-    "objectID": "labs/lab0.html#clone-the-repo-start-new-rstudio-project",
-    "href": "labs/lab0.html#clone-the-repo-start-new-rstudio-project",
-    "title": "Lab 0: Hello R.",
-    "section": "Clone the repo & start new RStudio project",
-    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta323-sp23 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to Project in the upper-right. Click New Project -> Version Control -> Git and paste the SSH URL under “Repository URL”. Select Create Project.\nThe R Project will open by default. In the future, you can open the project manually by clicking in the upper right, Open Project, and navigate to lab-0.Rproj from the drop-down menu.\nClick lab-0.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
   },
   {
     "objectID": "labs/lab0.html#r-and-r-studio",
@@ -144,49 +18,35 @@
     "href": "labs/lab0.html#yaml",
     "title": "Hello R.",
     "section": "YAML",
-    "text": "YAML\nThe top portion of your Quarto or R markdown file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nGo to file &gt; new file, Quarto document. Input title “Lab 0”, and change the author name to your name. Select pdf output and press Create. Render the document. Examine the rendered document."
-  },
-  {
-    "objectID": "labs/lab0.html#committing-changes",
-    "href": "labs/lab0.html#committing-changes",
-    "title": "Lab 0: Hello R.",
-    "section": "Committing changes",
-    "text": "Committing changes\n\nIn the Terminal pane of RStudio, type pwd to “print working directory”, i.e. show where in the filesystem you are. You should see something like /home/guest/lab-0-username. Next type ls to list files in the directory. You should see something similar:\n\nlab-0.Rproj  README.md lab-0.qmd\n\nType git status and press enter. You should see which files have been edited (highlighted in red). lab-0.qmd should be in red since you updated the YAML.\nType git add lab-0.qmd. This stages the file to be committed. In the future you can add several files to the same commit by repeating this step. You can type git status again to see the staged file (in green). Next type git commit -m \"updating YAML\". This will commit the file with the message between quotes.\nFinally git push to push the changes to the remote repository.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
-  },
-  {
-    "objectID": "labs/lab0.html#exercises",
-    "href": "labs/lab0.html#exercises",
-    "title": "Hello R.",
-    "section": "Exercises",
-    "text": "Exercises\nThe following exercises are designed to help you gain basic familiarity with R as well as the quirks of floating point arithmetic.\n\nFloating point algebra.\n\nDo floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. (x + y) + z == x + (y + z). Check if this is true in R using \\(x = 0.1\\), \\(y = 0.1\\) and \\(z = 1\\). Explain what you find.\n\nAdditional examples of floating point pecularity are provided below.\n\n# example 1\n0.2 == 0.6 / 3\n# example 2\npoint3 &lt;- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\npoint3 == 0.3\n\nTo work around these issues, you could use all.equal() for checking the equality of two double quantities in R. What does all.equal() do?\n\n# example 1, all.equal()\nall.equal(0.2, 0.6 / 3)\n# example 2, all.equal()\npoint3 &lt;- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\nall.equal(point3, rep(.3, length(point3)))\n\n\nWhat do these functions do?\n\nUse ?rnorm to read the documentation and explain the output of each of the following:\n\nrnorm(10, mean = 1, sd = 2)\npnorm(0)\ndnorm(0.5)\nqnorm(0.5)\n\nHow is dnorm(0.5) computed? Can you compute it manually?\n\nShow it numerically\n\n\\(X \\sim N(\\mu, \\sigma^2)\\) means that \\(X\\) is normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Show, using rnorm that if \\(X \\sim N(0, 1)\\) and \\(Y \\sim N(1, 2)\\) that \\(\\mathbb{E}(X + Y) = 1\\) and \\(\\mathbb{V}(X + Y) = 3\\)\n\nControl flow\n\n\n# for loop example\nfor (i in 1:5) {\n  cat(\"Hello\", i, \"\\n\")\n}\n\n# if else example\nx = 1\nif(x &gt; 0) {\n  print(\"I'm positive x is greater than 0.\")\n} else {\n  print(\"I'm not so positive about x being positive\")\n}\n\nAssume there are 50 days of class. Suppose that, on any given day, there is a \\(X_i\\) probability student \\(i\\) will come to class. Every day you come to class, you obtain Y points towards your final grade. Every day that you don’t come to class, you obtain Z points towards your final grade.\nAssume \\(Y \\sim Uniform(1.9, 2)\\) and \\(Z \\sim Uniform(1, 2)\\).\nAssume student A has a 95% chance of coming to class any given day (X = 0.95) and student B has a 70% of coming to class any given day (X = 0.7). While there are more efficient ways to do this, practice using a for loop, a conditional if statement, rbinom and runif to simulate one possible final grade for each student."
-  },
-  {
-    "objectID": "labs/lab0.html#style-guidelines",
-    "href": "labs/lab0.html#style-guidelines",
-    "title": "Hello R.",
-    "section": "Style guidelines",
-    "text": "Style guidelines\nAlthough coding is not the primary focus of this course, there are a short list below of fundamental principles we will follow. Note: some of these stylistic principles may not be followed in the text!\nFirst, it’s easy to write code that runs off the page when you render to pdf. This happens when you write more than 80 characters in a single line of code. To ensure this doesn’t happen, make sure your code doesn’t have 80 characters in a single line. To enable a vertical line in the RStudio IDE that helps you visually see the limit, go to Tools &gt; Global Options &gt; Code &gt; Display &gt; Show margin &gt; 80. This will enable a vertical line in your .qmd files that shows you where the 80 character cutoff is for code chunks. Instructions may vary slightly for local installs of RStudio.\n\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAny and all pipes %&gt;% or |&gt; as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs &lt;- and %&gt;% vs |&gt;\nYour name should be at the top (in the YAML) of each document under “author:”\n\nIf you have any questions about style, please ask a member of the teaching team."
-  },
-  {
-    "objectID": "labs/lab0.html#submitting-your-lab",
-    "href": "labs/lab0.html#submitting-your-lab",
-    "title": "Hello R.",
-    "section": "Submitting your lab",
-    "text": "Submitting your lab\nFor future lab assignments (this one isn’t graded), you will submit your lab assignment by simply committing and pushing your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus)."
+    "text": "YAML\nThe top portion of your Quarto or R markdown file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nGo to file > new file, Quarto document. Input title “Lab 0”, and change the author name to your name. Select pdf output and press Create. Render the document. Examine the rendered document."
   },
   {
     "objectID": "labs/lab0.html#latex",
     "href": "labs/lab0.html#latex",
     "title": "Hello R.",
     "section": "LaTeX",
-    "text": "LaTeX\nAssignments in this course are not required to be written in LaTeX. You may write equations by hand and scan them as a pdf to submit to Gradescope. However, LaTeX is the typesetting system to communicate statistics and mathematics professionally. It’s worthwhile to use. Moreover, it’s fully supported within .Rmd and .qmd files.\nIf you’re using R on your local machine, you may need to install\n\nMiKTeX (if you’re using windows): https://miktex.org/\nMacTeX (if you’re using macOS): https://www.tug.org/mactex/\nTeXLive (if you’re using linux): https://tug.org/texlive/\n\nTo write a LaTeX equation within your markdown document, simply use $$ to surround blocks of math and $ to surround in-line math.\nExample: copy and paste the following and then render.\nWe can see that $\\beta_0 = 2 and \\beta_1 = 3$ is the OLS solution under our model\n\n$$\ny = \\beta_0 + \\beta_1 x\n$$\n\n\n\n\n\n\nNote\n\n\n\nThere is no space between $ and math. Whitespace may cause the document to fail to render.\n\n\nCheck out this LaTeX cheatsheet to typeset a variety of math."
+    "text": "LaTeX\nAssignments in this course are not required to be written in LaTeX. You may write equations by hand and scan them as a pdf to submit to Gradescope. However, LaTeX is the typesetting system to communicate statistics and mathematics professionally. It’s worthwhile to use. Moreover, it’s fully supported within .Rmd and .qmd files.\nIf you’re using R on your local machine, you may need to install\n\nMiKTeX (if you’re using windows): https://miktex.org/\nMacTeX (if you’re using macOS): https://www.tug.org/mactex/\nTeXLive (if you’re using linux): https://tug.org/texlive/\n\nTo write a LaTeX equation within your markdown document, simply use $$ to surround blocks of math and $ to surround in-line math.\nExample: copy and paste the following and then render.\nWe can see that $\\beta_0 = 2 and \\beta_1 = 3$ is the OLS solution under our model\n\n$$\ny = \\beta_0 + \\beta_1 x\n$$\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is no space between $ and math. Whitespace may cause the document to fail to render.\n\n\nCheck out this LaTeX cheatsheet to typeset a variety of math."
   },
   {
-    "objectID": "links.html",
-    "href": "links.html",
-    "title": "Links",
+    "objectID": "labs/lab0.html#exercises",
+    "href": "labs/lab0.html#exercises",
+    "title": "Hello R.",
+    "section": "Exercises",
+    "text": "Exercises\nThe following exercises are designed to help you gain basic familiarity with R as well as the quirks of floating point arithmetic.\n\nFloating point algebra.\n\nDo floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. (x + y) + z == x + (y + z). Check if this is true in R using \\(x = 0.1\\), \\(y = 0.1\\) and \\(z = 1\\). Explain what you find.\n\nAdditional examples of floating point pecularity are provided below.\n\n# example 1\n0.2 == 0.6 / 3\n# example 2\npoint3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\npoint3 == 0.3\n\nTo work around these issues, you could use all.equal() for checking the equality of two double quantities in R. What does all.equal() do?\n\n# example 1, all.equal()\nall.equal(0.2, 0.6 / 3)\n# example 2, all.equal()\npoint3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\nall.equal(point3, rep(.3, length(point3)))\n\n\nWhat do these functions do?\n\nUse ?rnorm to read the documentation and explain the output of each of the following:\n\nrnorm(10, mean = 1, sd = 2)\npnorm(0)\ndnorm(0.5)\nqnorm(0.5)\n\nHow is dnorm(0.5) computed? Can you compute it manually?\n\nShow it numerically\n\n\\(X \\sim N(\\mu, \\sigma^2)\\) means that \\(X\\) is normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Show, using rnorm that if \\(X \\sim N(0, 1)\\) and \\(Y \\sim N(1, 2)\\) that \\(\\mathbb{E}(X + Y) = 1\\) and \\(\\mathbb{V}(X + Y) = 3\\)\n\n\n\n\nControl flow\n\n\n# for loop example\nfor (i in 1:5) {\n  cat(\"Hello\", i, \"\\n\")\n}\n\n# if else example\nx = 1\nif(x > 0) {\n  print(\"I'm positive x is greater than 0.\")\n} else {\n  print(\"I'm not so positive about x being positive\")\n}\n\nAssume there are 50 days of class. Suppose that, on any given day, there is a \\(X_i\\) probability student \\(i\\) will come to class. Every day you come to class, you obtain Y points towards your final grade. Every day that you don’t come to class, you obtain Z points towards your final grade.\nAssume \\(Y \\sim Uniform(1.9, 2)\\) and \\(Z \\sim Uniform(1, 2)\\).\nAssume student A has a 95% chance of coming to class any given day (X = 0.95) and student B has a 70% of coming to class any given day (X = 0.7). While there are more efficient ways to do this, practice using a for loop, a conditional if statement, rbinom and runif to simulate one possible final grade for each student."
+  },
+  {
+    "objectID": "labs/lab0.html#style-guidelines",
+    "href": "labs/lab0.html#style-guidelines",
+    "title": "Hello R.",
+    "section": "Style guidelines",
+    "text": "Style guidelines\nAlthough coding is not the primary focus of this course, there are a short list below of fundamental principles we will follow. Note: some of these stylistic principles may not be followed in the text!\nFirst, it’s easy to write code that runs off the page when you render to pdf. This happens when you write more than 80 characters in a single line of code. To ensure this doesn’t happen, make sure your code doesn’t have 80 characters in a single line. To enable a vertical line in the RStudio IDE that helps you visually see the limit, go to Tools > Global Options > Code > Display > Show margin > 80. This will enable a vertical line in your .qmd files that shows you where the 80 character cutoff is for code chunks. Instructions may vary slightly for local installs of RStudio.\n\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAny and all pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\n\nIf you have any questions about style, please ask a member of the teaching team."
+  },
+  {
+    "objectID": "chapterSummaries.html",
+    "href": "chapterSummaries.html",
+    "title": "Chapter summaries",
     "section": "",
-    "text": "Code\n\nRStudio containers\n\nResources\n\nSakai website\n\nlectures and solutions uploaded here under “Resources” tab on the left hand side\n\nGradescope\n\nTextbook\n\nA First Course in Bayesian Statistical Methods by Peter Hoff\nErrata to the textbook"
+    "text": "Additional related content (Ch2)\n\nLaw of total expectation \\(E(X) = E(E(X|Y))\\)\nLaw of total variance \\(Var(X) = E(Var(X|Y) + Var(E(X|Y))\\)"
   },
   {
     "objectID": "hw/hw00.html",
@@ -207,7 +67,7 @@
     "href": "hw/hw00.html#exercise-2",
     "title": "Homework 0",
     "section": "Exercise 2",
-    "text": "Exercise 2\nFind the derivative.\n\\[\n\\frac{d}{dx} \\left( \\frac{x}{\\log x} \\right)\n\\] ## Exercise 3\nWhat is the ordinary least squares estimator of \\(\\beta\\) (1-dimensional) in the linear regression \\(y = x \\beta + \\epsilon\\) with iid errors?"
+    "text": "Exercise 2\nFind the derivative.\n\\[\n\\frac{d}{dx} \\left( \\frac{x}{\\log x} \\right)\n\\]"
   },
   {
     "objectID": "hw/hw00.html#exercise-3",
@@ -242,7 +102,7 @@
     "href": "hw/hw00.html#exercise-7",
     "title": "Homework 0",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\\(X \\sim N(\\mu, \\sigma^2)\\) reads “X is normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\nLet\n\\[\n\\begin{aligned}\nX &\\sim N(0, 1),\\\\\nY &\\sim N(3, 2),\\\\\nZ &= X + Y\n\\end{aligned}\n\\] What is the distribution of \\(Z\\)? What is \\(\\mathbb{E}[Z]\\) and \\(Var(Z)\\)?"
+    "text": "Exercise 7\n\\(X \\sim N(\\mu, \\sigma^2)\\) reads “X is normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\nLet\n\\[\n\\begin{aligned}\nX &\\sim N(0, 1),\\\\\nY &\\sim N(3, 2),\\\\\nZ &= X + Y\n\\end{aligned}\n\\]\nWhat is the distribution of \\(Z\\)? What is \\(\\mathbb{E}[Z]\\) and \\(Var(Z)\\)?"
   },
   {
     "objectID": "hw/hw00.html#exercise-8",
@@ -257,6 +117,13 @@
     "title": "Homework 0",
     "section": "Exercise 9",
     "text": "Exercise 9\nTRUE/FALSE: The product of two uniform[0, 1] random variables is uniform[0, 1]."
+  },
+  {
+    "objectID": "hw/hw01.html",
+    "href": "hw/hw01.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Let \\(X_i \\in \\mathcal{X}\\) for all \\(i \\in \\{1, 2, \\ldots\\}\\) and suppose our belief model for \\(\\mathbf{X} = \\{ X_1, \\ldots X_n \\}\\) is exchangeable for all \\(n\\). Show, using de Finetti’s theorem, that for all \\(i \\neq j\\),\n\\[\nCov(X_i, X_j) \\geq 0 \\text{ and }\n\\]\n\\[\nCorr(X_i, X_j) \\geq 0.\n\\]"
   },
   {
     "objectID": "hw/hw01.html#exercise-2",
@@ -280,60 +147,74 @@
     "text": "Exercise 4\n\n2.6 from Hoff"
   },
   {
-    "objectID": "hw/hw01.html#exercise-5",
-    "href": "hw/hw01.html#exercise-5",
-    "title": "Homework 1",
-    "section": "Exercise 5",
-    "text": "Exercise 5\n\n2.6 from Hoff"
+    "objectID": "solutions/hw01s.html",
+    "href": "solutions/hw01s.html",
+    "title": "Homework 1 solutions",
+    "section": "",
+    "text": "By definition of covariance,\n\\[\nCov(X_i, X_j) = \\mathbb{E}~X_i X_j - \\mathbb{E}~X_i ~\\mathbb{E}~X_j\n\\]\nBy the law of total expectation,\n\\[\n= \\mathbb{E}~[\\mathbb{E}~X_i X_j| \\theta] -\n\\mathbb{E}~[\\mathbb{E}~X_i | \\theta]\n\\mathbb{E}~[\\mathbb{E}~X_j | \\theta]\n\\]\nBy de Finetti’s theorem, exchangeability of \\(X_i\\) and \\(X_j\\) implies the two variables are conditionally iid relative to \\(\\theta\\). Therefore,\n\\[\n\\begin{aligned}\n\\mathbb{E}~[\\mathbb{E} ~ X_i X_j| \\theta] &= \\mathbb{E}~\n\\left[\n\\int \\int x_i~x_j~p(x_i, x_j |\\theta) dx_i~dx_j\n\\right]\\\\\n&=\\mathbb{E}~\n\\left[\n\\int x_i~p(x_i |\\theta) dx_i \\cdot \\int x_j~p(x_j |\\theta) dx_j\n\\right]\\\\\n&=\n\\mathbb{E}\n\\left[\n\\mathbb{E}~ X_i | \\theta \\cdot\n\\mathbb{E}~ X_j | \\theta\n\\right]\n\\end{aligned}\n\\]\nSimilarly,\n\\[\n\\mathbb{E}~\nX_i | \\theta\n=\n\\mathbb{E}\nX_j | \\theta\n\\]\nso that in total,\n\\[\nCov(X_i, X_j) =\n\\mathbb{E}~\n\\left[\n\\left(\n\\mathbb{E}~X_i | \\theta\n\\right)^2\n\\right]\n-\n\\left(\n\\mathbb{E}~\n\\left[\n\\mathbb{E}~\nX_i | \\theta\n\\right]\n\\right)^2\n\\]\nNote that \\(\\mathbb{E}~X_i | \\theta\\) is some function of \\(\\theta\\), say \\(g(\\theta)\\). It is easy to see\n\\[\nCov(X_i, X_j) = Var(g(\\theta)) \\geq 0\n\\]\n\nExplicit detail:\nBy de Finetti’s theorem exchangeability of \\(X_i\\) and \\(X_j\\) implies\n\\[\np(x_i, x_j) = \\int p(x_i | \\theta) p(x_j | \\theta) p(\\theta) d\\theta\n\\]\nRecall \\(p(x_i, x_j) = \\int p(x_i, x_j, \\theta) d\\theta\\) and therefore \\(p(x_i, x_j) = \\int p(x_i, x_j | \\theta) p(\\theta) d\\theta\\). By comparison to the above, notice\n\\[\np(x_i, x_j | \\theta) = p(x_i | \\theta) p(x_j|\\theta).\n\\]\nIn words, \\(x_i\\) and \\(x_j\\) are conditionally independent given \\(\\theta\\)."
   },
   {
-    "objectID": "slides/lab0-welcome.html",
-    "href": "slides/lab0-welcome.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bayesian methods and modern statistics",
+    "section": "",
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nconjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\nMonte Carlo integration\nCh. 4\n\n\n\n\n\nThu Sep 14\nthe normal model\nCh. 5\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\ntwo parameter estimation\nCh. 5\n\n\n\n\n\nThu Sep 21\nGibbs sampling\nCh. 6\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#introductions",
+    "href": "slides/lab0-welcome.html#introductions",
     "title": "Welcome to Lab",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta360-fa23.github.io\nBookmark this! It’s the course website."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "href": "slides/lab0-welcome.html#what-to-expect-in-labs",
+    "title": "Welcome to Lab",
+    "section": "What to expect in labs",
+    "text": "What to expect in labs\n\nDiscussion\nPractice problems\nAssistance on computing portion of homeworks"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#tips",
+    "href": "slides/lab0-welcome.html#tips",
+    "title": "Welcome to Lab",
+    "section": "Tips",
+    "text": "Tips\n\nShow up.\nMake use of office hours. Before you need help!"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#beginnings",
+    "href": "slides/lab0-welcome.html#beginnings",
+    "title": "Welcome to Lab",
+    "section": "Beginnings",
+    "text": "Beginnings\nWhile this is not a computing class, computers are the workhorse of Bayesian statistics and we will use R to both enhance understanding of fundamental course material as well as to implement models to learn about real data sets."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#set-up-rstudio",
+    "href": "slides/lab0-welcome.html#set-up-rstudio",
+    "title": "Welcome to Lab",
+    "section": "Set up RStudio",
+    "text": "Set up RStudio\nOption 1 (easiest): RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick RStudio to log into the Docker container. You should now see the RStudio environment.\n\nIf you haven’t previously done so, you will need to reserve a container for RStudio first."
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#set-up-rstudio-1",
+    "href": "slides/lab0-welcome.html#set-up-rstudio-1",
+    "title": "Welcome to Lab",
+    "section": "Set up RStudio",
+    "text": "Set up RStudio\nOption 2: RStudio on your computer\n\nDownload R from http://www.r-project.org/.\nDownload RStudio, the popular IDE for R, from https://posit.co/downloads/.\n(optionally) download Quarto from https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "slides/lab0-welcome.html#demo",
+    "href": "slides/lab0-welcome.html#demo",
+    "title": "Welcome to Lab",
+    "section": "Demo",
+    "text": "Demo\nNext, check your familarity with R/RStudio fundamentals here. You can also find a link to this from the course schedule under “Assignment”."
+  },
+  {
+    "objectID": "links.html",
+    "href": "links.html",
+    "title": "Links",
     "section": "",
-    "text": "Meet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta360-fa23.github.io\nBookmark this! It’s the course website."
-  },
-  {
-    "objectID": "hw/hw01.html#exercise-1",
-    "href": "hw/hw01.html#exercise-1",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Let \\(X_i \\in \\mathcal{X}\\) for all \\(i \\in \\{1, 2, \\ldots\\}\\) and suppose our belief model for \\(\\mathbf{X} = \\{ X_1, \\ldots X_n \\}\\) is exchangeable for all \\(n\\). Show, using de Finetti’s theorem, that for all \\(i \\neq j\\),\n\\[\nCov(X_i, X_j) \\geq 0 \\text{ and }\n\\]\n\\[\nCorr(X_i, X_j) \\geq 0.\n\\]"
-  },
-  {
-    "objectID": "notes/probability-notes.html",
-    "href": "notes/probability-notes.html",
-    "title": "Probability",
-    "section": "",
-    "text": "Definition\n\n\n\nset: a collection of elements, denoted by {}\nExample\n\n\\(\\phi\\) = {} “the empty set”\nA = {1, 2, 3}\nB = {taken STA199, has not taken STA199}\nC = {{1,2,3}, {4, 5}}\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsubset: denoted by \\(\\subset\\), \\(A \\subset B\\) iff \\(a \\in A \\implies a \\in B\\)\nExample\nUsing the previously examples of A, B and C above,\n\n\\(A \\subset C\\)\n\\(A \\not\\subset B\\)\n\n\n\nRecall:\n\n\\(\\cup\\) means “union”, “or”\n\\(\\cap\\) means “intersection”, “and”\n\n\n\n\n\n\n\nDefinition\n\n\n\npartition: {\\(H_1, H_2, ... H_n\\)} = \\(\\{H_i\\}_{i = 1}^n\\) is a partition of \\(\\mathcal{H}\\) if\n\nthe union of sets is \\(\\mathcal{H}\\) i.e. \\(\\cup_{i = 1}^n H_i = \\mathcal{H}\\)\nthe sets are disjoint i.e. \\(H_i \\cap H_j = \\phi\\) for all \\(i \\neq j\\)\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsample space: \\(\\mathcal{H}\\), the set of all possible data sets (outcomes)\nevent: a set of one or more outcomes\nNote: p(\\(\\mathcal{H}\\)) = 1\nExample\n\nRoll a six-sided die once. The sample space \\(\\mathcal{H} = \\{1, 2, 3, 4, 5, 6\\}\\).\nLet \\(A\\) be the event that the die lands on an even number. \\(A = \\{2, 4, 6 \\}\\)"
-  },
-  {
-    "objectID": "notes/probability-notes.html#review-set-theory",
-    "href": "notes/probability-notes.html#review-set-theory",
-    "title": "Probability",
-    "section": "",
-    "text": "Definition\n\n\n\nset: a collection of elements, denoted by {}\nExample\n\n\\(\\phi\\) = {} “the empty set”\nA = {1, 2, 3}\nB = {taken STA199, has not taken STA199}\nC = {{1,2,3}, {4, 5}}\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsubset: denoted by \\(\\subset\\), \\(A \\subset B\\) iff \\(a \\in A \\implies a \\in B\\)\nExample\nUsing the previously examples of A, B and C above,\n\n\\(A \\subset C\\)\n\\(A \\not\\subset B\\)\n\n\n\nRecall:\n\n\\(\\cup\\) means “union”, “or”\n\\(\\cap\\) means “intersection”, “and”\n\n\n\n\n\n\n\nDefinition\n\n\n\npartition: {\\(H_1, H_2, ... H_n\\)} = \\(\\{H_i\\}_{i = 1}^n\\) is a partition of \\(\\mathcal{H}\\) if\n\nthe union of sets is \\(\\mathcal{H}\\) i.e. \\(\\cup_{i = 1}^n H_i = \\mathcal{H}\\)\nthe sets are disjoint i.e. \\(H_i \\cap H_j = \\phi\\) for all \\(i \\neq j\\)\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsample space: \\(\\mathcal{H}\\), the set of all possible data sets (outcomes)\nevent: a set of one or more outcomes\nNote: p(\\(\\mathcal{H}\\)) = 1\nExample\n\nRoll a six-sided die once. The sample space \\(\\mathcal{H} = \\{1, 2, 3, 4, 5, 6\\}\\).\nLet \\(A\\) be the event that the die lands on an even number. \\(A = \\{2, 4, 6 \\}\\)"
-  },
-  {
-    "objectID": "notes/probability-notes.html#example",
-    "href": "notes/probability-notes.html#example",
-    "title": "Probability",
-    "section": "Example",
-    "text": "Example\n\n\\(\\phi\\) = {} “the empty set”"
-  },
-  {
-    "objectID": "notes/probability-notes.html#definition-1",
-    "href": "notes/probability-notes.html#definition-1",
-    "title": "Probability",
-    "section": "Definition",
-    "text": "Definition\nsubset: denoted by \\(\\subset\\), \\(A \\subset B\\) iff \\(a \\in A \\implies a \\in B\\)\nExample\n\n\\(A \\subset C\\)\n\\(A \\not\\subset B\\)\n\nExample\n\n\\(\\phi\\) = {} “the empty set”\nA = {1, 2, 3}\nB = {taken STA199, has not taken STA199}\nC = {{1,2,3}, {4, 5}} :::"
-  },
-  {
-    "objectID": "notes/probability-notes.html#axioms-of-probability-in-words",
-    "href": "notes/probability-notes.html#axioms-of-probability-in-words",
-    "title": "Probability",
-    "section": "Axioms of probability (in words)",
-    "text": "Axioms of probability (in words)\nP1. Probabilities are between 0 and 1, importantly p(\\(\\neg\\)H|H) = 0 and p(H|H) = 1.\nP2. If two events A and B are disjoint, then p(A or B) = p(A) + p(B)\nP3. The joint probability of two events may be broken down stepwise: p(A,B) = p(A|B)p(B)\n–\nIt follows that\n\nfor any partition \\(\\{H_i\\}_{i = 1}^n\\), \\(\\sum_{i=1}^n p(H_i) = 1\\) (rule of total probability)\n\nnote simplest partition: \\(p(A) + p(\\neg A) = 1\\)\n\n\\(p(A) = \\sum_{i=1}^n p(A, H_i)\\) (rule of marginal probability)\n\nnote: P3 implies that equivalently, \\(p(A) = \\sum_{i=1}^n p(A | H_i) p(H_i)\\)\n\np(A|B) = p(A,B) / p(B) when p(B) \\(\\neq 0\\)\n\n\n\n\n\n\n\nExercise\n\n\n\nDerive Bayes’ rule:\n\\(p(H_i|B) = \\frac{p(B|H_i)p(H_i)}{\\sum_i p(B|H_i)p(H_i)}\\)\nusing the axioms of probability."
+    "text": "RStudio containers\n\nResources\n\nSakai website\n\nlectures and solutions uploaded here under “Resources” tab on the left hand side\n\nGradescope\n\nTextbook\n\nA First Course in Bayesian Statistical Methods by Peter Hoff\nErrata to the textbook"
   },
   {
     "objectID": "notes/probability.html",
@@ -347,7 +228,7 @@
     "href": "notes/probability.html#review-set-theory",
     "title": "Probability",
     "section": "Review: set theory",
-    "text": "Review: set theory\n\n\n\n\n\n\nDefinition\n\n\n\nset: a collection of elements, denoted by {}\nExamples\n\n\\(\\phi\\) = {} “the empty set”\nA = {1, 2, 3}\nB = {taken STA199, has not taken STA199}\nC = {{1,2,3}, {4, 5}}\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsubset: denoted by \\(\\subset\\), \\(A \\subset B\\) iff \\(a \\in A \\implies a \\in B\\)\nExamples\nUsing the previously examples of A, B and C above,\n\n\\(A \\subset C\\)\n\\(A \\not\\subset B\\)\n\n\n\nRecall:\n\n\\(\\cup\\) means “union”, “or”\n\\(\\cap\\) means “intersection”, “and”\n\n\n\n\n\n\n\nDefinition\n\n\n\npartition: {\\(H_1, H_2, ... H_n\\)} = \\(\\{H_i\\}_{i = 1}^n\\) is a partition of \\(\\mathcal{H}\\) if\n\nthe union of sets is \\(\\mathcal{H}\\) i.e. \\(\\cup_{i = 1}^n H_i = \\mathcal{H}\\)\nthe sets are disjoint i.e. \\(H_i \\cap H_j = \\phi\\) for all \\(i \\neq j\\)\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsample space: \\(\\mathcal{H}\\), the set of all possible data sets (outcomes)\nevent: a set of one or more outcomes\nNote: p(\\(\\mathcal{H}\\)) = 1\nExamples\n\nRoll a six-sided die once. The sample space \\(\\mathcal{H} = \\{1, 2, 3, 4, 5, 6\\}\\).\nLet \\(A\\) be the event that the die lands on an even number. \\(A = \\{2, 4, 6 \\}\\)"
+    "text": "Review: set theory\n\n\n\n\n\n\nDefinition\n\n\n\nset: a collection of elements, denoted by {}\nExamples\n\n\\(\\phi\\) = {} “the empty set”\nA = {1, 2, 3}\nB = {taken STA199, has not taken STA199}\nC = {{1,2,3}, {4, 5}}\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsubset: denoted by \\(\\subset\\), \\(A \\subset B\\) iff \\(a \\in A \\implies a \\in B\\)\nExamples\nUsing the previously examples of A, B and C above,\n\n\\(A \\subset C\\)\n\\(A \\not\\subset B\\)\n\n\n\nRecall:\n\n\\(\\cup\\) means “union”, “or”\n\\(\\cap\\) means “intersection”, “and”\n\n\n\n\n\n\n\nDefinition\n\n\n\npartition: {\\(H_1, H_2, ... H_n\\)} = \\(\\{H_i\\}_{i = 1}^n\\) is a partition of \\(\\mathcal{H}\\) if\n\nthe union of sets is \\(\\mathcal{H}\\) i.e. \\(\\cup_{i = 1}^n H_i = \\mathcal{H}\\)\nthe sets are disjoint i.e. \\(H_i \\cap H_j = \\phi\\) for all \\(i \\neq j\\)\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nsample space: \\(\\mathcal{H}\\), the set of all possible data sets (outcomes)\nevent: a set of one or more outcomes\nNote: p(\\(\\mathcal{H}\\)) = 1\nExamples\n\nRoll a six-sided die once. The sample space \\(\\mathcal{H} = \\{1, 2, 3, 4, 5, 6\\}\\).\nLet \\(A\\) be the event that the die lands on an even number. \\(A = \\{2, 4, 6 \\}\\)"
   },
   {
     "objectID": "notes/probability.html#axioms-of-probability-in-words",
@@ -355,13 +236,6 @@
     "title": "Probability",
     "section": "Axioms of probability (in words)",
     "text": "Axioms of probability (in words)\nP1. Probabilities are between 0 and 1, importantly p(\\(\\neg\\)H|H) = 0 and p(H|H) = 1.\nP2. If two events A and B are disjoint, then p(A or B) = p(A) + p(B)\nP3. The joint probability of two events may be broken down stepwise: p(A,B) = p(A|B)p(B)\n–\nIt follows that\n\nfor any partition \\(\\{H_i\\}_{i = 1}^n\\), \\(\\sum_{i=1}^n p(H_i) = 1\\) (rule of total probability)\n\nnote: simplest partition \\(p(A) + p(\\neg A) = 1\\)\n\n\\(p(A) = \\sum_{i=1}^n p(A, H_i)\\) (rule of marginal probability)\n\nnote: P3 implies that equivalently, \\(p(A) = \\sum_{i=1}^n p(A | H_i) p(H_i)\\)\n\np(A|B) = p(A,B) / p(B) when p(B) \\(\\neq 0\\)\n\nnote: these statements can also be made where each term is additionally conditioned on another event C\n\n\n\n\n\n\n\n\nExercise\n\n\n\nDerive Bayes’ rule:\n\\(p(H_i|X) = \\frac{p(X|H_i)p(H_i)}{\\sum_k p(X|H_k)p(H_k)}\\)\nusing the axioms of probability.\n\n\nBayes’ rule tells us how to update beliefs about \\(\\{H_i \\}_{i = 1}^n\\) given data \\(X\\)."
-  },
-  {
-    "objectID": "notes/probability.html#bayes-theorem",
-    "href": "notes/probability.html#bayes-theorem",
-    "title": "Probability",
-    "section": "Bayes’ theorem",
-    "text": "Bayes’ theorem"
   },
   {
     "objectID": "notes/probability.html#independence",
@@ -375,7 +249,14 @@
     "href": "notes/probability.html#random-variables",
     "title": "Probability",
     "section": "Random variables",
-    "text": "Random variables\n\n\n\n\n\n\nDefinition\n\n\n\nIn Bayesian inference, a random variable is an unknown numerical quantity about which we make probability statements.\nExamples\n\nData. E.g. the amount of a wheat a field will yield later this year. Since this data has not yet been generated, the quantity is unknown.\nA population parameter. E.g. the true mean resting heart rate of Duke students. Note: this is a fixed (non-random) quantity, but it is also unknown. We use probability to describe our uncertainty in this quantity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\ndiscrete random variable: a random variable that takes countably many values. Y is discrete if its possible outcomes can be enumerated \\(\\mathcal{Y} = \\{y_1, y_2, \\ldots \\}\\).\nNote: discrete does not mean finite. There may be infinitely many outcomes!\nExamples\n\nY = the number of children of a randomly sampled person\nY = the number of visible stars in the sky on a randomly sampled night of the year\n\nFor each \\(y \\in \\mathcal{Y}\\), let p(Y) = probability(Y = y). Then p is the probability mass function (pmf) of the random variable Y.\nExamples\n\nBinomial pmf: the probability of \\(y\\) successes in \\(n\\) trials, where each trial has an individual probability of success \\(\\theta\\). \\[p(y | \\theta) = {n \\choose y} \\theta ^y (1-\\theta)^y$ for $y \\in \\{0, 1, \\ldots n \\}\\]\n\nsupport: \\(y \\in \\{0, 1, 2, \\ldots n\\}\\)\nsuccess probability \\(\\theta \\in [0, 1]\\)\ndbinom(y, n, theta) computes this pmf in R\n\nPoisson pmf: probability of \\(y\\) events occurring during a fixed interval at a mean rate \\(\\theta\\) \\[p(y | \\theta) = \\frac{\\theta^y e^{-\\theta}}{y!}\\]\n\nsupport: \\(y \\in \\{0, 1, 2, \\ldots \\}\\)\nrate \\(\\theta \\in \\mathbb{R}^+\\)\ndpois(y, theta) computes this pmf in R\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\ncontinuous random variable: a random variable that takes uncountably many values.\nThe probability density function (pdf) of a continuous random variable, X is defined\n\\(pdf(x) = \\lim_{\\Delta x \\rightarrow 0} \\frac{p(x &lt; X &lt; x + \\Delta x)}{\\Delta x}\\)\nand the probability X is in some interval,\n\\(p(x_1 &lt; X &lt; x_2) = \\int_{x_1}^{x_2} pdf(x) dx\\)\nExamples\n\nNormal pdf \\[\np(x | \\mu, \\sigma) = (2\\pi \\sigma^2)^{-\\frac{1}{2}}e^{-\\frac{1}{2\\sigma^2}(x-\\mu)^2}\n\\]\nUniform pdf \\[p(x|a,b) =\n\\begin{cases}\n\\frac{1}{b - a} \\hspace{.6cm}\\text{ for } x \\in [a, b]\\\\\n0 \\hspace{1cm}\\text{ otherwise }\n\\end{cases}\\]\n\n\n\nNote: we will often abuse notation and use \\(p(x)\\) in place of \\(pmf(x)\\) and \\(pdf(x)\\) and prob(event), where only the context makes meaning clear.\nFor pmfs\n\\[\n0 \\leq p(y) \\leq 1\\\\\n\\sum_{y \\in \\mathcal{Y}} p(y) = 1\n\\] Similarly, for pdfs, \\[\n\\begin{aligned}\n0 \\leq p(y) \\ \\text{and} \\\\\n\\int_{y \\in \\mathcal{Y}} p(y) = 1\n\\end{aligned}\n\\]\nNote: For a continuous random variable Y, p(y) can be larger than 1 and p(y) is not p(Y = y), which equals 0.\n\n\n\n\n\n\nDefinition\n\n\n\nThe part of the density/mass function that depends on the variable is called the kernel.\nExample\n\nthe kernel of the normal pdf is \\(e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\)\n\n\n\n\n\n\n\n\n\nExercise\n\n\n\nWhat’s the kernel of a gamma random variable X?\nRecall: the pdf of a gamma distribution:\n\\[\np(x | \\alpha, \\beta) = \\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha - 1} e^{-\\beta x}\n\\]"
+    "text": "Random variables\n\n\n\n\n\n\nDefinition\n\n\n\nIn Bayesian inference, a random variable is an unknown numerical quantity about which we make probability statements.\nExamples\n\nData. E.g. the amount of a wheat a field will yield later this year. Since this data has not yet been generated, the quantity is unknown.\nA population parameter. E.g. the true mean resting heart rate of Duke students. Note: this is a fixed (non-random) quantity, but it is also unknown. We use probability to describe our uncertainty in this quantity.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\ndiscrete random variable: a random variable that takes countably many values. Y is discrete if its possible outcomes can be enumerated \\(\\mathcal{Y} = \\{y_1, y_2, \\ldots \\}\\).\nNote: discrete does not mean finite. There may be infinitely many outcomes!\nExamples\n\nY = the number of children of a randomly sampled person\nY = the number of visible stars in the sky on a randomly sampled night of the year\n\nFor each \\(y \\in \\mathcal{Y}\\), let p(Y) = probability(Y = y). Then p is the probability mass function (pmf) of the random variable Y.\nExamples\n\nBinomial pmf: the probability of \\(y\\) successes in \\(n\\) trials, where each trial has an individual probability of success \\(\\theta\\).\n\\[p(y | \\theta) = {n \\choose y} \\theta ^y (1-\\theta)^y \\text{ for } y \\in \\{0, 1, \\ldots n \\}\\]\n\nsupport: \\(y \\in \\{0, 1, 2, \\ldots n\\}\\)\nsuccess probability \\(\\theta \\in [0, 1]\\)\ndbinom(y, n, theta) computes this pmf in R\n\nPoisson pmf: probability of \\(y\\) events occurring during a fixed interval at a mean rate \\(\\theta\\)\n\\[p(y | \\theta) = \\frac{\\theta^y e^{-\\theta}}{y!}\\]\n\nsupport: \\(y \\in \\{0, 1, 2, \\ldots \\}\\)\nrate \\(\\theta \\in \\mathbb{R}^+\\)\ndpois(y, theta) computes this pmf in R\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\ncontinuous random variable: a random variable that takes uncountably many values.\nThe probability density function (pdf) of a continuous random variable, X is defined\n\\(pdf(x) = \\lim_{\\Delta x \\rightarrow 0} \\frac{p(x < X < x + \\Delta x)}{\\Delta x}\\)\nand the probability X is in some interval,\n\\(p(x_1 < X < x_2) = \\int_{x_1}^{x_2} pdf(x) dx\\)\nExamples\n\nNormal pdf \\[\np(x | \\mu, \\sigma) = (2\\pi \\sigma^2)^{-\\frac{1}{2}}e^{-\\frac{1}{2\\sigma^2}(x-\\mu)^2}\n\\]\nUniform pdf \\[p(x|a,b) =\n\\begin{cases}\n\\frac{1}{b - a} \\hspace{.6cm}\\text{ for } x \\in [a, b]\\\\\n0 \\hspace{1cm}\\text{ otherwise }\n\\end{cases}\\]\n\n\n\nNote: we will often abuse notation and use \\(p(x)\\) in place of \\(pmf(x)\\) and \\(pdf(x)\\) and prob(event), where only the context makes meaning clear.\nFor pmfs\n\\[\n\\begin{aligned}\n0 \\leq p(y) \\leq 1\\\\\n\\sum_{y \\in \\mathcal{Y}} p(y) = 1\n\\end{aligned}\n\\]\nSimilarly, for pdfs,\n\\[\n\\begin{aligned}\n0 \\leq p(y) \\ \\text{and} \\\\\n\\int_{y \\in \\mathcal{Y}} p(y) = 1\n\\end{aligned}\n\\]\nNote: For a continuous random variable Y, p(y) can be larger than 1 and p(y) is not p(Y = y), which equals 0.\n\n\n\n\n\n\nDefinition\n\n\n\nThe part of the density/mass function that depends on the variable is called the kernel.\nExample\n\nthe kernel of the normal pdf is \\(e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\)\n\n\n\n\n\n\n\n\n\nExercise\n\n\n\nWhat’s the kernel of a gamma random variable X?\nRecall: the pdf of a gamma distribution:\n\\[\np(x | \\alpha, \\beta) = \\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha - 1} e^{-\\beta x}\n\\]"
+  },
+  {
+    "objectID": "notes/probability.html#moments",
+    "href": "notes/probability.html#moments",
+    "title": "Probability",
+    "section": "Moments",
+    "text": "Moments\nFor a random variable X, the \\(n\\)th moment is defined as E(\\(X^n\\)).\nRecall, the expected value is defined for discrete random variable X,\n\\[\nE(X) = \\sum_{x \\in \\mathcal{X}} x p(x)\n\\]\nand for continuous random variable Y,\n\\[\nE(Y) = \\int_{-\\infty}^{\\infty} y p(y) dy\n\\]\nThe variance of a random variable, is also known as the second central moment and is defined\n\\[\nE(X - E(X))^2\n\\] or equivalently,\n\\[\nE(X^2) - E(X)^2\n\\]\nMore generally, the covariance between two random variables X and Y is defined\n\\[\nE[(X - E[X])(Y - E[Y])]\n\\]"
   },
   {
     "objectID": "notes/probability.html#exchangeability",
@@ -385,10 +266,17 @@
     "text": "Exchangeability\n\noffline notes"
   },
   {
-    "objectID": "notes/probability.html#moments",
-    "href": "notes/probability.html#moments",
-    "title": "Probability",
-    "section": "Moments",
-    "text": "Moments\nFor a random variable X, the \\(n\\)th moment is defined as E(\\(X^n\\)).\nRecall the expected value is defined for discrete random variable X, \\[\nE(X) = \\sum_{x \\in \\mathcal{X}} x p(x)\n\\] and for continuous random variable Y,\n\\[\nE(Y) = \\int_{-\\infty}^{\\infty} y p(y) dy\n\\] The variance of a random variable, is also known as the second central moment and is defined\n\\[\nE(X - E(X))^2\n\\] or equivalently,\n\\[\nE(X^2) - E(X)^2\n\\] More generally, the covariance between two random variables X and Y is defined\n\\[\nE[(X - E[X])(Y - E[Y])]\n\\]"
+    "objectID": "notes/coinFlipEstimation.html",
+    "href": "notes/coinFlipEstimation.html",
+    "title": "Coin flip estimation",
+    "section": "",
+    "text": "We observe 10 flips from the same coin above, where 0 is “tails” and 1 is “heads”. In summary, we see Y = 1 heads in 10 coin flips. Is this a fair coin?\n\nTo articulate this mathematically, let \\(\\theta \\in [0, 1]\\) be the bias-weighting (the chance of heads) of the coin. Fundamentally, we want \\(p(\\theta | y)\\), which we can expand via Bayes’ rule,\n\\[\np(\\theta | y) = \\frac{p(y|\\theta) p(\\theta)}{\\int_{\\theta \\in \\Theta} p(y|\\theta) p(\\theta) d\\theta}\n\\]\n\n\n\n\n\n\nExercise\n\n\n\nLabel the following on the equation above.\n\n\nLikelihood: the data generative process. The probability (or density) of the data given the model. Most often thought of as a function of the parameter.\nPrior: Our a priori (beforehand) beliefs about the true population characteristics.\nPosterior: Our a posteriori (afterwards) beliefs about the true population characteristics after having observed the dataset \\(y\\).\nNormalizing constant: A number that enables a pmf or pdf to integrate to 1."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "STA 360: Bayesian methods and modern statistics",
+    "section": "",
+    "text": "This course introduces Bayesian modeling and inference, motivated by real world examples. Course topics include Bayes’ theorem, exchangeability, conjugate priors, Markov chain Monte Carlo (MCMC) approximation, Gibbs sampling, hierarchical modeling, Bayesian regression and generalized linear models. We compare and contrast Bayesian methods to the frequentist paradigm. By the end of this course students should feel comfortable (1) writing Bayesian models and, when appropriate, (2) sampling from the posterior using MCMC to make inference.\n\n\n\n\n\n\n\n\n\nContact\nOffice hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nTu: 11:30am-1:30pm\nOld Chem 207\n\n\nCarol Wang\nzhuoqun.wang@duke.edu\nMo: 6:00pm-8:00pm\nZoom\n\n\nManny Mokel\nemmanuel.mokel@duke.edu\nTh: 3:00pm-5:00pm\nOld Chem 203B\n\n\nCaitrin Murphy\ncaitrin.murphy@duke.edu\nWe: 4:30pm-6:30pm\nOld Chem 025\n\n\n\n\n\n\n\n\n\nLecture\nTu/Th 10:05 - 11:20am\nOld Chemistry 116\n\n\nLab 01\nM 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nM 4:40pm - 5:55pm\nSocial Sciences 124\n\n\n\nCourse website: sta360-fa23.github.io\n\n\n\n\n\n\n\n\n\n\n\nA First Course in Bayesian Statistical Methods. As a Duke student, an electronic version of the book is freely available to you on Springer link. Check the errata at the link above.\nChapter summaries. I compile major take-away points from each section. Review these to help prepare for exams.\nWe will use the statistical software package R on homework asignments in this course. R is freely available at http://www.r-project.org/. RStudio, the popular IDE for R, is freely available at https://posit.co/downloads/.\n\n\n\n\nPart I: The Bayesian modeling toolkit\n\nReview of probability\nConjugate statistical models\nSemi-conjugate models and Gibbs sampling\n\nPart II: Statistical model building and analysis\n\nMultilevel models\nLinear regression\nGeneralized linear models\nDensity estimation and classification\n\n\n\n\n\n\n\n\n\n\n\nAssignment\nDescription\n\n\n\n\nHomework (40%)\nIndividual take-home assignments, submitted to Gradescope.\n\n\nMidterms (30%)\nTwo in-class exams.\n\n\nFinal exam (25%)\nCumulative final during final’s week.\n\n\nQuizzes (5%)\nIn-class pop quizzes.\n\n\n\nA \\(>= 93\\), A- \\(< 93\\), B+ \\(< 90\\), B \\(< 87\\), B- \\(< 83\\), C+ \\(<80\\), C \\(< 77\\), C- \\(< 73\\), D+ \\(< 70\\), D \\(< 67\\), D- \\(< 63\\), F \\(< 60\\)\n\n\n\n\n\n\nA note on quizzes\n\n\n\nOn random class days, there will be a brief quiz on the previous lectures. If you score \\(>60\\%\\) cumulatively on your final quiz grade, you will receive full participation credit. Your lowest two quizzes will also be dropped.\n\n\n\n\n\n\n\n\nA note on exams\n\n\n\nIf you miss either midterm 1 or midterm 2, and have an excused absence, your missing midterm grade will be replaced by your final exam grade. You must take at least 1 midterm and the final exam to pass the course.\n\n\n\n\n\n\n\n\n\nAcademic integrity\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations of academic integrity will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action. For the Exams and Quizzes, students are required to work alone. For the Homework assignments, students may work with a study group but each student must write up and submit their own answers.\nLate work\nLate homework may be submitted with 48 hours of the assignment deadline. Late homework submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nErrors in grading\nErrors in grading must be brought to the attention of the TA or instructor during office hours within 1 week of receiving the grade."
   }
 ]

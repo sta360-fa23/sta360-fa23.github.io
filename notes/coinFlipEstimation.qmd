@@ -1,0 +1,42 @@
+---
+title: "Coin flip estimation"
+author: "Dr. Alexander Fisher"
+mainfont: Lato
+format: 
+  html:
+    toc: true
+---
+
+```{r}
+#| echo: false
+set.seed(3)
+flips = rbinom(10, size = 1, prob = 0.25)
+flips
+```
+
+We observe 10 flips from the same coin above, where 0 is "tails" and 1 is "heads".
+In summary, we see Y = 1 heads in 10 coin flips. Is this a fair coin?
+
+---
+
+To articulate this mathematically, let $\theta \in [0, 1]$ be the bias-weighting (the chance of heads) of the coin.
+Fundamentally, we want $p(\theta | y)$, which we can expand via Bayes' rule,
+
+$$
+p(\theta | y) = \frac{p(y|\theta) p(\theta)}{\int_{\theta \in \Theta} p(y|\theta) p(\theta) d\theta}
+$$
+
+::: callout-important
+## Exercise
+Label the following on the equation above.
+:::
+
+**Likelihood**: the data generative process. The probability (or density) of the data given the model. Most often thought of as a function of the *parameter*. 
+
+**Prior**: Our *a priori* (beforehand) beliefs about the true population characteristics.
+
+**Posterior**: Our *a posteriori* (afterwards) beliefs about the true population characteristics after having observed the dataset $y$.
+
+**Normalizing constant**: A number that enables a pmf or pdf to integrate to 1.
+
+
