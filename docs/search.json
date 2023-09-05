@@ -158,7 +158,7 @@
     "href": "index.html",
     "title": "Bayesian methods and modern statistics",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nconjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\nMonte Carlo integration\nCh. 4\n\n\n\n\n\nThu Sep 14\nthe normal model\nCh. 5\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\ntwo parameter estimation\nCh. 5\n\n\n\n\n\nThu Sep 21\nGibbs sampling\nCh. 6\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model, exponential families\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\nMonte Carlo integration\nCh. 4\n\n\n\n\n\nThu Sep 14\nthe normal model\nCh. 5\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\ntwo parameter estimation\nCh. 5\n\n\n\n\n\nThu Sep 21\nGibbs sampling\nCh. 6\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\n\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
   },
   {
     "objectID": "slides/lab0-welcome.html#introductions",
@@ -217,6 +217,48 @@
     "text": "RStudio containers\n\nResources\n\nSakai website\n\nlectures and solutions uploaded here under “Resources” tab on the left hand side\n\nGradescope\n\nTextbook\n\nA First Course in Bayesian Statistical Methods by Peter Hoff\nErrata to the textbook"
   },
   {
+    "objectID": "notes/estimation1.html",
+    "href": "notes/estimation1.html",
+    "title": "Is this a fair coin?",
+    "section": "",
+    "text": "outputcode\n\n\n\n\n [1] 0 1 0 0 0 0 0 0 0 0\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(latex2exp)\nlibrary(glue)\nlibrary(patchwork)\n\nset.seed(3)\nflips = rbinom(5000, size = 1, prob = 0.25)\nflips %>% head(10)\nWe observe 10 flips from the same coin above, where 0 is “tails” and 1 is “heads”. In summary, we see Y = 1 heads in 10 coin flips. Is this a fair coin?\nTo articulate this mathematically, let \\(\\theta \\in [0, 1]\\) be the bias-weighting (the chance of heads) of the coin. Fundamentally, we want \\(p(\\theta | y)\\), which we can expand via Bayes’ rule,\n\\[\np(\\theta | y) = \\frac{p(y|\\theta) p(\\theta)}{\\int_{\\theta \\in \\Theta} p(y|\\theta) p(\\theta) d\\theta}\n\\]\nLikelihood: the data generative process. The probability (or density) of the data given the model. Most often thought of as a function of the parameter.\nPrior: Our a priori (beforehand) beliefs about the true population characteristics.\nPosterior: Our a posteriori (afterwards) beliefs about the true population characteristics after having observed the data set \\(y\\).\nNormalizing constant: A number that enables a pmf or pdf to integrate to 1."
+  },
+  {
+    "objectID": "notes/estimation1.html#uniform-prior",
+    "href": "notes/estimation1.html#uniform-prior",
+    "title": "Is this a fair coin?",
+    "section": "Uniform prior",
+    "text": "Uniform prior\nLet \\(y\\) be the number of heads in \\(n\\) coin flips.\n\\[\np(\\theta | y) \\propto \\theta^{y}(1-\\theta)^{n-y}\n\\]\nThis is the kernel of a ___ density, where \\(\\alpha = y + 1\\) and \\(\\beta = n - y + 1\\), hence\n\\[\np(\\theta | y) = \\frac{\\Gamma(n + 2)}{\\Gamma(y + 1)\\Gamma(n-y+1)} \\theta^{y}(1-\\theta)^{n-y}\n\\]\nand the posterior mean is \\(\\frac{y + 1}{n + 2}\\) and the posterior variance is \\(\\frac{(y+1)(n - y + 1)}{(n + 2)^2 (n + 1)}\\).\nLet’s examine how the posterior evolves with each successive coin flip.\n\nplotscode\n\n\n\n\n\n\n\n\n\n\nN = c(0, 1, 2, 3, 4, 10, 100, 1000, 5000)\n\nfor (i in seq_along(N)) {\nn = N[i]\nif(n == 0) {\n  y = 0\n}\nelse {\n  y = sum(flips[1:n])\n}\n\nx = 0:1 # range\ndf = data.frame(x)\nassign(paste0(\"p\", i),\n  df %>%\n  ggplot(aes(x = x)) +\n  stat_function(fun=dbeta, \n                args = list(shape1 = y + 1, shape2 = n - y + 1)) +\n  labs(y = TeX(\"$p(\\\\theta | y)$\"), x = TeX(\"$\\\\theta$\"),\n       title = glue(\"n = {n}\")) +\n  theme_bw()\n)\n}\n\n(p1 + p2 + p3) / \n  (p4 + p5 + p6) / \n  (p7 + p8 + p9)"
+  },
+  {
+    "objectID": "notes/estimation1.html#conjugacy",
+    "href": "notes/estimation1.html#conjugacy",
+    "title": "Is this a fair coin?",
+    "section": "Conjugacy",
+    "text": "Conjugacy\nIf \\(\\theta \\sim\\) Uniform(0, 1) then \\(p(\\theta)\\) = 1 for all \\(\\theta \\in [0, 1]\\).\nSimilarly, if \\(\\theta \\sim\\) beta(1, 1), then \\(p(\\theta) = 1\\).\nClaim:\nIf\n\\[\n\\begin{aligned}\n\\theta &\\sim \\text{beta}(a, b)\\\\\nY &\\sim \\text{binomial}(n, \\theta)\n\\end{aligned}\n\\]\nthen\n\\[\np(\\theta | Y) \\sim \\text{beta}(y + a, n - y + b)\n\\]\n\n\n\n\n\n\nDefinition\n\n\n\nA prior \\(p(\\theta)\\) is said to be conjugate to the data generative model \\(p(y|\\theta)\\) if the family of the posterior is necessarily in the same family as the prior. In math, \\(p(\\theta)\\) is conjugate to \\(p(y|\\theta)\\) if\n\\[\np(\\theta) \\in \\mathcal{P} \\implies p(\\theta | y) \\in \\mathcal{P}\n\\]\n\n\nWhile conjugate priors make calculation easy, they may not accurately reflect our prior beliefs.\n\n\n\n\n\n\nExercise\n\n\n\nProve the claim above."
+  },
+  {
+    "objectID": "notes/estimation1.html#other-priors",
+    "href": "notes/estimation1.html#other-priors",
+    "title": "Is this a fair coin?",
+    "section": "Other priors",
+    "text": "Other priors\nIncidentally, people are often satisfied with the choice of likelihood but are worried about the choice of prior.\nLet’s examine the effect of another couple of priors.\nGiven the coin’s dubious origin, we might believe a priori that the coin is biased. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(.5, .5)\n\\]\nOr alternatively, we might be strongly believe a priori that the coin is fair. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(20, 20)\n\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise\n\n\n\nHow would you update the code of the previous example to show posterior inference under the prior \\(\\theta \\sim\\) beta(2,3)?"
+  },
+  {
+    "objectID": "notes/estimation1.html#prior-data",
+    "href": "notes/estimation1.html#prior-data",
+    "title": "Is this a fair coin?",
+    "section": "Prior data",
+    "text": "Prior data\nIn the example above, the parameters, a and b, of the conjugate prior are often thought of as prior data.\n\na: “prior number of 1s”\nb: “prior number of 0s”\na + b: “prior sample size”\n\n\n\n\n\n\n\nExercise\n\n\n\nWe saw above that when a = 20 and b = 20, we needed more data to move the posterior.\nShow that the posterior mean, \\(E(\\theta | y) = \\frac{a + y}{a + b + n}\\) converges to the sample average as \\(n \\rightarrow \\infty\\)."
+  },
+  {
+    "objectID": "notes/estimation1.html#posterior-summaries-and-reliability",
+    "href": "notes/estimation1.html#posterior-summaries-and-reliability",
+    "title": "Is this a fair coin?",
+    "section": "Posterior summaries and reliability",
+    "text": "Posterior summaries and reliability\n\nLaplace approximation\nPosterior mode: sometimes called “MAP” or “maximum a posteriori” estimate, this quantity is given by \\(\\hat{\\theta} = \\arg \\max_{\\theta} p(\\theta | y)\\).\n\nNotice this unwinds to be \\(\\hat{\\theta} = \\arg \\max_{\\theta} p(y | \\theta) p(\\theta)\\).\n\n\n\n\n\n\n\nExercise\n\n\n\n\nShow that, for the uniform prior, \\(\\hat{\\theta} = y / n\\)\n\n\n\nOne way to report the reliability of the posterior mode is to look at the width of the posterior near the mode, which we can sometimes approximate with a Gaussian distribution:\n\\[\np(\\theta | y) \\approx C e^{\\frac{1}{2} \\frac{d^2L}{d\\theta^2}|_{\\hat{\\theta}} (\\theta - \\hat{\\theta})^2}\n\\]\nwhere \\(C\\) is a normalization constant and \\(L\\) is the log-posterior, \\(\\log p(\\theta | y)\\).\nTaken together, the fitted Gaussian with a mean equal to the posterior mode is called the Laplace approximation.\n\nLet’s derive the Laplace approximation offline\n\n\n\nConfidence regions\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\(\\Phi\\) be the support of \\(\\theta\\). An interval \\((l(y), u(y)) \\subset \\Phi\\) has 95% posterior coverage if\n\\[\np(l(y) < \\theta < u(y) | y ) = 0.95\n\\]\nInterpretation: after observing \\(Y = y\\), our probability that \\(\\theta \\in (l(y), u(y))\\) is 95%.\nSuch an interval is called 95% posterior confidence interval (CI). It may also sometimes be referred to as a 95% “credible interval” to distinguish it from a frequentist CI.\n\n\nContrast posterior coverage to frequentist coverage:\n\n\n\n\n\n\nDefinition\n\n\n\nA random interval \\((l(Y), u(Y)\\)) has 95% frequentist coverage for \\(\\theta\\) if before data are observed,\n\\[\np(l(Y) < \\theta < u(Y) | \\theta) = 0.95\n\\]\nInterpretation: if \\(Y \\sim P_\\theta\\) then the probability that \\((l(Y), u(Y)\\) will cover \\(\\theta\\) is 0.95.\n\n\nIn practice, for many applied problems\n\\[\np(l(y) < \\theta < u(y) | y ) \\approx p(l(Y) < \\theta < u(Y) | \\theta)\n\\]\nsee section 3.1.2. in the book."
+  },
+  {
     "objectID": "notes/probability.html",
     "href": "notes/probability.html",
     "title": "Probability",
@@ -266,45 +308,10 @@
     "text": "Exchangeability\n\noffline notes"
   },
   {
-    "objectID": "notes/coinFlipEstimation.html",
-    "href": "notes/coinFlipEstimation.html",
-    "title": "Coin flip estimation",
-    "section": "",
-    "text": "outputcode\n\n\n\n\n [1] 0 1 0 0 0 0 0 0 0 0\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(latex2exp)\nlibrary(glue)\nlibrary(patchwork)\n\nset.seed(3)\nflips = rbinom(5000, size = 1, prob = 0.25)\nflips %>% head(10)\nWe observe 10 flips from the same coin above, where 0 is “tails” and 1 is “heads”. In summary, we see Y = 1 heads in 10 coin flips. Is this a fair coin?\nTo articulate this mathematically, let \\(\\theta \\in [0, 1]\\) be the bias-weighting (the chance of heads) of the coin. Fundamentally, we want \\(p(\\theta | y)\\), which we can expand via Bayes’ rule,\n\\[\np(\\theta | y) = \\frac{p(y|\\theta) p(\\theta)}{\\int_{\\theta \\in \\Theta} p(y|\\theta) p(\\theta) d\\theta}\n\\]\nLikelihood: the data generative process. The probability (or density) of the data given the model. Most often thought of as a function of the parameter.\nPrior: Our a priori (beforehand) beliefs about the true population characteristics.\nPosterior: Our a posteriori (afterwards) beliefs about the true population characteristics after having observed the data set \\(y\\).\nNormalizing constant: A number that enables a pmf or pdf to integrate to 1."
-  },
-  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "STA 360: Bayesian methods and modern statistics",
     "section": "",
     "text": "This course introduces Bayesian modeling and inference, motivated by real world examples. Course topics include Bayes’ theorem, exchangeability, conjugate priors, Markov chain Monte Carlo (MCMC) approximation, Gibbs sampling, hierarchical modeling, Bayesian regression and generalized linear models. We compare and contrast Bayesian methods to the frequentist paradigm. By the end of this course students should feel comfortable (1) writing Bayesian models and, when appropriate, (2) sampling from the posterior using MCMC to make inference.\n\n\n\n\n\n\n\n\n\nContact\nOffice hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nTu: 11:30am-1:30pm\nOld Chem 207\n\n\nCarol Wang\nzhuoqun.wang@duke.edu\nMo: 6:00pm-8:00pm\nZoom\n\n\nManny Mokel\nemmanuel.mokel@duke.edu\nTh: 3:00pm-5:00pm\nOld Chem 203B\n\n\nCaitrin Murphy\ncaitrin.murphy@duke.edu\nWe: 4:30pm-6:30pm\nOld Chem 025\n\n\n\n\n\n\n\n\n\nLecture\nTu/Th 10:05 - 11:20am\nOld Chemistry 116\n\n\nLab 01\nM 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nM 4:40pm - 5:55pm\nSocial Sciences 124\n\n\n\nCourse website: sta360-fa23.github.io\n\n\n\n\n\n\n\n\n\n\n\nA First Course in Bayesian Statistical Methods. As a Duke student, an electronic version of the book is freely available to you on Springer link. Check the errata at the link above.\nChapter summaries. I compile major take-away points from each section. Review these to help prepare for exams.\nWe will use the statistical software package R on homework asignments in this course. R is freely available at http://www.r-project.org/. RStudio, the popular IDE for R, is freely available at https://posit.co/downloads/.\n\n\n\n\nPart I: The Bayesian modeling toolkit\n\nReview of probability\nConjugate statistical models\nSemi-conjugate models and Gibbs sampling\n\nPart II: Statistical model building and analysis\n\nMultilevel models\nLinear regression\nGeneralized linear models\nDensity estimation and classification\n\n\n\n\n\n\n\n\n\n\n\nAssignment\nDescription\n\n\n\n\nHomework (40%)\nIndividual take-home assignments, submitted to Gradescope.\n\n\nMidterms (30%)\nTwo in-class exams.\n\n\nFinal exam (25%)\nCumulative final during final’s week.\n\n\nQuizzes (5%)\nIn-class pop quizzes.\n\n\n\nA \\(>= 93\\), A- \\(< 93\\), B+ \\(< 90\\), B \\(< 87\\), B- \\(< 83\\), C+ \\(<80\\), C \\(< 77\\), C- \\(< 73\\), D+ \\(< 70\\), D \\(< 67\\), D- \\(< 63\\), F \\(< 60\\)\n\n\n\n\n\n\nA note on quizzes\n\n\n\nOn random class days, there will be a brief quiz on the previous lectures. If you score \\(>60\\%\\) cumulatively on your final quiz grade, you will receive full participation credit. Your lowest two quizzes will also be dropped.\n\n\n\n\n\n\n\n\nA note on exams\n\n\n\nIf you miss either midterm 1 or midterm 2, and have an excused absence, your missing midterm grade will be replaced by your final exam grade. You must take at least 1 midterm and the final exam to pass the course.\n\n\n\n\n\n\n\n\n\nAcademic integrity\nBy enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations of academic integrity will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action. For the Exams and Quizzes, students are required to work alone. For the Homework assignments, students may work with a study group but each student must write up and submit their own answers.\nLate work\nLate homework may be submitted with 48 hours of the assignment deadline. Late homework submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nErrors in grading\nErrors in grading must be brought to the attention of the TA or instructor during office hours within 1 week of receiving the grade."
-  },
-  {
-    "objectID": "notes/coinFlipEstimation.html#uniform-prior",
-    "href": "notes/coinFlipEstimation.html#uniform-prior",
-    "title": "Coin flip estimation",
-    "section": "Uniform prior",
-    "text": "Uniform prior\nLet \\(y\\) be the number of heads in \\(n\\) coin flips.\n\\[\np(\\theta | y) \\propto \\theta^{y}(1-\\theta)^{n-y}\n\\]\nThis is the kernel of a ___ density, where \\(\\alpha = y + 1\\) and \\(\\beta = n - y + 1\\), hence\n\\[\np(\\theta | y) = \\frac{\\Gamma(n + 2)}{\\Gamma(y + 1)\\Gamma(n-y+1)} \\theta^{y}(1-\\theta)^{n-y}\n\\]\nand the posterior mean is \\(\\frac{y + 1}{n + 2}\\).\nLet’s examine how the posterior evolves with each successive coin flip.\n\nplotscode\n\n\n\n\n\n\n\n\n\n\nN = c(0, 1, 2, 3, 4, 10, 100, 1000, 5000)\n\nfor (i in seq_along(N)) {\nn = N[i]\nif(n == 0) {\n  y = 0\n}\nelse {\n  y = sum(flips[1:n])\n}\n\nx = 0:1 # range\ndf = data.frame(x)\nassign(paste0(\"p\", i),\n  df %>%\n  ggplot(aes(x = x)) +\n  stat_function(fun=dbeta, \n                args = list(shape1 = y + 1, shape2 = n - y + 1)) +\n  labs(y = TeX(\"$p(\\\\theta | y)$\"), x = TeX(\"$\\\\theta$\"),\n       title = glue(\"n = {n}\")) +\n  theme_bw()\n)\n}\n\n(p1 + p2 + p3) / \n  (p4 + p5 + p6) / \n  (p7 + p8 + p9)"
-  },
-  {
-    "objectID": "notes/coinFlipEstimation.html#conjugacy",
-    "href": "notes/coinFlipEstimation.html#conjugacy",
-    "title": "Coin flip estimation",
-    "section": "Conjugacy",
-    "text": "Conjugacy"
-  },
-  {
-    "objectID": "notes/coinFlipEstimation.html#another-prior",
-    "href": "notes/coinFlipEstimation.html#another-prior",
-    "title": "Coin flip estimation",
-    "section": "Another prior",
-    "text": "Another prior"
-  },
-  {
-    "objectID": "notes/coinFlipEstimation.html#reliability",
-    "href": "notes/coinFlipEstimation.html#reliability",
-    "title": "Coin flip estimation",
-    "section": "Reliability",
-    "text": "Reliability"
   }
 ]
