@@ -165,7 +165,7 @@ If
 $$
 \begin{aligned}
 \theta &\sim \text{beta}(a, b)\\
-Y &\sim \text{binomial}(n, \theta)
+Y | \theta &\sim \text{binomial}(n, \theta)
 \end{aligned}
 $$
 then 
