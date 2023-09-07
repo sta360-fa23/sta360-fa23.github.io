@@ -158,6 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#laplace-approximation" id="toc-laplace-approximation" class="nav-link" data-scroll-target="#laplace-approximation">Laplace approximation</a></li>
   <li><a href="#confidence-regions" id="toc-confidence-regions" class="nav-link" data-scroll-target="#confidence-regions">Confidence regions</a></li>
+  <li><a href="#high-posterior-density" id="toc-high-posterior-density" class="nav-link" data-scroll-target="#high-posterior-density">High posterior density</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -411,6 +412,7 @@ Exercise
 <div class="callout-body-container callout-body">
 <ul>
 <li>Show that, for the uniform prior, <span class="math inline">\(\hat{\theta} = y / n\)</span></li>
+<li>Compare to maximum likelihood estimate (MLE); see <a href="https://sta323-sp23.github.io/slides/lec11.html#/example-normal-likelihood">notes on likelihoods</a></li>
 </ul>
 </div>
 </div>
@@ -467,6 +469,42 @@ p(l(Y) &lt; \theta &lt; u(Y) | \theta) = 0.95
 p(l(y) &lt; \theta &lt; u(y) | y ) \approx p(l(Y) &lt; \theta &lt; u(Y) | \theta)
 \]</span></p>
 <p>see section 3.1.2. in the book.</p>
+</section>
+<section id="high-posterior-density" class="level3">
+<h3 class="anchored" data-anchor-id="high-posterior-density">High posterior density</h3>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="math inline">\(100 \times (1-\alpha)\)</span>% <strong>high posterior density</strong> (HPD) region is a set <span class="math inline">\(s(y) \subset \Theta\)</span> such that</p>
+<ol type="1">
+<li><p><span class="math inline">\(p(\theta \in s(y) | Y = y) = 1 - \alpha\)</span></p></li>
+<li><p>If <span class="math inline">\(\theta_a \in s(y)\)</span> and <span class="math inline">\(\theta_b \not\in s(y)\)</span>, then <span class="math inline">\(p(\theta_a | Y = y) &gt; p(\theta_b | Y = y)\)</span></p></li>
+</ol>
+</div>
+</div>
+<ul>
+<li>Note: all points inside an HPD region have higher posterior density than points outside the region.</li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Is the HPD region always an interval?</p>
+</div>
+</div>
 
 
 </section>

@@ -290,6 +290,7 @@ Show that the **posterior mean**, $E(\theta | y) = \frac{a + y}{a + b + n}$ conv
 ::: callout-important
 ## Exercise
 - Show that, for the uniform prior, $\hat{\theta} = y / n$
+- Compare to maximum likelihood estimate (MLE); see [notes on likelihoods](https://sta323-sp23.github.io/slides/lec11.html#/example-normal-likelihood)
 ::: 
 
 One way to report the reliability of the posterior mode is to look at the width of the posterior near the mode, which we can sometimes approximate with a Gaussian distribution:
@@ -341,3 +342,22 @@ $$
 
 see section 3.1.2. in the book.
 
+### High posterior density
+
+::: callout-note
+## Definition
+
+A $100 \times (1-\alpha)$% **high posterior density** (HPD) region is a set $s(y) \subset \Theta$ such that 
+
+
+1. $p(\theta \in s(y) | Y = y) = 1 - \alpha$
+
+2. If $\theta_a \in s(y)$ and $\theta_b \not\in s(y)$, then $p(\theta_a | Y = y) > p(\theta_b | Y = y)$
+:::
+
+- Note: all points inside an HPD region have higher posterior density than points outside the region.
+
+::: callout-important
+## Exercise
+Is the HPD region always an interval?
+:::

@@ -55,18 +55,18 @@ schedule %>%
 |      | Thu Aug 31 | probability, exchangeability | Ch. 2   |[💻](/notes/probability.html)       |  [hw 1](/hw/hw01.html)          |
 | 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
 |      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
-|      | Thu Sep 07 | Poisson model, exponential families                             | Ch. 3         |        | hw 2           |
+|      | Thu Sep 07 | Posterior summaries and reliability                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
 | 3    | Mon Sep 11 |                              |         |       |            |
-|      | Tue Sep 12 | Monte Carlo integration                             | Ch. 4        |       |            |
-|      | Thu Sep 14 |  the normal model                            | Ch. 5        |       |            |
+|      | Tue Sep 12 | Poisson model, exponential families                            | Ch. 4        |       |            |
+|      | Thu Sep 14 |  Monte Carlo integration                         | Ch. 5        |       |            |
 | 4    | Mon Sep 18 |                              |         |       |            |
-|      | Tue Sep 19 | two parameter estimation                             | Ch. 5        |       |            |
-|      | Thu Sep 21 | Gibbs sampling                            | Ch. 6        |       |            |
+|      | Tue Sep 19 | the normal model                            | Ch. 5        |       |            |
+|      | Thu Sep 21 | two parameter estimation                           | Ch. 6        |       |            |
 | 5    | Mon Sep 25 |                              |         |       |            |
 |      | Tue Sep 26 | catch up / review                            |         |       |            |
 |      | Thu Sep 28 | Exam I                             |         |       |            |
 | 6    | Mon Oct 02 |                              |         |       |            |
-|      | Tue Oct 03 |                              |         |       |            |
+|      | Tue Oct 03 | Gibbs sampling                             |         |       |            |
 |      | Thu Oct 05 |                              |         |       |            |
 | 7    | Mon Oct 09 |                              |         |       |            |
 |      | Tue Oct 10 |                              |         |       |            |
