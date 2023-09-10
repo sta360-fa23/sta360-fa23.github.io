@@ -1,6 +1,5 @@
 ---
 title: "Welcome to Lab"
-date: "August 28, 2023"
 format: revealjs
 ---
 

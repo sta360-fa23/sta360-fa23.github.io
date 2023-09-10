@@ -158,7 +158,7 @@
     "href": "index.html",
     "title": "Bayesian methods and modern statistics",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\n\n\n\n\n\n\n\nTue Sep 12\nReliability, exponential families\nCh. 4\n\n\n\n\n\nThu Sep 14\nMonte Carlo integration\nCh. 5\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\nthe normal model\nCh. 5\n\n\n\n\n\nThu Sep 21\ntwo parameter estimation\nCh. 6\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\nGibbs sampling\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nwelcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\nMLE and MAP estimator\n\n💻\n\n\n\n\nTue Sep 12\nReliability, exponential families\nCh. 4\n\n\n\n\n\nThu Sep 14\nMonte Carlo integration\nCh. 5\n\n\n\n\n4\nMon Sep 18\n\n\n\n\n\n\n\nTue Sep 19\nthe normal model\nCh. 5\n\n\n\n\n\nThu Sep 21\ntwo parameter estimation\nCh. 6\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\nGibbs sampling\n\n\n\n\n\n\nThu Oct 05\n\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\n\n\n\n\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\n\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\n\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
   },
   {
     "objectID": "slides/lab0-welcome.html#introductions",
@@ -207,7 +207,7 @@
     "href": "slides/lab0-welcome.html#demo",
     "title": "Welcome to Lab",
     "section": "Demo",
-    "text": "Demo\nNext, check your familarity with R/RStudio fundamentals here. You can also find a link to this from the course schedule under “Assignment”."
+    "text": "Demo\nNext, check your familarity with R/RStudio fundamentals here. You can also find a link to this from the course schedule under “Assignment”.\n\n\n🔗 sta360-fa23.github.io"
   },
   {
     "objectID": "links.html",
@@ -228,7 +228,7 @@
     "href": "notes/estimation1.html#uniform-prior",
     "title": "Is this a fair coin?",
     "section": "Uniform prior",
-    "text": "Uniform prior\nLet \\(y\\) be the number of heads in \\(n\\) coin flips.\n\\[\np(\\theta | y) \\propto \\theta^{y}(1-\\theta)^{n-y}\n\\]\nThis is the kernel of a ___ density, where \\(\\alpha = y + 1\\) and \\(\\beta = n - y + 1\\), hence\n\\[\np(\\theta | y) = \\frac{\\Gamma(n + 2)}{\\Gamma(y + 1)\\Gamma(n-y+1)} \\theta^{y}(1-\\theta)^{n-y}\n\\]\nand the posterior mean is \\(\\frac{y + 1}{n + 2}\\) and the posterior variance is \\(\\frac{(y+1)(n - y + 1)}{(n + 2)^2 (n + 1)}\\).\nLet’s examine how the posterior evolves with each successive coin flip.\n\nplotscode\n\n\n\n\n\n\n\n\n\n\nN = c(0, 1, 2, 3, 4, 10, 100, 1000, 5000)\n\nfor (i in seq_along(N)) {\nn = N[i]\nif(n == 0) {\n  y = 0\n}\nelse {\n  y = sum(flips[1:n])\n}\n\nx = 0:1 # range\ndf = data.frame(x)\nassign(paste0(\"p\", i),\n  df %>%\n  ggplot(aes(x = x)) +\n  stat_function(fun=dbeta, \n                args = list(shape1 = y + 1, shape2 = n - y + 1)) +\n  labs(y = TeX(\"$p(\\\\theta | y)$\"), x = TeX(\"$\\\\theta$\"),\n       title = glue(\"n = {n}\")) +\n  theme_bw()\n)\n}\n\n(p1 + p2 + p3) / \n  (p4 + p5 + p6) / \n  (p7 + p8 + p9)"
+    "text": "Uniform prior\nLet \\(y\\) be the number of heads in \\(n\\) coin flips.\n\\[\np(\\theta | y) \\propto \\theta^{y}(1-\\theta)^{n-y}\n\\]\nThis is the kernel of a ___ density, where \\(\\alpha = y + 1\\) and \\(\\beta = n - y + 1\\), hence\n\\[\np(\\theta | y) = \\frac{\\Gamma(n + 2)}{\\Gamma(y + 1)\\Gamma(n-y+1)} \\theta^{y}(1-\\theta)^{n-y}\n\\]\nand the posterior mean is \\(\\frac{y + 1}{n + 2}\\) and the posterior variance is \\(\\frac{(y+1)(n - y + 1)}{(n + 2)^2 (n + 1)}\\).\nLet’s examine how the posterior evolves with each successive coin flip.\n\nplotscode\n\n\n\n\n\n\n\n\n\n\nN = c(0, 1, 2, 3, 4, 10, 100, 1000, 5000)\n\nfor (i in seq_along(N)) {\nn = N[i]\nif(n == 0) {\n  y = 0\n}\nelse {\n  y = sum(flips[1:n])\n}\n\nx = 0:1 # range\ndf = data.frame(x)\nassign(paste0(\"p\", i),\n  df %>%\n  ggplot(aes(x = x)) +\n  stat_function(fun=dbeta, \n                args = list(shape1 = y + 1, shape2 = n - y + 1)) +\n  labs(y = TeX(\"$p(\\\\theta | y)$\"), x = TeX(\"$\\\\theta$\"),\n       title = glue(\"n = {n}\")) +\n  theme_bw()\n)\n}\n\n(p1 + p2 + p3) / \n  (p4 + p5 + p6) / \n  (p7 + p8 + p9) +\n  plot_annotation(title = \"Figure 1\")"
   },
   {
     "objectID": "notes/estimation1.html#conjugacy",
@@ -341,5 +341,68 @@
     "title": "Homework 2",
     "section": "Exercise 3",
     "text": "Exercise 3\nLet \\(\\theta_1\\) be the prevalence of a rare allele among people with Alzheimer’s disease, and let \\(\\theta_2\\) be the prevalence among people without the disease. To estimate \\(\\theta_1\\) and \\(\\theta_2\\), a sample of \\(n_1 = 19\\) Alzheimer’s patients and \\(n_2 = 176\\) control subjects are genotyped for the presence of the allele. Let \\(Y_1\\) and \\(Y_2\\) be the number of people in the two samples who have the allele. We will model \\(Y_1\\) and \\(Y_2\\) as independent with \\(Y_1 | \\theta_1 \\sim \\text{binomial}(n_1, \\theta_1)\\) and \\(Y_2 | \\theta_2 \\sim \\text{binomial}(n_2, \\theta_2)\\). Prior studies suggest that \\(\\theta_2 \\sim \\text{beta}(2, 30)\\) is a reasonable prior distribution for \\(\\theta_2\\). For now, we will use the same prior distribution for \\(\\theta_1\\). The study is performed and the data are that \\(Y_1 = 1\\) and \\(Y_2 = 16\\).\n\nState the posterior distributions of \\(\\theta_1\\) and \\(\\theta_2\\). Plot the posterior densities together on a single graph with the prior density, and compare all three curves with words.\nCompute the posterior mean and a 95% posterior interval for each of \\(\\theta_1\\) and \\(\\theta_2\\).\nWith a picture, with words, or mathematically, try to describe different kind of joint prior distribution for \\(\\theta_1\\) and \\(\\theta_2\\) that represents the \\(\\theta_1\\) and \\(\\theta_2\\) are close to each other, but highly uncertain."
+  },
+  {
+    "objectID": "slides/lab1.html",
+    "href": "slides/lab1.html",
+    "title": "Likelihoods and plotting",
+    "section": "",
+    "text": "plot the likelihood\nconcept of function of the parameter\nneed for log-likelihood"
+  },
+  {
+    "objectID": "slides/lab1.html#maximum-likelihood-estimation",
+    "href": "slides/lab1.html#maximum-likelihood-estimation",
+    "title": "Likelihoods and plotting",
+    "section": "Maximum likelihood estimation",
+    "text": "Maximum likelihood estimation\n\npractically, check concavity, take derivative and set = to 0.\n\n\n\n🔗 sta360-fa23.github.io"
+  },
+  {
+    "objectID": "slides/lab1.html#unpacking-the-concept-of-a-likelihood",
+    "href": "slides/lab1.html#unpacking-the-concept-of-a-likelihood",
+    "title": "Likelihoods and plotting",
+    "section": "Unpacking the concept of a likelihood",
+    "text": "Unpacking the concept of a likelihood\ntutorial\n\nplot the likelihood\nconcept of function of the parameter\nneed for log-likelihood"
+  },
+  {
+    "objectID": "slides/lab1.html#example-normal-likelihood",
+    "href": "slides/lab1.html#example-normal-likelihood",
+    "title": "MLEs and MAPs",
+    "section": "Example: normal likelihood",
+    "text": "Example: normal likelihood\nLet \\(X\\) be the resting heart rate (RHR) in beats per minute of a student in this class.\nAssume RHR is normally distributed with some mean \\(\\mu\\) and standard deviation \\(8\\).\n\n\\[\n\\textbf{Data-generative model: } X_i \\overset{\\mathrm{iid}}{\\sim} N(\\mu, 64)\n\\]\n\n\nIf we observe three student heart rates, {75, 58, 68} then our likelihood\n\\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\]\nThat is, the joint density function of the observed data, viewed as a function of the parameter.\n\n\n\n\n\n\n\n\nImportant\n\n\nThe likelihood itself is not a density function. The integral with respect to the parameter does not need to equal 1."
+  },
+  {
+    "objectID": "slides/lab1.html#visualizing-the-likelihood",
+    "href": "slides/lab1.html#visualizing-the-likelihood",
+    "title": "MLEs and MAPs",
+    "section": "Visualizing the likelihood",
+    "text": "Visualizing the likelihood\n\\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\]\n\ndatalikelihood functionplotplot code\n\n\n\nx = c(75, 58, 68)\n\n\n\n\nL = function(mu, x) {\n  stopifnot(is.numeric(x))\n  n = length(x)\n  likelihood = 1\n  for(i in 1:n){\n    likelihood = likelihood * dnorm(x[i], mean = mu, sd = 8)\n  }\n  return(likelihood)\n}\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  xlim(c(50, 83)) +\n  geom_function(fun = L, args = list(x = x)) +\n  theme_bw() +\n  labs(x = expression(mu), y = \"likelihood\") + \n  geom_vline(xintercept = 67, color = 'red')\n\n\n\n\n\nThe maximum likelihood estimate \\(\\hat{\\mu} = \\frac{75 + 58 + 68}{3} = 67\\).\nThe maximum likelihood estimate is the parameter value that maximizes the likelihood function."
+  },
+  {
+    "objectID": "slides/lab1.html#the-log-likelihood",
+    "href": "slides/lab1.html#the-log-likelihood",
+    "title": "MLEs and MAPs",
+    "section": "The log-likelihood",
+    "text": "The log-likelihood\nNotice how small the y-axis is on the previous slide. What happens to the scale of the likelihood as we add additional data points?\n\\[\nL(\\mu) = \\prod_{i = 1}^{n} f_x(x_i |\\mu)\n\\]\n\nSince densities evaluate between 0 and 1, multiplying many together (as we often do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.\n\n\nlog to the rescue!\n\nlog is a monotonic function, i.e. \\(x > y\\) implies \\(\\log(x) > \\log(y)\\), because of this the maximum of \\(f\\) is the same as the maximum of \\(\\log f\\).\nadditionally, log turns products into sums\n\nin practice, we always work with the log-likelihood,\n\\[\n\\log L(\\mu) = \\sum_{i = 1}^n \\log f_x(x_i | \\mu).\n\\]"
+  },
+  {
+    "objectID": "slides/lab1.html#maximum-likelihood-estimation-mle",
+    "href": "slides/lab1.html#maximum-likelihood-estimation-mle",
+    "title": "MLEs and MAPs",
+    "section": "Maximum likelihood estimation (MLE)",
+    "text": "Maximum likelihood estimation (MLE)\nHow did we know to take the average of the values to find the maximum likelihood estimator \\(\\hat{\\mu}\\)?\n\nFrom calculus, we know that to maximize a function, we need to find where the slope equals zero (technically, to ensure we find some maxima and not a minima we need to also check that the second derivative is positive).\nExample: normal likelihood\nFor the normal likelihood example on the previous slide, we can see visually that the function is concave.\nTo find the maximum,\n\\[\n\\begin{aligned}\n\\frac{d}{d\\mu} \\log L(\\mu) &= \\sum_{i}\\frac{d}{d\\mu} \\log f_x(x_i |\\mu)\\\\\n&= \\sum_{i}\\frac{d}{d\\mu} \\left[ -\\frac{1}{2} \\log (2 \\pi \\sigma^2) - \\frac{1}{2\\sigma^2} (x_i - \\mu)^2 \\right]\\\\\n&= \\sum_i \\frac{1}{\\sigma^2} (x_i - \\mu)\n\\end{aligned}\n\\]\nSetting the derivative equal to zero,\n\\[\n\\begin{aligned}\n\\sum_i \\left[ x_i - \\hat{\\mu} \\right] &= 0\\\\\nn \\hat{\\mu} &= \\sum_i x_i\\\\\n\\hat{\\mu} &= \\bar{x}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lab1.html#maximum-a-posteriori-probability-map",
+    "href": "slides/lab1.html#maximum-a-posteriori-probability-map",
+    "title": "MLEs and MAPs",
+    "section": "Maximum a posteriori probability (MAP)",
+    "text": "Maximum a posteriori probability (MAP)\nIn Bayesian inference, we wish to find the mode of the posterior, not the likelihood.\nTo find the posterior mode, \\(\\hat{\\theta}\\), we instead take the derivative of the log-posterior,\n\\[\n\\frac{d}{d\\theta} \\log p(\\theta | y) = 0\n\\]\nPractice exercise\nAs in class, let\n\\[\nY | \\theta \\sim \\text{binomial}(n, \\theta)\\\\\n\\theta \\sim \\text{beta}(a, b)\n\\]\n\nFind the closed-form solution for the posterior mode \\(\\hat{\\theta}\\).\nRecreate Figure 1 from class using the same data flips provided below but change the prior to \\(\\theta \\sim \\text{beta}(2, 2)\\).\n\n\nset.seed(3)\nflips = rbinom(5000, size = 1, prob = 0.25)\n\n\nAdd a red vertical line to each subplot that shows the MAP estimate under the prior \\(\\theta \\sim \\text{beta}(2, 2)\\).\n\n\n\n🔗 sta360-fa23.github.io"
+  },
+  {
+    "objectID": "slides/lab1.html#practice-exercise",
+    "href": "slides/lab1.html#practice-exercise",
+    "title": "MLEs and MAPs",
+    "section": "Practice exercise",
+    "text": "Practice exercise\nAs in class, let\n\\[\nY | \\theta \\sim \\text{binomial}(n, \\theta)\\\\\n\\theta \\sim \\text{beta}(a, b)\n\\]\n\nFind the posterior mode (MAP) estimator for \\(\\theta\\).\nAdd a red vertical line showing the MAP estimator to Figure 2 from class.\n\n\n\n🔗 sta360-fa23.github.io"
   }
 ]

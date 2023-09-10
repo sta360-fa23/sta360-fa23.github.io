@@ -115,7 +115,8 @@ assign(paste0("p", i),
 
 (p1 + p2 + p3) / 
   (p4 + p5 + p6) / 
-  (p7 + p8 + p9)
+  (p7 + p8 + p9) +
+  plot_annotation(title = "Figure 1")
 ```
 ### code
 
@@ -147,7 +148,8 @@ assign(paste0("p", i),
 
 (p1 + p2 + p3) / 
   (p4 + p5 + p6) / 
-  (p7 + p8 + p9)
+  (p7 + p8 + p9) +
+  plot_annotation(title = "Figure 1")
 ```
 
 :::
@@ -256,7 +258,8 @@ combined = (p1 + p2 + p3) /
   plot_annotation("Posterior under two different priors") &
   theme(legend.position = "right")
 
-combined + plot_layout(guides = "collect")
+combined + plot_layout(guides = "collect") +
+  plot_annotation(title = "Figure 2")
 ```
 
 ::: callout-important

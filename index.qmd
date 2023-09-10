@@ -56,7 +56,7 @@ schedule %>%
 | 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
 |      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
 |      | Thu Sep 07 | Poisson model and conjugacy                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
-| 3    | Mon Sep 11 |                              |         |       |            |
+| 3    | Mon Sep 11 | MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
 |      | Tue Sep 12 | Reliability, exponential families                            | Ch. 4        |       |            |
 |      | Thu Sep 14 |  Monte Carlo integration                         | Ch. 5        |       |            |
 | 4    | Mon Sep 18 |                              |         |       |            |
