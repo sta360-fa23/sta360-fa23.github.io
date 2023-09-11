@@ -153,7 +153,7 @@ How did we know to take the average of the values to find the maximum likelihood
 
 . . .
 
-From calculus, we know that to maximize a function, we need to find where the slope equals zero (technically, to ensure we find some maxima and not a minima we need to also check that the second derivative is positive). 
+From calculus, we know that to maximize a function, we need to find where the slope equals zero (technically, to ensure we find some maxima and not a minima we need to also check that the second derivative is negative). 
 
 ### Example: normal likelihood
 
