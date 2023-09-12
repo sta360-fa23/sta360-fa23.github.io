@@ -173,7 +173,7 @@ $$
 then 
 
 $$
-p(\theta | Y) \sim \text{beta}(y + a, n - y + b)
+p(\theta | Y) = \text{beta}(y + a, n - y + b)
 $$
 
 ::: callout-note

@@ -57,11 +57,11 @@ schedule %>%
 |      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
 |      | Thu Sep 07 | Poisson model and conjugacy                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
 | 3    | Mon Sep 11 | MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
-|      | Tue Sep 12 | Reliability, exponential families                            | Ch. 4        |       |            |
-|      | Thu Sep 14 |  Monte Carlo integration                         | Ch. 5        |       |            |
+|      | Tue Sep 12 | Reliability, exp. families, prediction                            | Ch. 3        | [💻](/notes/prediction1.html)      |            |
+|      | Thu Sep 14 |  Monte Carlo integration                         | Ch. 4        |       |            |
 | 4    | Mon Sep 18 |                              |         |       |            |
 |      | Tue Sep 19 | the normal model                            | Ch. 5        |       |            |
-|      | Thu Sep 21 | two parameter estimation                           | Ch. 6        |       |            |
+|      | Thu Sep 21 | two parameter estimation                           | Ch. 5        |       |            |
 | 5    | Mon Sep 25 |                              |         |       |            |
 |      | Tue Sep 26 | catch up / review                            |         |       |            |
 |      | Thu Sep 28 | Exam I                             |         |       |            |

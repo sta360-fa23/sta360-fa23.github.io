@@ -1,0 +1,113 @@
+---
+title: "Prediction"
+author: "Dr. Alexander Fisher"
+mainfont: Lato
+format: 
+  html:
+    toc: true
+---
+
+Load packages: 
+
+```{r}
+#| warning: false
+library(tidyverse)
+library(latex2exp)
+```
+
+## Example
+
+**General social survey (1998)**
+
+Setup:
+
+- Suppose $X_i = 1$ if the ith person is happy. $X_i = 0$ otherwise.
+- Let $Y = \sum_{i = 1}^{n} X_i$, where $n$ is the number of people sampled.
+- $Y_i | \theta \sim \text{Binomial}(\theta)$ for some fixed $n$.
+- $\theta \sim \text{Uniform}(0, 1)$
+
+Scenario: We sample $n = 10$ people. $y = 6$ are happy. If we sample another $n = 10$, what is the probability that $\tilde{y}$ are happy?
+
+We fundamentally want the posterior predictive distribution, $p(\tilde{y} | y)$.
+
+Following the offline notes, and given conditional independence, we want
+
+<!-- E\left[ -->
+<!-- {n \choose \tilde{y}} -->
+<!-- (\theta)^\tilde{y} (1-\theta)^{n-\tilde{y}} -->
+<!-- | y -->
+<!-- \right] &=  -->
+
+$$
+\begin{aligned}
+\int p(\tilde{y} | \theta) p(\theta | y) d\theta
+&=
+\int {n \choose \tilde{y}}
+(\theta)^\tilde{y} (1-\theta)^{n-\tilde{y}}
+\cdot
+\frac{1}{\text{B(y + 1, n - y + 1)}}\theta^{y}(1-\theta)^{n-y}
+d\theta\\
+&= {n \choose \tilde{y}} \frac{1}{\text{B(y + 1, n - y + 1)}} \int \theta^{\tilde{y}+y} \cdot 
+(1-\theta)^{(n-\tilde{y}) + (n - y)} d\theta\\
+&= {n \choose \tilde{y}}
+\frac{\text{B}(\tilde{y} + y + 1, 2n - y - \tilde{y} + 1)}{\text{B(y + 1, n - y + 1)}}
+\end{aligned}
+$$
+where $B(\alpha, \beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}$. We can of course simplify, since this is really a bunch of factorials, but we can also naively use the `beta()` function in R and push forward.
+
+::: panel-tabset
+
+### plot
+
+```{r}
+#| echo: false
+#| warning: false
+y = 6
+n = 10
+
+# posterior predictive probability of ytilde
+probYT = function(ytilde) {
+  choose(n, ytilde) * 
+    beta(ytilde + y + 1, (2*n) - y - ytilde + 1) / 
+    beta(y + 1, n - y + 1)
+}
+
+df = data.frame(ytilde = 0:10) %>%
+  mutate(postPredict = probYT(ytilde))
+
+df %>%
+  ggplot(aes(x = ytilde, y = postPredict)) +
+  geom_bar(stat = 'identity') +
+  labs(x = TeX("$\\tilde{y}$"), y = TeX("$p(\\tilde{y}|y)$"),
+       title = "Posterior predictive probability") +
+  theme_bw()
+```
+
+### code
+
+```{r}
+#| eval: false
+y = 6
+n = 10
+
+# posterior predictive probability of ytilde
+probYT = function(ytilde) {
+  choose(n, ytilde) * 
+    beta(ytilde + y + 1, (2*n) - y - ytilde + 1) / 
+    beta(y + 1, n - y + 1)
+}
+
+# construct data frame
+df = data.frame(ytilde = 0:10) %>%
+  mutate(postPredict = probYT(ytilde))
+
+# plot data frame
+df %>%
+  ggplot(aes(x = ytilde, y = postPredict)) +
+  geom_bar(stat = 'identity') +
+  labs(x = TeX("$\\tilde{y}$"), y = TeX("$p(\\tilde{y}|y)$"),
+       title = "Posterior predictive probability") +
+  theme_bw()
+```
+
+:::
