@@ -13,7 +13,7 @@ Let $Y_1, Y_2 | \theta$ be i.i.d. binary($\theta$), so that $p(y_1, y_2 | \theta
 
 a. Compute $E~Y_i$ and $Var~Y_i$ (the mean and variance of $Y_i$ unconditional on $\theta$) as a function of $\eta$
 
-b. Compute $E~Y_1 Y_2$, which is the same as $p(Y_1 = 1, Y_2 = 1$ unconditional on $\theta$. You can do this with help from the formula on page 33 of the book.
+b. Compute $E~Y_1 Y_2$, which is the same as $p(Y_1 = 1, Y_2 = 1)$ unconditional on $\theta$. You can do this with help from the formula on page 33 of the book.
 
 c. Using the terms you have calculated above, make a graph of the correlation between $Y_1$ and $Y_2$ as a function of $\eta$.
 

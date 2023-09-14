@@ -50,26 +50,26 @@ schedule %>%
 
 | Week | Date       | Topic                        | Reading | Notes | Assignment |
 |:-----|:-----------|:----------------------------------|-----|:------:|:-----------|
-| 1    | Mon Aug 28 | welcome                     |         | [💻](/slides/lab0-welcome.html)       | [hello R](/labs/lab0.html)           |
+| 1    | Mon Aug 28 | lab: welcome                     |         | [💻](/slides/lab0-welcome.html)       | [hello R](/labs/lab0.html)           |
 |      | Tue Aug 29 | intro, history, notation          | Ch. 2   |       | [hw 0](/hw/hw00.html)            |
 |      | Thu Aug 31 | probability, exchangeability | Ch. 2   |[💻](/notes/probability.html)       |  [hw 1](/hw/hw01.html)          |
 | 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
 |      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
 |      | Thu Sep 07 | Poisson model and conjugacy                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
-| 3    | Mon Sep 11 | MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
-|      | Tue Sep 12 | Reliability, exp. families, prediction                            | Ch. 3        | [💻](/notes/prediction1.html)      |            |
-|      | Thu Sep 14 |  Monte Carlo integration                         | Ch. 4        |       |            |
+| 3    | Mon Sep 11 | lab: MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
+|      | Tue Sep 12 | Reliability, exp. families                            | Ch. 3        | [💻](/notes/reliability.html),  [📝](/notes/ReliabilityExpFamilies.pdf)     |            |
+|      | Thu Sep 14 |  prediction, Monte Carlo intro                         | Ch. 4        | [💻](/notes/prediction1.html)       |  [hw 3](/hw/hw03.html)          |
 | 4    | Mon Sep 18 |                              |         |       |            |
-|      | Tue Sep 19 | the normal model                            | Ch. 5        |       |            |
-|      | Thu Sep 21 | two parameter estimation                           | Ch. 5        |       |            |
+|      | Tue Sep 19 | Monte Carlo integration                            | Ch. 4        |       |            |
+|      | Thu Sep 21 | the normal model                         | Ch. 5        |       |            |
 | 5    | Mon Sep 25 |                              |         |       |            |
 |      | Tue Sep 26 | catch up / review                            |         |       |            |
 |      | Thu Sep 28 | Exam I                             |         |       |            |
 | 6    | Mon Oct 02 |                              |         |       |            |
-|      | Tue Oct 03 | Gibbs sampling                             |         |       |            |
-|      | Thu Oct 05 |                              |         |       |            |
+|      | Tue Oct 03 | Two parameter estimation                             |         |       |            |
+|      | Thu Oct 05 | Gibbs sampling                             |         |       |            |
 | 7    | Mon Oct 09 |                              |         |       |            |
-|      | Tue Oct 10 |                              |         |       |            |
+|      | Tue Oct 10 |  MCMC diagnostics                            |         |       |            |
 |      | Thu Oct 12 |                              |         |       |            |
 | 8    | Mon Oct 16 | NO CLASS                     |         |       |            |
 |      | Tue Oct 17 | NO CLASS                     |         |       |            |

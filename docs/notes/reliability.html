@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Alexander Fisher">
 
-<title>STA360 - Homework 2</title>
+<title>STA360 - Posterior summaries and reliability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,9 +87,9 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#laplace-approximation" id="toc-laplace-approximation" class="nav-link active" data-scroll-target="#laplace-approximation">Laplace approximation</a></li>
+  <li><a href="#confidence-regions" id="toc-confidence-regions" class="nav-link" data-scroll-target="#confidence-regions">Confidence regions</a></li>
+  <li><a href="#high-posterior-density" id="toc-high-posterior-density" class="nav-link" data-scroll-target="#high-posterior-density">High posterior density</a></li>
   </ul>
 </nav>
     </div>
@@ -97,14 +98,19 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 2</h1>
-<p class="subtitle lead">Due Friday September 15th at 5:00pm</p>
+<h1 class="title">Posterior summaries and reliability</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Alexander Fisher </p>
+          </div>
+  </div>
     
     
   </div>
@@ -112,33 +118,117 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Let <span class="math inline">\(Y_1, Y_2 | \theta\)</span> be i.i.d. binary(<span class="math inline">\(\theta\)</span>), so that <span class="math inline">\(p(y_1, y_2 | \theta) = \theta ^{y_1 + y_2} (1- \theta) ^{2 - y_1 - y_2}\)</span> and let <span class="math inline">\(\theta \sim \text{beta}(\eta, \eta)\)</span></p>
-<ol type="a">
-<li><p>Compute <span class="math inline">\(E~Y_i\)</span> and <span class="math inline">\(Var~Y_i\)</span> (the mean and variance of <span class="math inline">\(Y_i\)</span> unconditional on <span class="math inline">\(\theta\)</span>) as a function of <span class="math inline">\(\eta\)</span></p></li>
-<li><p>Compute <span class="math inline">\(E~Y_1 Y_2\)</span>, which is the same as <span class="math inline">\(p(Y_1 = 1, Y_2 = 1)\)</span> unconditional on <span class="math inline">\(\theta\)</span>. You can do this with help from the formula on page 33 of the book.</p></li>
-<li><p>Using the terms you have calculated above, make a graph of the correlation between <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> as a function of <span class="math inline">\(\eta\)</span>.</p></li>
-<li><p>Interpreting <span class="math inline">\(\eta\)</span> as how confident you are that <span class="math inline">\(\theta\)</span> is near <span class="math inline">\(\frac{1}{2}\)</span>, and interpreting <span class="math inline">\(Cor(Y_1, Y_2)\)</span> as how much information <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> provide about each other, explain in words why the correlation changes as a function of <span class="math inline">\(\eta\)</span>.</p></li>
-</ol>
+<section id="laplace-approximation" class="level2">
+<h2 class="anchored" data-anchor-id="laplace-approximation">Laplace approximation</h2>
+<p><strong>Posterior mode</strong>: sometimes called “MAP” or “maximum a posteriori” estimate, this quantity is given by <span class="math inline">\(\hat{\theta} = \arg \max_{\theta} p(\theta | y)\)</span>.</p>
+<ul>
+<li>Notice this unwinds to be <span class="math inline">\(\hat{\theta} = \arg \max_{\theta} p(y | \theta) p(\theta)\)</span>.</li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Show that, for the uniform prior, <span class="math inline">\(\hat{\theta} = y / n\)</span></li>
+<li>Compare to maximum likelihood estimate (MLE); see <a href="https://sta323-sp23.github.io/slides/lec11.html#/example-normal-likelihood">notes on likelihoods</a></li>
+</ul>
+</div>
+</div>
+<p>One way to report the reliability of the posterior mode is to look at the width of the posterior near the mode, which we can sometimes approximate with a Gaussian distribution:</p>
+<p><span class="math display">\[
+p(\theta | y) \approx C e^{\frac{1}{2} \frac{d^2L}{d\theta^2}|_{\hat{\theta}} (\theta - \hat{\theta})^2}
+\]</span></p>
+<p>where <span class="math inline">\(C\)</span> is a normalization constant and <span class="math inline">\(L\)</span> is the log-posterior, <span class="math inline">\(\log p(\theta | y)\)</span>.</p>
+<p>Taken together, the fitted Gaussian with a mean equal to the posterior mode is called the <strong>Laplace approximation</strong>.</p>
+<ul>
+<li>Let’s derive the Laplace approximation offline</li>
+</ul>
 </section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Suppose <span class="math inline">\(n\)</span> individuals volunteer to count birds in a forest. Let <span class="math inline">\(Y_i\)</span> be the number of birds counted by individual <span class="math inline">\(i\)</span>, and let <span class="math inline">\(x_i\)</span> be the number of hours spent in the forest by volunteer <span class="math inline">\(i\)</span>. We will model the data <span class="math inline">\(Y_1, \ldots Y_n\)</span> as being independent given <span class="math inline">\(\theta\)</span>, but not identically distributed. Specifically, our model is that <span class="math inline">\(Y_i | \theta \sim \text{Pois}(\theta x_i)\)</span>, independently for <span class="math inline">\(i = 1, \ldots n\)</span>.</p>
-<ol type="a">
-<li><p>Compute <span class="math inline">\(E~Y_i | \theta\)</span> and explain what <span class="math inline">\(\theta\)</span> represents.</p></li>
-<li><p>Write out a formula for the joint pdf <span class="math inline">\(p(y_1, \ldots y_n |\theta)\)</span> and simplify as much as possible. Find the MLE, that is, the value of <span class="math inline">\(\theta\)</span> that maximizes <span class="math inline">\(p(y_1, \ldots y_n | \theta)\)</span>. Explain why it makes sense.</p></li>
-<li><p>Let <span class="math inline">\(\theta \sim \text{gamma}(a, b)\)</span>. Find a formula for the posterior mode of <span class="math inline">\(\theta\)</span> and compare to the MLE.</p></li>
-</ol>
+<section id="confidence-regions" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-regions">Confidence regions</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\Phi\)</span> be the support of <span class="math inline">\(\theta\)</span>. An interval <span class="math inline">\((l(y), u(y)) \subset \Phi\)</span> has 95% <strong>posterior coverage</strong> if</p>
+<p><span class="math display">\[
+p(l(y) &lt; \theta &lt; u(y) | y ) = 0.95
+\]</span></p>
+<p>Interpretation: after observing <span class="math inline">\(Y = y\)</span>, our probability that <span class="math inline">\(\theta \in (l(y), u(y))\)</span> is 95%.</p>
+<p>Such an interval is called 95% posterior confidence interval (CI). It may also sometimes be referred to as a 95% “credible interval” to distinguish it from a frequentist CI.</p>
+</div>
+</div>
+<p>Contrast posterior coverage to frequentist coverage:</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A random interval <span class="math inline">\((l(Y), u(Y)\)</span>) has 95% frequentist coverage for <span class="math inline">\(\theta\)</span> if before data are observed,</p>
+<p><span class="math display">\[
+p(l(Y) &lt; \theta &lt; u(Y) | \theta) = 0.95
+\]</span></p>
+<p>Interpretation: if <span class="math inline">\(Y \sim P_\theta\)</span> then the probability that <span class="math inline">\((l(Y), u(Y)\)</span> will cover <span class="math inline">\(\theta\)</span> is 0.95.</p>
+</div>
+</div>
+<p>In practice, for many applied problems</p>
+<p><span class="math display">\[
+p(l(y) &lt; \theta &lt; u(y) | y ) \approx p(l(Y) &lt; \theta &lt; u(Y) | \theta)
+\]</span></p>
+<p>see section 3.1.2. in the book.</p>
 </section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Let <span class="math inline">\(\theta_1\)</span> be the prevalence of a rare allele among people with Alzheimer’s disease, and let <span class="math inline">\(\theta_2\)</span> be the prevalence among people without the disease. To estimate <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>, a sample of <span class="math inline">\(n_1 = 19\)</span> Alzheimer’s patients and <span class="math inline">\(n_2 = 176\)</span> control subjects are genotyped for the presence of the allele. Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> be the number of people in the two samples who have the allele. We will model <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> as independent with <span class="math inline">\(Y_1 | \theta_1 \sim \text{binomial}(n_1, \theta_1)\)</span> and <span class="math inline">\(Y_2 | \theta_2 \sim \text{binomial}(n_2, \theta_2)\)</span>. Prior studies suggest that <span class="math inline">\(\theta_2 \sim \text{beta}(2, 30)\)</span> is a reasonable prior distribution for <span class="math inline">\(\theta_2\)</span>. For now, we will use the same prior distribution for <span class="math inline">\(\theta_1\)</span>. The study is performed and the data are that <span class="math inline">\(Y_1 = 1\)</span> and <span class="math inline">\(Y_2 = 16\)</span>.</p>
-<ol type="a">
-<li><p>State the posterior distributions of <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>. Plot the posterior densities together on a single graph with the prior density, and compare all three curves with words.</p></li>
-<li><p>Compute the posterior mean and a 95% posterior interval for each of <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>.</p></li>
-<li><p>With a picture, with words, or mathematically, try to describe different kind of joint prior distribution for <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> that represents the <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> are close to each other, but highly uncertain.</p></li>
+<section id="high-posterior-density" class="level2">
+<h2 class="anchored" data-anchor-id="high-posterior-density">High posterior density</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="math inline">\(100 \times (1-\alpha)\)</span>% <strong>high posterior density</strong> (HPD) region is a set <span class="math inline">\(s(y) \subset \Theta\)</span> such that</p>
+<ol type="1">
+<li><p><span class="math inline">\(p(\theta \in s(y) | Y = y) = 1 - \alpha\)</span></p></li>
+<li><p>If <span class="math inline">\(\theta_a \in s(y)\)</span> and <span class="math inline">\(\theta_b \not\in s(y)\)</span>, then <span class="math inline">\(p(\theta_a | Y = y) &gt; p(\theta_b | Y = y)\)</span></p></li>
 </ol>
+</div>
+</div>
+<ul>
+<li>Note: all points inside an HPD region have higher posterior density than points outside the region.</li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Is the HPD region always an interval?</p>
+</div>
+</div>
 
 
 </section>

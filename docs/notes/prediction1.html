@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dr.&nbsp;Alexander Fisher">
 
-<title>STA360 - Prediction</title>
+<title>STA360 - Prediction &amp; Intro to Monte Carlo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example">Example</a></li>
+  <li><a href="#prediction-example" id="toc-prediction-example" class="nav-link active" data-scroll-target="#prediction-example">Prediction example</a></li>
+  <li><a href="#monte-carlo-motivation" id="toc-monte-carlo-motivation" class="nav-link" data-scroll-target="#monte-carlo-motivation">Monte Carlo motivation</a></li>
+  <li><a href="#monte-carlo-integration" id="toc-monte-carlo-integration" class="nav-link" data-scroll-target="#monte-carlo-integration">Monte Carlo integration</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -159,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Prediction</h1>
+<h1 class="title">Prediction &amp; Intro to Monte Carlo</h1>
 </div>
 
 
@@ -184,8 +187,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="example" class="level2">
-<h2 class="anchored" data-anchor-id="example">Example</h2>
+<section id="prediction-example" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-example">Prediction example</h2>
 <p><strong>General social survey (1998)</strong></p>
 <p>Setup:</p>
 <ul>
@@ -255,8 +258,163 @@ d\theta\\
 </div>
 </div>
 </div>
+</section>
+<section id="monte-carlo-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="monte-carlo-motivation">Monte Carlo motivation</h2>
+<p><a href="https://gss.norc.org/">General social survey</a> from the 90s gathered data on the number of children to women of two categories: those with and without a bachelor’s degree.</p>
+<p>Setup:</p>
+<ul>
+<li><span class="math inline">\(Y_{i1}\)</span>: number of children of <span class="math inline">\(i\)</span>th woman in group 1 (no bachelor’s)</li>
+<li><span class="math inline">\(Y_{i2}\)</span>: number of children of <span class="math inline">\(i\)</span>th woman in group 2 (bachelor’s)</li>
+</ul>
+<p>Model:</p>
+<ul>
+<li><span class="math inline">\(Y_{11}, \ldots, Y_{n_1 1} | \theta_1 \overset{\mathrm{iid}}{\sim} \text{Poisson}(\theta_1)\)</span></li>
+<li><span class="math inline">\(Y_{12} \ldots, Y_{n_2 2} | \theta_2 \overset{\mathrm{iid}}{\sim} \text{Poisson}(\theta_2)\)</span></li>
+</ul>
+<p>Prior:</p>
+<ul>
+<li><span class="math inline">\(\theta_1 \sim \text{gamma}(2, 1)\)</span></li>
+<li><span class="math inline">\(\theta_2 \sim \text{gamma}(2, 1)\)</span></li>
+</ul>
+<p>Data:</p>
+<ul>
+<li><span class="math inline">\(n_1 = 111\)</span>, <span class="math inline">\(\bar{y_1} = 1.95\)</span>, <span class="math inline">\(\sum y_{i 1} = 217\)</span></li>
+<li><span class="math inline">\(n_2 = 44\)</span>, <span class="math inline">\(\bar{y_1} = 1.5\)</span>, <span class="math inline">\(\sum y_{i 1} = 66\)</span></li>
+</ul>
+<p>Posterior:</p>
+<ul>
+<li><span class="math inline">\(\theta_1 | \vec{y_1} \sim \text{gamma}(219, 112)\)</span></li>
+<li><span class="math inline">\(\theta_2 | \vec{y_2} \sim \text{gamma}(68, 45)\)</span></li>
+</ul>
+<p>We already know how to compute</p>
+<ul>
+<li>posterior mean: <span class="math inline">\(E~\theta | y = \alpha / \beta\)</span> (<em>shape</em>, <em>rate</em> parameterization)</li>
+<li>posterior density (<code>dgamma</code>)</li>
+<li>posterior quantiles and confidence intervals (<code>qgamma</code>)</li>
+</ul>
+<p>What about?</p>
+<ul>
+<li><span class="math inline">\(p(\theta \in \mathcal{A} | y)\)</span></li>
+<li><span class="math inline">\(E~f(\theta) | y\)</span></li>
+<li><span class="math inline">\(Var~f(\theta) | y\)</span></li>
+</ul>
+<p>What about posterior distribution of <span class="math inline">\(|\theta_1 - \theta_2\)</span>, <span class="math inline">\(\theta_1 / \theta_2\)</span>, <span class="math inline">\(\text{max} \{\theta_1, \theta_2 \}\)</span>?</p>
+</section>
+<section id="monte-carlo-integration" class="level2">
+<h2 class="anchored" data-anchor-id="monte-carlo-integration">Monte Carlo integration</h2>
+<ul>
+<li>approximates an integral by a stochastic average</li>
+<li>shines when other methods of integration are impossible (e.g.&nbsp;high dimensional integration)</li>
+<li>works because of law of large numbers: for a random variable <span class="math inline">\(X\)</span>, the sample mean <span class="math inline">\(\bar{x}_N\)</span> converges to the true mean <span class="math inline">\(\mu\)</span> as the number of samples <span class="math inline">\(N\)</span> tends to infinity.</li>
+</ul>
+<p>The key idea is: we obtain independent samples from the posterior,</p>
+<p><span class="math display">\[
+\theta^{(1)}, \ldots \theta^{(N)} \overset{\mathrm{iid}}{\sim} p(\theta |\vec{y})
+\]</span></p>
+<p>then the empirical distribution of the samples approximates the posterior (approximation improves as <span class="math inline">\(N\)</span> increases).</p>
+<p>Recall</p>
+<p><span class="math display">\[
+E~g(\theta)|y = \int_\mathcal{\theta} g(\theta) f_\theta(\theta | y)dx \approx \frac{1}{N} \sum_{i = 1}^N g(\theta^{(i)})
+\]</span></p>
+<p>where <span class="math inline">\(f_x(x)\)</span> is the probability density function for a random variable <span class="math inline">\(X\)</span>.</p>
+<p>The law of large numbers says that if our samples <span class="math inline">\(\theta^{(i)}\)</span> are independent, <span class="math inline">\(\frac{1}{N} \sum_{i = 1}^N g(\theta^{(i)})\)</span> to <span class="math inline">\(E~\theta|y\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Integrals are expectations, <strong>and</strong> expectations are integrals.</p>
+</div>
+</div>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<ul>
+<li><span class="math inline">\(\theta_1 | \vec{y_1} \sim \text{gamma}(219, 112)\)</span></li>
+<li><span class="math inline">\(\theta_2 | \vec{y_2} \sim \text{gamma}(68, 45)\)</span></li>
+</ul>
+<section id="proof-of-concept-the-mean" class="level4">
+<h4 class="anchored" data-anchor-id="proof-of-concept-the-mean">(1) proof of concept: the mean</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">5000</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rgamma</span>(N, <span class="at">shape =</span> <span class="dv">219</span>, <span class="at">rate =</span> <span class="dv">112</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.95294</code></pre>
+</div>
+</div>
+<p>Pretty close to the true mean, 1.9553571.</p>
+</section>
+<section id="posterior-of-theta_1---theta_2" class="level4">
+<h4 class="anchored" data-anchor-id="posterior-of-theta_1---theta_2">(2) posterior of <span class="math inline">\(\theta_1 - \theta_2\)</span></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>theta1 <span class="ot">=</span> <span class="fu">rgamma</span>(N, <span class="at">shape =</span> <span class="dv">219</span>, <span class="at">rate =</span> <span class="dv">112</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>theta2 <span class="ot">=</span> <span class="fu">rgamma</span>(N, <span class="at">shape =</span> <span class="dv">68</span>, <span class="at">rate =</span> <span class="dv">45</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">diff =</span> theta1 <span class="sc">-</span> theta2)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diff)) <span class="sc">+</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">theta_1 - </span><span class="sc">\\</span><span class="st">theta_2$"</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">"$p(</span><span class="sc">\\</span><span class="st">theta_1 - </span><span class="sc">\\</span><span class="st">theta_2 | {y}_1, {y}_2)$"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="prediction1_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="ptheta_1---theta_2-.5" class="level4">
+<h4 class="anchored" data-anchor-id="ptheta_1---theta_2-.5">(3) <span class="math inline">\(p(\theta_1 - \theta_2&gt; .5)\)</span></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>diff <span class="sc">&gt;</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4106</code></pre>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(\theta \sim \text{Uniform}(0, 1)\)</span></li>
+<li>Let <span class="math inline">\(\gamma = \log \theta\)</span></li>
+<li>Visualize <span class="math inline">\(p(\gamma)\)</span> using Monte Carlo simulation, then show using the change of variables formula and plotting the closed form of the density.</li>
+</ul>
+</div>
+</div>
+<!-- ```{r} -->
+<!-- theta = runif(1000) -->
+<!-- gamma = log(theta) -->
+<!-- hist(gamma) -->
+<!-- f = function(x) { -->
+<!--   return(exp(x)) -->
+<!-- } -->
+<!-- df = data.frame(gamma = -7:0) -->
+<!-- df2 = data.frame(gammaSamples = log(theta)) -->
+<!-- df %>% -->
+<!--   ggplot(aes(x = gamma)) + -->
+<!--   stat_function(fun = f, col = 'red', alpha = 0.5) + -->
+<!--   geom_density(data = df2, aes(x = gammaSamples),  -->
+<!--                col = 'steelblue', alpha = 0.5) -->
+<!-- ``` -->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

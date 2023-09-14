@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA360 - Homework 2</title>
+<title>STA360 - Homework 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,8 +97,8 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 2</h1>
-<p class="subtitle lead">Due Friday September 15th at 5:00pm</p>
+<h1 class="title">Homework 3</h1>
+<p class="subtitle lead">Due Friday September 22nd at 5:00pm</p>
 </div>
 
 
@@ -114,30 +114,46 @@ ul.task-list{list-style: none;}
 
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Let <span class="math inline">\(Y_1, Y_2 | \theta\)</span> be i.i.d. binary(<span class="math inline">\(\theta\)</span>), so that <span class="math inline">\(p(y_1, y_2 | \theta) = \theta ^{y_1 + y_2} (1- \theta) ^{2 - y_1 - y_2}\)</span> and let <span class="math inline">\(\theta \sim \text{beta}(\eta, \eta)\)</span></p>
+<p>Let <span class="math inline">\(Y_1, \ldots Y_n | \theta\)</span> be an i.i.d. random sample from a population with pdf <span class="math inline">\(p(y|\theta)\)</span> where</p>
+<p><span class="math display">\[
+p(y|\theta) = \frac{2}{\Gamma(a)} \theta^{2a} y^{2a -1} e^{-\theta^2 y^2}
+\]</span></p>
+<p>and <span class="math inline">\(y &gt; 0\)</span>, <span class="math inline">\(\theta &gt; 0\)</span>, <span class="math inline">\(a &gt; 0\)</span>.</p>
+<p>For this density,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E~Y|\theta &amp;= \frac{\Gamma(a + \frac{1}{2})}{\theta \Gamma(a)}\\
+E~Y^2|\theta &amp;= \frac{a}{\theta^2}
+\end{aligned}
+\]</span></p>
+<p>Call this density <span class="math inline">\(g^2\)</span> such that <span class="math inline">\(Y_1, \ldots Y_n | \theta \sim g^2(a, \theta)\)</span>.</p>
 <ol type="a">
-<li><p>Compute <span class="math inline">\(E~Y_i\)</span> and <span class="math inline">\(Var~Y_i\)</span> (the mean and variance of <span class="math inline">\(Y_i\)</span> unconditional on <span class="math inline">\(\theta\)</span>) as a function of <span class="math inline">\(\eta\)</span></p></li>
-<li><p>Compute <span class="math inline">\(E~Y_1 Y_2\)</span>, which is the same as <span class="math inline">\(p(Y_1 = 1, Y_2 = 1)\)</span> unconditional on <span class="math inline">\(\theta\)</span>. You can do this with help from the formula on page 33 of the book.</p></li>
-<li><p>Using the terms you have calculated above, make a graph of the correlation between <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> as a function of <span class="math inline">\(\eta\)</span>.</p></li>
-<li><p>Interpreting <span class="math inline">\(\eta\)</span> as how confident you are that <span class="math inline">\(\theta\)</span> is near <span class="math inline">\(\frac{1}{2}\)</span>, and interpreting <span class="math inline">\(Cor(Y_1, Y_2)\)</span> as how much information <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> provide about each other, explain in words why the correlation changes as a function of <span class="math inline">\(\eta\)</span>.</p></li>
+<li><p>Find the joint pdf of <span class="math inline">\(Y_1, \ldots Y_n | \theta\)</span> and simplify as much as possible.</p></li>
+<li><p>Suppose <span class="math inline">\(a\)</span> is known but <span class="math inline">\(\theta\)</span> is unknown. Identify a simple conjugate class of priors for <span class="math inline">\(\theta\)</span>. For any arbitrary member of the class, identify the posterior density <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span>.</p></li>
+<li><p>Obtain a formula for <span class="math inline">\(E~ \theta | Y_1, \ldots Y_n\)</span> when the prior is in the conjugate class.</p></li>
 </ol>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Suppose <span class="math inline">\(n\)</span> individuals volunteer to count birds in a forest. Let <span class="math inline">\(Y_i\)</span> be the number of birds counted by individual <span class="math inline">\(i\)</span>, and let <span class="math inline">\(x_i\)</span> be the number of hours spent in the forest by volunteer <span class="math inline">\(i\)</span>. We will model the data <span class="math inline">\(Y_1, \ldots Y_n\)</span> as being independent given <span class="math inline">\(\theta\)</span>, but not identically distributed. Specifically, our model is that <span class="math inline">\(Y_i | \theta \sim \text{Pois}(\theta x_i)\)</span>, independently for <span class="math inline">\(i = 1, \ldots n\)</span>.</p>
+<p>Suppose <span class="math inline">\(Y|\theta \sim \text{binary}(\theta)\)</span> and we want to use <span class="math inline">\(\theta \sim \text{Uniform}(0, 1)\)</span> to represent our lack of knowledge about <span class="math inline">\(\theta\)</span>. However, we are interested in the log-odds <span class="math inline">\(\gamma = \log \frac{\theta}{1 - \theta}\)</span>.</p>
 <ol type="a">
-<li><p>Compute <span class="math inline">\(E~Y_i | \theta\)</span> and explain what <span class="math inline">\(\theta\)</span> represents.</p></li>
-<li><p>Write out a formula for the joint pdf <span class="math inline">\(p(y_1, \ldots y_n |\theta)\)</span> and simplify as much as possible. Find the MLE, that is, the value of <span class="math inline">\(\theta\)</span> that maximizes <span class="math inline">\(p(y_1, \ldots y_n | \theta)\)</span>. Explain why it makes sense.</p></li>
-<li><p>Let <span class="math inline">\(\theta \sim \text{gamma}(a, b)\)</span>. Find a formula for the posterior mode of <span class="math inline">\(\theta\)</span> and compare to the MLE.</p></li>
+<li><p>Find the prior distirbution for <span class="math inline">\(\gamma\)</span> induced by our prior on <span class="math inline">\(\theta\)</span>. Is the prior informative about <span class="math inline">\(\gamma\)</span>? Verify <span class="math inline">\(p(\gamma)\)</span> using Monte Carlo sampling and then plotting the empirical density of the samples along with the closed-form solution.</p></li>
+<li><p>Assume some data come in and <span class="math inline">\(y = 7\)</span> out of <span class="math inline">\(n = 10\)</span> trials. Report the posterior mean and 95% posterior confidence interval for <span class="math inline">\(\gamma\)</span>.</p></li>
 </ol>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Let <span class="math inline">\(\theta_1\)</span> be the prevalence of a rare allele among people with Alzheimer’s disease, and let <span class="math inline">\(\theta_2\)</span> be the prevalence among people without the disease. To estimate <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>, a sample of <span class="math inline">\(n_1 = 19\)</span> Alzheimer’s patients and <span class="math inline">\(n_2 = 176\)</span> control subjects are genotyped for the presence of the allele. Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> be the number of people in the two samples who have the allele. We will model <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> as independent with <span class="math inline">\(Y_1 | \theta_1 \sim \text{binomial}(n_1, \theta_1)\)</span> and <span class="math inline">\(Y_2 | \theta_2 \sim \text{binomial}(n_2, \theta_2)\)</span>. Prior studies suggest that <span class="math inline">\(\theta_2 \sim \text{beta}(2, 30)\)</span> is a reasonable prior distribution for <span class="math inline">\(\theta_2\)</span>. For now, we will use the same prior distribution for <span class="math inline">\(\theta_1\)</span>. The study is performed and the data are that <span class="math inline">\(Y_1 = 1\)</span> and <span class="math inline">\(Y_2 = 16\)</span>.</p>
+<p>Suppose an experimental machine in a lab is either fine, or comes from a bad batch of machines that are to be recalled by the manufacturer. Scientists in the lab want to estimate the failure rate of their machine and decide whether or not to return it. They encode their prior uncertainty about the failure rate <span class="math inline">\(\theta\)</span> with the following density:</p>
+<p><span class="math display">\[
+p(\theta) = \frac{1}{4} \frac{\Gamma(10)}{\Gamma(2)\Gamma(8)}\left[
+3 \theta (1 - \theta)^7 + \theta^7(1- \theta)
+\right]
+\]</span></p>
 <ol type="a">
-<li><p>State the posterior distributions of <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>. Plot the posterior densities together on a single graph with the prior density, and compare all three curves with words.</p></li>
-<li><p>Compute the posterior mean and a 95% posterior interval for each of <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>.</p></li>
-<li><p>With a picture, with words, or mathematically, try to describe different kind of joint prior distribution for <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> that represents the <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span> are close to each other, but highly uncertain.</p></li>
+<li><p>Make a plot of this prior density and explain why it makes sense for the scientists. Based on the prior density, which do the scientists think is more likely - that their machine is fine, or bad?</p></li>
+<li><p>The scientists run the machine <span class="math inline">\(n\)</span> times. Let <span class="math inline">\(y_i\)</span> be one if the machine fails on the <span class="math inline">\(i\)</span>th run, and zero otherwise. Write out the posterior distribution of <span class="math inline">\(\theta\)</span> given <span class="math inline">\(y_1, \ldots, y_n\)</span> and simplify as much as possible.</p></li>
+<li><p>For the case that <span class="math inline">\(n = 4\)</span>, make a plot of the posterior of <span class="math inline">\(\theta\)</span> for the five cases <span class="math inline">\(\sum y_i \in \{ 0, 1, 2, 3, 4\}\)</span>.</p></li>
+<li><p>The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions.</p></li>
 </ol>
 
 
