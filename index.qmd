@@ -57,7 +57,7 @@ schedule %>%
 |      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
 |      | Thu Sep 07 | Poisson model and conjugacy                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
 | 3    | Mon Sep 11 | lab: MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
-|      | Tue Sep 12 | Reliability, exp. families                            | Ch. 3        | [💻](/notes/reliability.html),  [📝](/notes/ReliabilityExpFamilies.pdf)     |            |
+|      | Tue Sep 12 | reliability, exp. families                            | Ch. 3        | [💻](/notes/reliability.html),  [📝](/notes/ReliabilityExpFamilies.pdf)     |            |
 |      | Thu Sep 14 |  prediction, Monte Carlo intro                         | Ch. 4        | [💻](/notes/prediction1.html)       |  [hw 3](/hw/hw03.html)          |
 | 4    | Mon Sep 18 |                              |         |       |            |
 |      | Tue Sep 19 | Monte Carlo integration                            | Ch. 4        |       |            |
