@@ -194,8 +194,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Suppose <span class="math inline">\(X_i = 1\)</span> if the ith person is happy. <span class="math inline">\(X_i = 0\)</span> otherwise.</li>
 <li>Let <span class="math inline">\(Y = \sum_{i = 1}^{n} X_i\)</span>, where <span class="math inline">\(n\)</span> is the number of people sampled.</li>
-<li><span class="math inline">\(Y_i | \theta \sim \text{Binomial}(\theta)\)</span> for some fixed <span class="math inline">\(n\)</span>.</li>
-<li><span class="math inline">\(\theta \sim \text{Uniform}(0, 1)\)</span></li>
+<li><span class="math inline">\(Y_i | \theta \sim \text{binomial}(\theta)\)</span> for some fixed <span class="math inline">\(n\)</span>.</li>
+<li><span class="math inline">\(\theta \sim \text{uniform}(0, 1)\)</span></li>
 </ul>
 <p>Scenario: We sample <span class="math inline">\(n = 10\)</span> people. <span class="math inline">\(y = 6\)</span> are happy. If we sample another <span class="math inline">\(n = 10\)</span>, what is the probability that <span class="math inline">\(\tilde{y}\)</span> are happy?</p>
 <p>We fundamentally want the posterior predictive distribution, <span class="math inline">\(p(\tilde{y} | y)\)</span>.</p>
@@ -293,11 +293,11 @@ d\theta\\
 <li>posterior density (<code>dgamma</code>)</li>
 <li>posterior quantiles and confidence intervals (<code>qgamma</code>)</li>
 </ul>
-<p>What about?</p>
+<p>What about…</p>
 <ul>
-<li><span class="math inline">\(p(\theta \in \mathcal{A} | y)\)</span></li>
-<li><span class="math inline">\(E~f(\theta) | y\)</span></li>
-<li><span class="math inline">\(Var~f(\theta) | y\)</span></li>
+<li><span class="math inline">\(p(\theta \in \mathcal{A} | y)\)</span>,</li>
+<li><span class="math inline">\(E~g(\theta) | y\)</span>,</li>
+<li><span class="math inline">\(Var~g(\theta) | y\)</span>?</li>
 </ul>
 <p>What about posterior distribution of <span class="math inline">\(|\theta_1 - \theta_2\)</span>, <span class="math inline">\(\theta_1 / \theta_2\)</span>, <span class="math inline">\(\text{max} \{\theta_1, \theta_2 \}\)</span>?</p>
 </section>
@@ -391,7 +391,7 @@ Exercise
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><span class="math inline">\(\theta \sim \text{Uniform}(0, 1)\)</span></li>
+<li><span class="math inline">\(\theta \sim \text{uniform}(0, 1)\)</span></li>
 <li>Let <span class="math inline">\(\gamma = \log \theta\)</span></li>
 <li>Visualize <span class="math inline">\(p(\gamma)\)</span> using Monte Carlo simulation, then show using the change of variables formula and plotting the closed form of the density.</li>
 </ul>

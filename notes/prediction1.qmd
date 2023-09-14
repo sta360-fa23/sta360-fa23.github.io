@@ -23,8 +23,8 @@ Setup:
 
 - Suppose $X_i = 1$ if the ith person is happy. $X_i = 0$ otherwise.
 - Let $Y = \sum_{i = 1}^{n} X_i$, where $n$ is the number of people sampled.
-- $Y_i | \theta \sim \text{Binomial}(\theta)$ for some fixed $n$.
-- $\theta \sim \text{Uniform}(0, 1)$
+- $Y_i | \theta \sim \text{binomial}(\theta)$ for some fixed $n$.
+- $\theta \sim \text{uniform}(0, 1)$
 
 Scenario: We sample $n = 10$ people. $y = 6$ are happy. If we sample another $n = 10$, what is the probability that $\tilde{y}$ are happy?
 
@@ -148,11 +148,11 @@ We already know how to compute
 - posterior density (`dgamma`)
 - posterior quantiles and confidence intervals (`qgamma`)
 
-What about? 
+What about...
 
-- $p(\theta \in \mathcal{A} | y)$
-- $E~f(\theta) | y$
-- $Var~f(\theta) | y$
+- $p(\theta \in \mathcal{A} | y)$,
+- $E~g(\theta) | y$,
+- $Var~g(\theta) | y$?
 
 What about posterior distribution of $|\theta_1 - \theta_2$, $\theta_1 / \theta_2$, $\text{max} \{\theta_1, \theta_2 \}$?
 
@@ -226,7 +226,7 @@ mean(df$diff > .5)
 
 ::: callout-important
 ## Exercise
-- $\theta  \sim \text{Uniform}(0, 1)$
+- $\theta  \sim \text{uniform}(0, 1)$
 - Let $\gamma = \log \theta$
 - Visualize $p(\gamma)$ using Monte Carlo simulation, then show using the change of variables formula and plotting the closed form of the density.
 :::
