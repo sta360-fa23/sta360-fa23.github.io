@@ -223,6 +223,9 @@ mean(df$diff > .5)
 ```
 
 
+::: panel-tabset
+
+## Exercise
 
 ::: callout-important
 ## Exercise
@@ -231,23 +234,41 @@ mean(df$diff > .5)
 - Visualize $p(\gamma)$ using Monte Carlo simulation, then show using the change of variables formula and plotting the closed form of the density.
 :::
 
-<!-- ```{r} -->
-<!-- theta = runif(1000) -->
-<!-- gamma = log(theta) -->
-<!-- hist(gamma) -->
+## Full solution
 
-<!-- f = function(x) { -->
-<!--   return(exp(x)) -->
-<!-- } -->
+```{r}
+#| warning: false
 
-<!-- df = data.frame(gamma = -7:0) -->
-<!-- df2 = data.frame(gammaSamples = log(theta)) -->
+# sample from p(theta)
+theta = runif(10000)
 
-<!-- df %>% -->
-<!--   ggplot(aes(x = gamma)) + -->
-<!--   stat_function(fun = f, col = 'red', alpha = 0.5) + -->
-<!--   geom_density(data = df2, aes(x = gammaSamples),  -->
-<!--                col = 'steelblue', alpha = 0.5) -->
-<!-- ``` -->
+# define transform function
+f = function(x) {
+  return(exp(x))
+}
 
+# create a df for each plot
+df = data.frame(gamma = -7:0)
+df2 = data.frame(gammaSamples = log(theta))
+
+# make plots
+df %>%
+  ggplot(aes(x = gamma)) +
+  stat_function(fun = f, col = 'red', alpha = 0.5) +
+  geom_histogram(data = df2, aes(x = gammaSamples,
+                                 y = ..density..),
+               fill = 'steelblue', alpha = 0.5)
+
+```
+
+## Quick Monte Carlo
+
+```{r}
+# Just making the Monte Carlo part of the plot 
+# in 3 lines
+theta = runif(10000)
+gamma = log(theta)
+hist(gamma)
+```
+:::
 

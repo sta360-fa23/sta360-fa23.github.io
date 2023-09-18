@@ -18,6 +18,7 @@ website:
 format:
   html:
     theme: cosmo
+    mainfont: Lato
     css: styles.css
     toc: true
 
