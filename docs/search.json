@@ -200,7 +200,7 @@
     "href": "index.html",
     "title": "Bayesian methods and modern statistics",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nlab: welcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\nlab: MLE and MAP estimator\n\n💻\n\n\n\n\nTue Sep 12\nreliability, exp. families\nCh. 3\n💻, 📝\n\n\n\n\nThu Sep 14\nprediction, Monte Carlo intro\nCh. 4\n💻\nhw 3\n\n\n4\nMon Sep 18\nlab: prior sensitivity and change of variables\n\n\n\n\n\n\nTue Sep 19\nMonte Carlo integration\nCh. 4\n\n\n\n\n\nThu Sep 21\nthe normal model\nCh. 5\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\nTwo parameter estimation\n\n\nhw 4\n\n\n\nThu Oct 05\nGibbs sampling\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\nMCMC diagnostics\n\n\nhw 5\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\nhw 6\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\nhw 7\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\nhw 8\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\ncatch up / review\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\nhw 9\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nlab: welcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO CLASS\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\nlab: MLE and MAP estimator\n\n💻\n\n\n\n\nTue Sep 12\nreliability, exp. families\nCh. 3\n💻, 📝\n\n\n\n\nThu Sep 14\nprediction, Monte Carlo intro\nCh. 4\n💻\nhw 3\n\n\n4\nMon Sep 18\nlab: prior sensitivity and change of variables\n\n💻\n\n\n\n\nTue Sep 19\nMonte Carlo integration\nCh. 4\n\n\n\n\n\nThu Sep 21\nthe normal model\nCh. 5\n\n\n\n\n5\nMon Sep 25\n\n\n\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\n\n\n\n\n\n\n\nTue Oct 03\nTwo parameter estimation\n\n\nhw 4\n\n\n\nThu Oct 05\nGibbs sampling\n\n\n\n\n\n7\nMon Oct 09\n\n\n\n\n\n\n\nTue Oct 10\nMCMC diagnostics\n\n\nhw 5\n\n\n\nThu Oct 12\n\n\n\n\n\n\n8\nMon Oct 16\nNO CLASS\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\n\n\n\nhw 6\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\n\n\n\n\n\n\n\nThu Oct 26\n\n\n\nhw 7\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\n\n\n\n\n\n\n\nThu Nov 02\n\n\n\nhw 8\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\n\n\n\n\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\ncatch up / review\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\n\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\nhw 9\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
   },
   {
     "objectID": "slides/lab1.html#example-normal-likelihood",
@@ -453,5 +453,26 @@
     "title": "Quiz 2",
     "section": "",
     "text": "Exercise 1\nTRUE or FALSE: this is a 95% Bayesian confidence interval:\n\\[\np(l(y) < \\theta < u(y) | y) = 0.95\n\\]\n\n\nExercise 2\nWrite “equals” or “does not equal” in the blank below:\nIf\n\\[\nY | \\theta \\sim \\text{binomial}(n, \\theta),\n\\]\nthen \\(\\hat{\\theta}_{MLE}\\) ___ \\(\\hat{\\theta}_{MAP}\\) when \\(\\theta \\sim \\text{beta}(1, 1)\\).\n\n\nExercise 3\nTRUE or FALSE: high posterior density regions are always intervals.\n\n\n\n03:00"
+  },
+  {
+    "objectID": "notes/MonteCarlo.html",
+    "href": "notes/MonteCarlo.html",
+    "title": "Monte Carlo Integration",
+    "section": "",
+    "text": "Recall: central limit theorem (CLT) states that if \\(\\theta_i |\\vec{y}\\) iid with mean \\(\\mu\\) and finite variance \\(\\sigma^2\\), for \\(i \\in \\{1, \\ldots, N\\}\\),\n\\[\n\\bar{\\theta} \\sim N(E~\\theta|\\vec{y}, \\frac{\\sigma^2}{N} )\n\\]"
+  },
+  {
+    "objectID": "slides/lab2.html#practice-exercise",
+    "href": "slides/lab2.html#practice-exercise",
+    "title": "Sensitivity to the prior and change of variables",
+    "section": "Practice exercise",
+    "text": "Practice exercise\nA cancer laboratory is estimating the rate of tumorigenesis in two strains of mice, \\(A\\) and \\(B\\). They have tumor count data for 10 mice in strain \\(A\\) and 13 mice in strain \\(B\\),\n\nyA = c(12, 9, 12, 14, 13, 13, 15, 8, 15, 6)\nyB = c(11, 11, 10, 9, 9, 8, 7, 10, 6, 8, 8, 9, 7)\n\nAssume\n\\[\n\\begin{aligned}\nY_A &\\sim \\text{Poisson}(\\theta_A)\\\\\nY_B &\\sim \\text{Poisson}(\\theta_B).\n\\end{aligned}\n\\]\n\nExercise 1Exercise 2\n\n\nLet\n\\[\n\\begin{aligned}\n\\theta_A &\\sim \\text{gamma}(120, 10)\\\\\n\\theta_B &\\sim \\text{gamma}(12, 1).\n\\end{aligned}\n\\]\n\nCompute \\(p(\\theta_B < \\theta_A ~|~ \\vec{y}_A, \\vec{y}_B)\\) via Monte Carlo sampling.\n\n\n\nLet\n\\[\n\\begin{aligned}\n\\theta_A &\\sim \\text{gamma}(120, 10)\\\\\n\\theta_B &\\sim \\text{gamma}(12\\cdot n_0, n_0).\n\\end{aligned}\n\\]\n\nFor a range of values of \\(n_0\\), obtain \\(p(\\theta_B < \\theta_A ~|~ \\vec{y}_A, \\vec{y}_B)\\).\nDescribe how sensitive conclusions about the event \\(\\{ \\theta_B < \\theta_A\\}\\) are to the prior distribution on \\(\\theta_B\\)."
+  },
+  {
+    "objectID": "slides/lab2.html#practice-exercise-1",
+    "href": "slides/lab2.html#practice-exercise-1",
+    "title": "Sensitivity to the prior and change of variables",
+    "section": "Practice exercise",
+    "text": "Practice exercise\n\nLet \\(X \\sim \\text{Unif}(5, 10)\\)\nLet \\(Y = X^2\\)\n\nNotice that even though \\(X^2\\) is not a monotonic function everywhere, it is a monotonic function over the support of X.\nExercise: use the change of variables formula to derive \\(p(y)\\). Confirm with Monte Carlo simulation.\n\n\nShow solution\nlibrary(tidyverse)\n\nx = runif(100000, 5, 10)\ny = x^2\n\ndf = data.frame(y)\n\nf = function(y) {\n  return(.1/sqrt(y))\n}\n\ndf %>%\n  ggplot(aes(x = y)) + \n  stat_function(fun = f) +\n  geom_histogram(aes(x = y, y = ..density..),\n                 fill = 'steelblue', alpha = 0.5)\n\n\n\n\n🔗 sta360-fa23.github.io"
   }
 ]

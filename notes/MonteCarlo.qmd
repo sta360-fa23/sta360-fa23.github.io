@@ -1,0 +1,17 @@
+---
+title: "Monte Carlo Integration"
+author: "Dr. Alexander Fisher"
+# mainfont: Lato
+format: 
+  html:
+    toc: true
+---
+
+Recall: expected values are integrals, and vice versa.
+
+Recall: central limit theorem (CLT) states that if $\theta_i |\vec{y}$ iid with mean $\mu$ and finite variance $\sigma^2$, for $i \in \{1, \ldots, N\}$,
+
+$$
+\bar{\theta} \sim N(E~\theta|\vec{y}, \frac{\sigma^2}{N} )
+$$
+
