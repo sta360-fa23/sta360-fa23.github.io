@@ -59,38 +59,38 @@ schedule %>%
 | 3    | Mon Sep 11 | lab: MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
 |      | Tue Sep 12 | reliability, exp. families                            | Ch. 3        | [💻](/notes/reliability.html),  [📝](/notes/ReliabilityExpFamilies.pdf)     |            |
 |      | Thu Sep 14 |  prediction, Monte Carlo intro                         | Ch. 4        | [💻](/notes/prediction1.html)       |  [hw 3](/hw/hw03.html)          |
-| 4    | Mon Sep 18 |                              |         |       |            |
+| 4    | Mon Sep 18 | lab: prior sensitivity and change of variables                             |         |       |            |
 |      | Tue Sep 19 | Monte Carlo integration                            | Ch. 4        |       |            |
 |      | Thu Sep 21 | the normal model                         | Ch. 5        |       |            |
 | 5    | Mon Sep 25 |                              |         |       |            |
 |      | Tue Sep 26 | catch up / review                            |         |       |            |
 |      | Thu Sep 28 | Exam I                             |         |       |            |
 | 6    | Mon Oct 02 |                              |         |       |            |
-|      | Tue Oct 03 | Two parameter estimation                             |         |       |            |
-|      | Thu Oct 05 | Gibbs sampling                             |         |       |            |
+|      | Tue Oct 03 | Two parameter estimation                             |         |       |  hw 4          |
+|      | Thu Oct 05 | Gibbs sampling                             |         |       |          |
 | 7    | Mon Oct 09 |                              |         |       |            |
-|      | Tue Oct 10 |  MCMC diagnostics                            |         |       |            |
+|      | Tue Oct 10 |  MCMC diagnostics                            |         |       | hw 5           |
 |      | Thu Oct 12 |                              |         |       |            |
 | 8    | Mon Oct 16 | NO CLASS                     |         |       |            |
 |      | Tue Oct 17 | NO CLASS                     |         |       |            |
-|      | Thu Oct 19 |                              |         |       |            |
+|      | Thu Oct 19 |                              |         |       | hw 6           |
 | 9    | Mon Oct 23 |                              |         |       |            |
 |      | Tue Oct 24 |                              |         |       |            |
-|      | Thu Oct 26 |                              |         |       |            |
+|      | Thu Oct 26 |                              |         |       |  hw 7          |
 | 10   | Mon Oct 30 |                              |         |       |            |
 |      | Tue Oct 31 |                              |         |       |            |
-|      | Thu Nov 02 |                              |         |       |            |
+|      | Thu Nov 02 |                              |         |       |  hw 8          |
 | 11   | Mon Nov 06 |                              |         |       |            |
 |      | Tue Nov 07 |                              |         |       |            |
-|      | Thu Nov 09 |                              |         |       |            |
+|      | Thu Nov 09 |                              |         |       |          |
 | 12   | Mon Nov 13 |                              |         |       |            |
-|      | Tue Nov 14 |                              |         |       |            |
+|      | Tue Nov 14 | catch up / review                             |         |       |            |
 |      | Thu Nov 16 |  Exam II                            |         |       |            |
 | 13   | Mon Nov 20 |                              |         |       |            |
 |      | Tue Nov 21 |                              |         |       |            |
 |      | Thu Nov 23 | NO CLASS                     |         |       |            |
 | 14   | Mon Nov 27 |                              |         |       |            |
-|      | Tue Nov 28 |                              |         |       |            |
+|      | Tue Nov 28 |                              |         |       | hw 9           |
 |      | Thu Nov 30 |                              |         |       |            |
 | 15   | Mon Dec 04 |                              |         |       |            |
 |      | Tue Dec 05 |                              |         |       |            |
