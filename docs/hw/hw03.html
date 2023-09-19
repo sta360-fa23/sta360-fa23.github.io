@@ -137,7 +137,7 @@ E~Y^2|\theta &amp;= \frac{a}{\theta^2}
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <p>Suppose <span class="math inline">\(Y|\theta \sim \text{binary}(\theta)\)</span> and we want to use <span class="math inline">\(\theta \sim \text{Uniform}(0, 1)\)</span> to represent our lack of knowledge about <span class="math inline">\(\theta\)</span>. However, we are interested in the log-odds <span class="math inline">\(\gamma = \log \frac{\theta}{1 - \theta}\)</span>.</p>
 <ol type="a">
-<li><p>Find the prior distirbution for <span class="math inline">\(\gamma\)</span> induced by our prior on <span class="math inline">\(\theta\)</span>. Is the prior informative about <span class="math inline">\(\gamma\)</span>? Verify <span class="math inline">\(p(\gamma)\)</span> using Monte Carlo sampling and then plotting the empirical density of the samples along with the closed-form solution.</p></li>
+<li><p>Find the prior distribution for <span class="math inline">\(\gamma\)</span> induced by our prior on <span class="math inline">\(\theta\)</span>. Is the prior informative about <span class="math inline">\(\gamma\)</span>? Verify <span class="math inline">\(p(\gamma)\)</span> using Monte Carlo sampling and then plotting the empirical density of the samples along with the closed-form solution.</p></li>
 <li><p>Assume some data come in and <span class="math inline">\(y = 7\)</span> out of <span class="math inline">\(n = 10\)</span> trials. Report the posterior mean and 95% posterior confidence interval for <span class="math inline">\(\gamma\)</span>.</p></li>
 </ol>
 </section>
@@ -153,7 +153,7 @@ p(\theta) = \frac{1}{4} \frac{\Gamma(10)}{\Gamma(2)\Gamma(8)}\left[
 <li><p>Make a plot of this prior density and explain why it makes sense for the scientists. Based on the prior density, which do the scientists think is more likely - that their machine is fine, or bad?</p></li>
 <li><p>The scientists run the machine <span class="math inline">\(n\)</span> times. Let <span class="math inline">\(y_i\)</span> be one if the machine fails on the <span class="math inline">\(i\)</span>th run, and zero otherwise. Write out the posterior distribution of <span class="math inline">\(\theta\)</span> given <span class="math inline">\(y_1, \ldots, y_n\)</span> and simplify as much as possible.</p></li>
 <li><p>For the case that <span class="math inline">\(n = 4\)</span>, make a plot of the posterior of <span class="math inline">\(\theta\)</span> for the five cases <span class="math inline">\(\sum y_i \in \{ 0, 1, 2, 3, 4\}\)</span>.</p></li>
-<li><p>The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions.</p></li>
+<li><p>The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions, including their parameters.</p></li>
 </ol>
 
 

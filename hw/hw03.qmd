@@ -38,7 +38,7 @@ c. Obtain a formula for $E~ \theta | Y_1, \ldots Y_n$ when the prior is in the c
 
 Suppose $Y|\theta \sim \text{binary}(\theta)$ and we want to use $\theta \sim \text{Uniform}(0, 1)$ to represent our lack of knowledge about $\theta$. However, we are interested in the log-odds $\gamma = \log \frac{\theta}{1 - \theta}$.
 
-a. Find the prior distirbution for $\gamma$ induced by our prior on $\theta$. Is the prior informative about $\gamma$? Verify $p(\gamma)$ using Monte Carlo sampling and then plotting the empirical density of the samples along with the closed-form solution.
+a. Find the prior distribution for $\gamma$ induced by our prior on $\theta$. Is the prior informative about $\gamma$? Verify $p(\gamma)$ using Monte Carlo sampling and then plotting the empirical density of the samples along with the closed-form solution.
 
 b. Assume some data come in and $y = 7$ out of $n = 10$ trials. Report the posterior mean and 95% posterior confidence interval for $\gamma$.
 
@@ -59,7 +59,7 @@ b. The scientists run the machine $n$ times. Let $y_i$ be one if the machine fai
 
 c. For the case that $n = 4$, make a plot of the posterior of $\theta$ for the five cases $\sum y_i \in \{ 0, 1, 2, 3, 4\}$.
 
-d. The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions.
+d. The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions, including their parameters.
 
 
 
