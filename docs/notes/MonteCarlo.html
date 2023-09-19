@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#posterior-predictive-model-checking" id="toc-posterior-predictive-model-checking" class="nav-link" data-scroll-target="#posterior-predictive-model-checking">Posterior predictive model checking</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#example-is-our-poisson-model-flawed" id="toc-example-is-our-poisson-model-flawed" class="nav-link" data-scroll-target="#example-is-our-poisson-model-flawed">Example: is our Poisson model flawed?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -195,7 +195,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="monte-carlo-error">Monte Carlo error</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="how-many-values-should-we-simulate" class="level4">
 <h4 class="anchored" data-anchor-id="how-many-values-should-we-simulate">How many values should we simulate?</h4>
@@ -313,40 +314,86 @@ p(\tilde{y} | y_1, \ldots y_n) = \int p(\tilde{y}|\theta) p(\theta|y_1, \ldots, 
 <section id="posterior-predictive-model-checking" class="level2">
 <h2 class="anchored" data-anchor-id="posterior-predictive-model-checking">Posterior predictive model checking</h2>
 <p>We can assess the fit of a model by comparing the posterior predictive distribution to the empirical distribution.</p>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<section id="example-is-our-poisson-model-flawed" class="level3">
+<h3 class="anchored" data-anchor-id="example-is-our-poisson-model-flawed">Example: is our Poisson model flawed?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"../data/gss.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 38116 Columns: 36
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (36): YEAR, WRKSTAT, MARITAL, AGEWED, CHILDS, AGE, EDUC, PAEDUC, MAEDUC,...
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load general social survey data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gss <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/gss.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">=</span> gss<span class="sc">$</span>CHILDS[gss<span class="sc">$</span>FEMALE <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span>  gss<span class="sc">$</span>YEAR <span class="sc">&gt;=</span> <span class="dv">1990</span>  <span class="sc">&amp;</span> gss<span class="sc">$</span>AGE <span class="sc">==</span> <span class="dv">40</span> <span class="sc">&amp;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                   gss<span class="sc">$</span>DEGREE <span class="sc">&lt;</span> <span class="dv">3</span> ]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">=</span> y1[<span class="sc">!</span><span class="fu">is.na</span>(y1)]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(y1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We are examining the number of children <span class="math inline">\(Y_i\)</span> belonging to <span class="math inline">\(n=\)</span> 111 40 year old women surveyed 1990 or later without a bachelor’s. These data come from the general social survey.</p>
+<p>Suppose</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y_i &amp; \sim \text{Poisson}(\theta)\\
+\theta &amp; \sim \text{gamma}(2, 1).
+\end{aligned}
+\]</span></p>
+<p>The empirical and predictive distributions of the data are both plotted below.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="MonteCarlo_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># posterior predictive distribution</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ytotal <span class="ot">=</span> <span class="fu">sum</span>(y1)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">2</span> ; b <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">10000</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>theta.post.mc <span class="ot">=</span> <span class="fu">rgamma</span>(N, ytotal <span class="sc">+</span> a, b <span class="sc">+</span> n)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>y1.mc <span class="ot">=</span> <span class="fu">rpois</span>(N, theta.post.mc)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(y1) <span class="co"># empirical</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">=</span> <span class="fu">data.frame</span>(y1.mc) <span class="co"># post predictive</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># make plot</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> y1)) <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> y1 <span class="sc">+</span> .<span class="dv">15</span>, <span class="at">y =</span> (..count..)<span class="sc">/</span><span class="fu">sum</span>(..count..),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">"empirical"</span>), <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">width =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data =</span> df2, </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> y1.mc <span class="sc">-</span>.<span class="dv">15</span>, <span class="at">y =</span> (..count..) <span class="sc">/</span> <span class="fu">sum</span>(..count..),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> <span class="st">"predictive"</span>), <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">width =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of children"</span>, </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">"$p(Y_i = y_i)$"</span>),</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">7</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">7</span>),</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">5</span>,<span class="fl">7.5</span>)) <span class="sc">+</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\mathbf{y}\)</span> be a vector of length 111. Let <span class="math inline">\(t(\mathbf{y})\)</span> be the ratio of <span class="math inline">\(2\)</span>s to <span class="math inline">\(1\)</span>s in <span class="math inline">\(\mathbf{y}\)</span>. For our observed data, this test statistic <span class="math inline">\(t(\mathbf{y}_{obs}) = 38 / 19 = 2\)</span>. What is the tail probability <span class="math inline">\(p(t(\tilde{\mathbf{Y}}) \geq t(\mathbf{y}_{obs}))\)</span> under the posterior predictive distribution?</p>
+</div>
+</div>
+<div class="cell">
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 38,116 × 36
-    YEAR WRKSTAT MARITAL AGEWED CHILDS   AGE  EDUC PAEDUC MAEDUC DEGREE PADEG
-   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
- 1  1972       1       5     NA      0    23    16     10     NA      3     0
- 2  1972       5       1     21      5    70    10      8      8      0     0
- 3  1972       2       1     20      4    48    12      8      8      1     0
- 4  1972       1       1     24      0    27    17     16     12      3     3
- 5  1972       7       1     22      2    61    12      8      8      1     0
- 6  1972       1       5     NA      0    26    14     18     19      1     3
- 7  1972       1       3     22      2    28    13     16     12      1     3
- 8  1972       1       5     NA      0    27    16     16     14      3     3
- 9  1972       2       5     NA      2    21    12     12     12      1     1
-10  1972       1       1     19      4    30    12     10      7      1     0
-# … with 38,106 more rows, and 25 more variables: MADEG &lt;dbl&gt;, FEMALE &lt;dbl&gt;,
-#   RACE &lt;dbl&gt;, INCOME &lt;dbl&gt;, INCOME98 &lt;dbl&gt;, RELIG &lt;dbl&gt;, FUND &lt;dbl&gt;,
-#   ATTEND &lt;dbl&gt;, RELITEN &lt;dbl&gt;, PRAY &lt;dbl&gt;, PRAYER &lt;dbl&gt;, BIBLE &lt;dbl&gt;,
-#   HAPPY &lt;dbl&gt;, ALIKE1 &lt;dbl&gt;, ALIKE2 &lt;dbl&gt;, ALIKE3 &lt;dbl&gt;, ALIKE4 &lt;dbl&gt;,
-#   ALIKE5 &lt;dbl&gt;, ALIKE6 &lt;dbl&gt;, ALIKE7 &lt;dbl&gt;, ALIKE8 &lt;dbl&gt;, AGEWEDCR &lt;dbl&gt;,
-#   HAPUNHAP &lt;dbl&gt;, REALINC &lt;dbl&gt;, WORDSUM &lt;dbl&gt;</code></pre>
-</div>
 </div>
 
 
