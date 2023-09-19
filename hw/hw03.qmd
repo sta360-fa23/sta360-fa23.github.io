@@ -55,9 +55,9 @@ $$
 
 a. Make a plot of this prior density and explain why it makes sense for the scientists. Based on the prior density, which do the scientists think is more likely - that their machine is fine, or bad?
 
-b. The scientists run the machine $n$ times. Let $y_i$ be one if the machine fails on the $i$th run, and zero otherwise. Write out the posterior distribution of $\theta$ given $y_1, \ldots, y_n$ and simplify as much as possible. 
+b. The scientists run the machine $n$ times. Let $y_i$ be one if the machine fails on the $i$th run, and zero otherwise. Write out the posterior distribution of $\theta$ given $y_1, \ldots, y_n$ (up to a proportionality constant) and simplify as much as possible.
 
-c. For the case that $n = 4$, make a plot of the posterior of $\theta$ for the five cases $\sum y_i \in \{ 0, 1, 2, 3, 4\}$.
+c. For the case that $n = 4$, make a plot of the (unscaled) posterior of $\theta$ for the five cases $\sum y_i \in \{ 0, 1, 2, 3, 4\}$.
 
 d. The posterior is a mixture (weighted average) of two distributions that you know. Identify these two distributions, including their parameters.
 
