@@ -7,11 +7,143 @@ format:
     toc: true
 ---
 
-Recall: expected values are integrals, and vice versa.
+## Monte Carlo error
 
-Recall: central limit theorem (CLT) states that if $\theta_i |\vec{y}$ iid with mean $\mu$ and finite variance $\sigma^2$, for $i \in \{1, \ldots, N\}$,
+```{r}
+#| warning: false
+#| message: false
+# load packages
+library(tidyverse)
+```
+
+
+#### How many values should we simulate?
+
+Recall: expected values are integrals, and integrals are expected values. Since central limit theorem (CLT) deals with expected values...
+
+Recall: CLT states that if $\theta_i |\vec{y}$ iid with mean $\theta$ and finite variance $\sigma^2$, for $i \in \{1, \ldots, N\}$, then the sample mean
 
 $$
-\bar{\theta} \sim N(E~\theta|\vec{y}, \frac{\sigma^2}{N} )
+\bar{\theta} \sim N(\theta, \frac{\sigma^2}{N} ).
 $$
+
+- How to remember this/show this? Offline notes.
+
+So to estimate $\theta$, we can generate $\bar{\theta}$ by Monte Carlo simulation and report a confidence interval using quantiles of the normal given above in conjunction with the Monte Carlo standard error $\frac{\hat{\sigma}}{\sqrt{N}}$
+
+This means we get convergence at the rate $\mathcal{O}\left(\frac{1}{\sqrt{N}}\right)$ regardless of the dimension of the integral!
+
+Recall: 
+
+```{r}
+sd1 = pnorm(1) - pnorm(-1)
+sd2 = pnorm(2) - pnorm(-2)
+sd3 = pnorm(3) - pnorm(-3)
+```
+
+- a `r sd1`% confidence interval can be obtained using $\pm 1\cdot \hat{\sigma}/\sqrt{N}$
+- a `r sd2`% confidence interval can be obtained using $\pm 2\cdot \hat{\sigma}/\sqrt{N}$
+- a `r sd3`% confidence interval can be obtained using $\pm 3\cdot \hat{\sigma}/\sqrt{N}$
+
+### Example
+
+```{r}
+# Let theta be "x" in the code below
+set.seed(123)
+
+# binomial(n, p)
+n = 20
+p = 0.4
+
+# mean, variance, sd of a binomial(n, p)
+EX = n*p # 20*.4 = 8
+VarX = n*p*(1-p) # 20*.4*.6 = 4.8
+sdX = sqrt(VarX) # 2.19089
+
+# Monte Carlo sample of size N
+N = 100
+xSamples = rbinom(N, size = n, prob = p) 
+
+# sample mean, var, sd
+xbar = mean(xSamples)
+xvar = var(xSamples)
+xsigma = sd(xSamples) # = sqrt(sum((xSamples - xbar)^2) / (N -1))
+
+se = xsigma / sqrt(N)
+
+lb = round(xbar - (2*se), 3)
+ub = round(xbar + (2*se), 3)
+```
+
+For `r paste("N = ", N)` Monte Carlo samples, The posterior mean of $\theta$ is $\bar{\theta} =$ `r xbar` with 95% confidence interval (`r paste(lb, ub)`).
+
+::: callout-important
+## Exercise
+
+Above we estimate $Var(\theta)$ to be `r round(xvar, 3)` and the standard error for $N = 100$ was `r round(se, 3)`.
+
+If you wanted to state $p(\theta \in (\hat{\theta} \pm 0.01)) = 0.95$, how large would $N$ have to be? 
+
+Check your answer by adjusting $N$ above.
+:::
+
+## Monte Carlo prediction
+
+### Prior predictive distribution
+
+We can use Monte Carlo to sample new observation, $\tilde{y}$, from the **prior predictive distribution**
+
+$$
+p(\tilde{y}) = \int p(\tilde{y}|\theta)p(\theta) d\theta,
+$$
+
+
+where we proceed by following the iterative procedure below
+
+```
+1. sample theta_i from the prior p(theta)
+2. sample ytilde from p(ytilde | theta_i)
+3. repeat steps 1 and 2
+```
+
+- this can be useful to see if a prior for $p(\theta)$ actually translate to reasonable prior beliefs about the data.
+
+::: callout-important
+## Exercise
+For $p(\theta) = \text{gamma}(8,2)$, plot $p(\tilde{y})$ assuming $\tilde{y} | \theta \sim \text{Poisson}(\theta)$.
+:::
+
+```{r}
+#| eval: false
+#| echo: false
+
+N = 10000
+
+theta.mc = rgamma(N, 8, 2)
+ytilde.mc = rpois(N, theta.mc)
+hist(ytilde.mc)
+```
+
+
+### Posterior predictive distribution
+
+We can also sample $\tilde{y}$ from the **posterior predictive distribution**,
+
+$$
+p(\tilde{y} | y_1, \ldots y_n) = \int p(\tilde{y}|\theta) p(\theta|y_1, \ldots, y_n)d\theta,
+$$
+
+where the procedure is the same as before, except step 1 is replace with sampling $\theta$ from the posterior $p(\theta | y_1,\ldots, y_n)$.
+
+The resulting sequence $(\theta^{(1)}, \tilde{y}^{(1)}), \ldots, (\theta^{(N)}, \tilde{y}^{(N)})$ constitutes $N$ independent samples from the joint posterior of $(\theta, \tilde{Y})$. The sequence $\tilde{y}^{(1)}, \ldots, \tilde{y}^{(N)})$ constitutes $N$ independent samples from the marginal posterior distribution of $\tilde{Y}$, aka the posterior predictive distribution.
+
+## Posterior predictive model checking
+
+We can assess the fit of a model by comparing the posterior predictive distribution to the empirical distribution.
+
+### Example
+
+```{r}
+read_csv("../data/gss.csv")
+```
 
