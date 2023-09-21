@@ -120,6 +120,8 @@ By Bayes' theorem,
 $$
 p(\theta| \sigma^2, \vec{y}) \propto \underbrace{p(\vec{y} |\theta, \sigma^2)}_{\text{likelihood}} \underbrace{p(\theta|\sigma^2)}_{\text{prior}}.
 $$
+To arrive at the full conditional posterior of $\theta$, we must first specify a prior on $\theta$.
+
 Considering we have a normal likelihood, what is a conjugate class of densities for $\theta$?
 
 ::: {.callout-tip collapse="true"}
@@ -194,15 +196,7 @@ $$
 p(\sigma^2 | \vec{y}) \propto p(\sigma^2)\int p(\vec{y} | \theta, \sigma^2) p(\theta|\sigma^2) d\theta
 $$
 
-But how do we choose $p(\sigma^2)$ to be conjugate? We can proceed in two ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see [this 3Blue1Brown video on convolutions](https://www.youtube.com/watch?v=IaSGqQa5O-M). The second way is perhaps more easily illustrated.
-
-We know 
-
-$$
-p(\theta, \sigma^2) = p(\theta| \sigma^2) p(\sigma^2)
-$$
-
-and since we have found $\theta | \sigma^2 \sim N(\mu_0, \sigma^2/\kappa_0)$, for conjugacy with fixed $\sigma$, we need to choose $p(\sigma^2)$ to preserve the form of $p(\theta | \sigma^2)$.
+But how do we choose $p(\sigma^2)$ to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see [this 3Blue1Brown video on convolutions](https://www.youtube.com/watch?v=IaSGqQa5O-M). Another way is perhaps more straightforward: consider $\mu$ fixed.
 
 Upon inspection, we can see a suitable choice is $\frac{1}{\sigma^2} \sim \text{gamma}(a, b)$. 
 

@@ -295,6 +295,7 @@ p(\theta, \sigma^2 | y_1, \ldots y_n) = p(\theta | \sigma^2, y_1, \ldots, y_n)p(
 <p><span class="math display">\[
 p(\theta| \sigma^2, \vec{y}) \propto \underbrace{p(\vec{y} |\theta, \sigma^2)}_{\text{likelihood}} \underbrace{p(\theta|\sigma^2)}_{\text{prior}}.
 \]</span></p>
+<p>To arrive at the full conditional posterior of <span class="math inline">\(\theta\)</span>, we must first specify a prior on <span class="math inline">\(\theta\)</span>.</p>
 <p>Considering we have a normal likelihood, what is a conjugate class of densities for <span class="math inline">\(\theta\)</span>?</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -366,12 +367,7 @@ answer
 <p><span class="math display">\[
 p(\sigma^2 | \vec{y}) \propto p(\sigma^2)\int p(\vec{y} | \theta, \sigma^2) p(\theta|\sigma^2) d\theta
 \]</span></p>
-<p>But how do we choose <span class="math inline">\(p(\sigma^2)\)</span> to be conjugate? We can proceed in two ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see <a href="https://www.youtube.com/watch?v=IaSGqQa5O-M">this 3Blue1Brown video on convolutions</a>. The second way is perhaps more easily illustrated.</p>
-<p>We know</p>
-<p><span class="math display">\[
-p(\theta, \sigma^2) = p(\theta| \sigma^2) p(\sigma^2)
-\]</span></p>
-<p>and since we have found <span class="math inline">\(\theta | \sigma^2 \sim N(\mu_0, \sigma^2/\kappa_0)\)</span>, for conjugacy with fixed <span class="math inline">\(\sigma\)</span>, we need to choose <span class="math inline">\(p(\sigma^2)\)</span> to preserve the form of <span class="math inline">\(p(\theta | \sigma^2)\)</span>.</p>
+<p>But how do we choose <span class="math inline">\(p(\sigma^2)\)</span> to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see <a href="https://www.youtube.com/watch?v=IaSGqQa5O-M">this 3Blue1Brown video on convolutions</a>. Another way is perhaps more straightforward: consider <span class="math inline">\(\mu\)</span> fixed.</p>
 <p>Upon inspection, we can see a suitable choice is <span class="math inline">\(\frac{1}{\sigma^2} \sim \text{gamma}(a, b)\)</span>.</p>
 <ul>
 <li>Let’s show this offline.</li>
