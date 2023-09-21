@@ -7,8 +7,6 @@ format:
     toc: true
 ---
 
-## Monte Carlo error
-
 ```{r}
 #| warning: false
 #| message: false
@@ -16,6 +14,8 @@ format:
 library(tidyverse)
 library(latex2exp)
 ```
+
+## Monte Carlo error
 
 
 #### How many values should we simulate?

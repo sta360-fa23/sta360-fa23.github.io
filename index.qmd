@@ -6,7 +6,6 @@ format:
    html: 
     page-layout: full
     toc: false
-  
 ---
 
 # Schedule
@@ -48,53 +47,53 @@ schedule %>%
   kable(format = "markdown")
 ```
 
-| Week | Date       | Topic                        | Reading | Notes | Assignment |
-|:-----|:-----------|:----------------------------------|-----|:------:|:-----------|
-| 1    | Mon Aug 28 | lab: welcome                     |         | [💻](/slides/lab0-welcome.html)       | [hello R](/labs/lab0.html)           |
-|      | Tue Aug 29 | intro, history, notation          | Ch. 2   |       | [hw 0](/hw/hw00.html)            |
-|      | Thu Aug 31 | probability, exchangeability | Ch. 2   |[💻](/notes/probability.html)       |  [hw 1](/hw/hw01.html)          |
-| 2    | Mon Sep 04 | NO CLASS                     |         |       |            |
-|      | Tue Sep 05 | single parameter estimation                             | Ch. 3        | [💻](/notes/estimation1.html) |       |            |
-|      | Thu Sep 07 | Poisson model and conjugacy                             | Ch. 3         |        | [hw 2](/hw/hw02.html)           |
-| 3    | Mon Sep 11 | lab: MLE and MAP estimator                              |         | [💻](/slides/lab1.html)      |            |
-|      | Tue Sep 12 | reliability, exp. families                            | Ch. 3        | [💻](/notes/reliability.html),  [📝](/notes/ReliabilityExpFamilies.pdf)     |            |
-|      | Thu Sep 14 |  prediction, Monte Carlo intro                         | Ch. 4        | [💻](/notes/prediction1.html), [📝](/notes/predictionOffline.pdf)       |  [hw 3](/hw/hw03.html)          |
-| 4    | Mon Sep 18 | lab: prior sensitivity and change of variables                             |         | [💻](/slides/lab2.html)       |            |
-|      | Tue Sep 19 | Monte Carlo integration                            | Ch. 4        | [💻](/notes/MonteCarlo.html)      |            |
-|      | Thu Sep 21 | the normal model                         | Ch. 5        |       |            |
-| 5    | Mon Sep 25 |                              |         |       |            |
-|      | Tue Sep 26 | catch up / review                            |         |       |            |
-|      | Thu Sep 28 | Exam I                             |         |       |            |
-| 6    | Mon Oct 02 |                              |         |       |            |
-|      | Tue Oct 03 | Two parameter estimation                             |         |       |  hw 4          |
-|      | Thu Oct 05 | Gibbs sampling                             |         |       |          |
-| 7    | Mon Oct 09 |                              |         |       |            |
-|      | Tue Oct 10 |  MCMC diagnostics                            |         |       | hw 5           |
-|      | Thu Oct 12 |                              |         |       |            |
-| 8    | Mon Oct 16 | NO CLASS                     |         |       |            |
-|      | Tue Oct 17 | NO CLASS                     |         |       |            |
-|      | Thu Oct 19 |                              |         |       | hw 6           |
-| 9    | Mon Oct 23 |                              |         |       |            |
-|      | Tue Oct 24 |                              |         |       |            |
-|      | Thu Oct 26 |                              |         |       |  hw 7          |
-| 10   | Mon Oct 30 |                              |         |       |            |
-|      | Tue Oct 31 |                              |         |       |            |
-|      | Thu Nov 02 |                              |         |       |  hw 8          |
-| 11   | Mon Nov 06 |                              |         |       |            |
-|      | Tue Nov 07 |                              |         |       |            |
-|      | Thu Nov 09 |                              |         |       |          |
-| 12   | Mon Nov 13 |                              |         |       |            |
-|      | Tue Nov 14 | catch up / review                             |         |       |            |
-|      | Thu Nov 16 |  Exam II                            |         |       |            |
-| 13   | Mon Nov 20 |                              |         |       |            |
-|      | Tue Nov 21 |                              |         |       |            |
-|      | Thu Nov 23 | NO CLASS                     |         |       |            |
-| 14   | Mon Nov 27 |                              |         |       |            |
-|      | Tue Nov 28 |                              |         |       | hw 9           |
-|      | Thu Nov 30 |                              |         |       |            |
-| 15   | Mon Dec 04 |                              |         |       |            |
-|      | Tue Dec 05 |                              |         |       |            |
-|      | Thu Dec 07 |                              |         |       |            |
+| Week | Date       | Topic                                          | Reading |                                 Notes                                  | Assignment                 |
+|:---------|:---------|:----------------------|----------|:--------:|:---------|
+| 1    | Mon Aug 28 | lab: welcome                                   |         |                    [💻](/slides/lab0-welcome.html)                     | [hello R](/labs/lab0.html) |
+|      | Tue Aug 29 | intro, history, notation                       | Ch. 2   |                                                                        | [hw 0](/hw/hw00.html)      |
+|      | Thu Aug 31 | probability, exchangeability                   | Ch. 2   |                     [💻](/notes/probability.html)                      | [hw 1](/hw/hw01.html)      |
+| 2    | Mon Sep 04 | NO CLASS                                       |         |                                                                        |                            |
+|      | Tue Sep 05 | single parameter estimation                    | Ch. 3   |                     [💻](/notes/estimation1.html)                      |                            |
+|      | Thu Sep 07 | Poisson model and conjugacy                    | Ch. 3   |                                                                        | [hw 2](/hw/hw02.html)      |
+| 3    | Mon Sep 11 | lab: MLE and MAP estimator                     |         |                        [💻](/slides/lab1.html)                         |                            |
+|      | Tue Sep 12 | reliability, exp. families                     | Ch. 3   | [💻](/notes/reliability.html), [📝](/notes/ReliabilityExpFamilies.pdf) |                            |
+|      | Thu Sep 14 | prediction, Monte Carlo intro                  | Ch. 4   |   [💻](/notes/prediction1.html), [📝](/notes/predictionOffline.pdf)    | [hw 3](/hw/hw03.html)      |
+| 4    | Mon Sep 18 | lab: prior sensitivity and change of variables |         |                        [💻](/slides/lab2.html)                         |                            |
+|      | Tue Sep 19 | Monte Carlo integration                        | Ch. 4   |                      [💻](/notes/MonteCarlo.html)                      |                            |
+|      | Thu Sep 21 | the normal model                               | Ch. 5   |                     [💻](/notes/normalModel1.html)                     |                            |
+| 5    | Mon Sep 25 | review                                         |         |                                                                        |                            |
+|      | Tue Sep 26 | catch up / review                              |         |                                                                        |                            |
+|      | Thu Sep 28 | Exam I                                         |         |                                                                        |                            |
+| 6    | Mon Oct 02 |                                                |         |                                                                        |                            |
+|      | Tue Oct 03 | two parameter estimation                       | Ch. 5   |                                                                        | hw 4                       |
+|      | Thu Oct 05 | Gibbs sampling                                 | Ch. 6   |                                                                        |                            |
+| 7    | Mon Oct 09 |                                                |         |                                                                        |                            |
+|      | Tue Oct 10 | MCMC diagnostics                               | Ch. 6   |                                                                        | hw 5                       |
+|      | Thu Oct 12 | multivariate normal (mvn)                      | Ch. 7   |                                                                        |                            |
+| 8    | Mon Oct 16 | NO CLASS                                       |         |                                                                        |                            |
+|      | Tue Oct 17 | NO CLASS                                       |         |                                                                        |                            |
+|      | Thu Oct 19 | mvn parameter estimation                       | Ch. 7   |                                                                        | hw 6                       |
+| 9    | Mon Oct 23 |                                                |         |                                                                        |                            |
+|      | Tue Oct 24 | hierarchical modeling intro                    | Ch. 8   |                                                                        |                            |
+|      | Thu Oct 26 | hierarchical examples                          | Ch. 8   |                                                                        | hw 7                       |
+| 10   | Mon Oct 30 |                                                |         |                                                                        |                            |
+|      | Tue Oct 31 | Bayesian regression I                          | Ch. 9   |                                                                        |                            |
+|      | Thu Nov 02 | Bayesian regression II                         | Ch. 9   |                                                                        | hw 8                       |
+| 11   | Mon Nov 06 |                                                |         |                                                                        |                            |
+|      | Tue Nov 07 | model selection                                | Ch. 9   |                                                                        |                            |
+|      | Thu Nov 09 |                                                |         |                                                                        |                            |
+| 12   | Mon Nov 13 |                                                |         |                                                                        |                            |
+|      | Tue Nov 14 | catch up / review                              |         |                                                                        |                            |
+|      | Thu Nov 16 | Exam II                                        |         |                                                                        |                            |
+| 13   | Mon Nov 20 |                                                |         |                                                                        |                            |
+|      | Tue Nov 21 |                                                |         |                                                                        |                            |
+|      | Thu Nov 23 | NO CLASS                                       |         |                                                                        |                            |
+| 14   | Mon Nov 27 |                                                |         |                                                                        |                            |
+|      | Tue Nov 28 |                                                |         |                                                                        | hw 9                       |
+|      | Thu Nov 30 |                                                |         |                                                                        |                            |
+| 15   | Mon Dec 04 |                                                |         |                                                                        |                            |
+|      | Tue Dec 05 |                                                |         |                                                                        |                            |
+|      | Thu Dec 07 |                                                |         |                                                                        |                            |
 
 <!-- | Week | Date       | Topic                                  |              Notes              | Lab                      | Exam                                  | Project | -->
 
