@@ -5,3 +5,4 @@ derivation-notes/*
 .DS_Store
 /.quarto/
 .Rhistory
+docs/solutions/*
