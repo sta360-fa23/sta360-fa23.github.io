@@ -51,3 +51,51 @@ Two events $F$ and $G$ are conditionally independent given $H$ if $Pr(F \cap G |
 
 - *Law of total expectation* $E(X) = E(E(X|Y))$ 
 - *Law of total variance* $Var(X) = E(Var(X|Y) + Var(E(X|Y))$
+
+### Chapter 3
+
+## Definitions and conjugacy
+
+- Be able to define **likelihood**, **prior**, **poserior**, **normalizing constant**
+
+::: callout-note
+## Definition
+A prior $p(\theta)$ is said to be **conjugate** to the data generative model $p(y|\theta)$ if the family of the posterior is necessarily in the same family as the prior. In math,  $p(\theta)$ is conjugate to $p(y|\theta)$ if
+
+$$
+p(\theta) \in \mathcal{P} \implies p(\theta | y) \in \mathcal{P}
+$$
+:::
+
+- Examples of conjugate models: beta-binomial, gamma-Poisson.
+
+## Reliability 
+
+::: callout-note
+## Definition
+Let $\Phi$ be the support of $\theta$.
+An interval $(l(y), u(y)) \subset \Phi$ has 95% **posterior coverage** if 
+
+$$
+p(l(y) < \theta < u(y) | y ) = 0.95
+$$
+
+Interpretation: after observing $Y = y$, our probability that $\theta \in (l(y), u(y))$ is 95%.
+
+Such an interval is called 95% posterior confidence interval (CI). It may also sometimes be referred to as a 95% "credible interval" to distinguish it from a frequentist CI.
+:::
+
+::: callout-note
+## Definition
+
+A $100 \times (1-\alpha)$% **high posterior density** (HPD) region is a set $s(y) \subset \Theta$ such that 
+
+
+1. $p(\theta \in s(y) | Y = y) = 1 - \alpha$
+
+2. If $\theta_a \in s(y)$ and $\theta_b \not\in s(y)$, then $p(\theta_a | Y = y) > p(\theta_b | Y = y)$
+:::
+
+## Exponential families
+
+If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some transform $\phi = f(\theta)$ we can say $p(y|\theta)$ belongs in the exponential family, and the conjugate prior is $p(\phi) =c(\phi)^{n_0} e^{n_0 t_0 \phi}$.

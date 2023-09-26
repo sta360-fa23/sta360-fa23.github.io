@@ -88,6 +88,10 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2">Chapter 2</a></li>
   <li><a href="#additional-related-content-ch2" id="toc-additional-related-content-ch2" class="nav-link" data-scroll-target="#additional-related-content-ch2">Additional related content (Ch2)</a></li>
+  <li><a href="#chapter-3" id="toc-chapter-3" class="nav-link" data-scroll-target="#chapter-3">Chapter 3</a></li>
+  <li><a href="#definitions-and-conjugacy" id="toc-definitions-and-conjugacy" class="nav-link" data-scroll-target="#definitions-and-conjugacy">Definitions and conjugacy</a></li>
+  <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a></li>
+  <li><a href="#exponential-families" id="toc-exponential-families" class="nav-link" data-scroll-target="#exponential-families">Exponential families</a></li>
   </ul>
 </nav>
     </div>
@@ -151,6 +155,76 @@ Pr(H_j | E) = \frac{Pr(E|H_j) Pr(H_j)}{Pr(E)}
 <li><em>Law of total expectation</em> <span class="math inline">\(E(X) = E(E(X|Y))\)</span></li>
 <li><em>Law of total variance</em> <span class="math inline">\(Var(X) = E(Var(X|Y) + Var(E(X|Y))\)</span></li>
 </ul>
+</section>
+<section id="chapter-3" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-3">Chapter 3</h3>
+</section>
+<section id="definitions-and-conjugacy" class="level2">
+<h2 class="anchored" data-anchor-id="definitions-and-conjugacy">Definitions and conjugacy</h2>
+<ul>
+<li>Be able to define <strong>likelihood</strong>, <strong>prior</strong>, <strong>poserior</strong>, <strong>normalizing constant</strong></li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A prior <span class="math inline">\(p(\theta)\)</span> is said to be <strong>conjugate</strong> to the data generative model <span class="math inline">\(p(y|\theta)\)</span> if the family of the posterior is necessarily in the same family as the prior. In math, <span class="math inline">\(p(\theta)\)</span> is conjugate to <span class="math inline">\(p(y|\theta)\)</span> if</p>
+<p><span class="math display">\[
+p(\theta) \in \mathcal{P} \implies p(\theta | y) \in \mathcal{P}
+\]</span></p>
+</div>
+</div>
+<ul>
+<li>Examples of conjugate models: beta-binomial, gamma-Poisson.</li>
+</ul>
+</section>
+<section id="reliability" class="level2">
+<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\Phi\)</span> be the support of <span class="math inline">\(\theta\)</span>. An interval <span class="math inline">\((l(y), u(y)) \subset \Phi\)</span> has 95% <strong>posterior coverage</strong> if</p>
+<p><span class="math display">\[
+p(l(y) &lt; \theta &lt; u(y) | y ) = 0.95
+\]</span></p>
+<p>Interpretation: after observing <span class="math inline">\(Y = y\)</span>, our probability that <span class="math inline">\(\theta \in (l(y), u(y))\)</span> is 95%.</p>
+<p>Such an interval is called 95% posterior confidence interval (CI). It may also sometimes be referred to as a 95% “credible interval” to distinguish it from a frequentist CI.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="math inline">\(100 \times (1-\alpha)\)</span>% <strong>high posterior density</strong> (HPD) region is a set <span class="math inline">\(s(y) \subset \Theta\)</span> such that</p>
+<ol type="1">
+<li><p><span class="math inline">\(p(\theta \in s(y) | Y = y) = 1 - \alpha\)</span></p></li>
+<li><p>If <span class="math inline">\(\theta_a \in s(y)\)</span> and <span class="math inline">\(\theta_b \not\in s(y)\)</span>, then <span class="math inline">\(p(\theta_a | Y = y) &gt; p(\theta_b | Y = y)\)</span></p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="exponential-families" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-families">Exponential families</h2>
+<p>If density <span class="math inline">\(p(y|\theta)\)</span> can be written <span class="math inline">\(h(y) c(\phi) e^{\phi t(y)}\)</span> for some transform <span class="math inline">\(\phi = f(\theta)\)</span> we can say <span class="math inline">\(p(y|\theta)\)</span> belongs in the exponential family, and the conjugate prior is <span class="math inline">\(p(\phi) =c(\phi)^{n_0} e^{n_0 t_0 \phi}\)</span>.</p>
 
 
 </section>

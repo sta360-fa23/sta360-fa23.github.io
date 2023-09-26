@@ -46,7 +46,7 @@
     "href": "chapterSummaries.html",
     "title": "Chapter summaries",
     "section": "",
-    "text": "Additional related content (Ch2)\n\nLaw of total expectation \\(E(X) = E(E(X|Y))\\)\nLaw of total variance \\(Var(X) = E(Var(X|Y) + Var(E(X|Y))\\)"
+    "text": "Axioms of probability\nFor all sets \\(F\\), \\(G\\) and \\(H\\),\n\n\\(0 = Pr(\\neg H | H) \\leq Pr(F | H) \\leq Pr(H | H) = 1\\)\n\\(Pr(F \\cup G | H) = Pr(F|H) + Pr(G|H) \\text{ if } F \\cap G = \\emptyset\\)\n\\(Pr(F \\cap G | H) = Pr(G | H) Pr(F | G \\cap H)\\)\n\nPartitions and probability\nSuppose \\(\\{ H_1, \\ldots, H_K\\}\\) is a partition of \\(\\mathcal{H}\\), \\(Pr(\\mathcal{H}) = 1\\) and \\(E\\) is some specific event. From the axioms of probability one may prove:\n\nRule of total probability:\n\n\\[\\begin{equation}\n\\sum_{k = 1}^K Pr(H_k) = 1\n\\end{equation}\\]\n\nRule of marginal probability:\n\n\\[\\begin{equation}\n\\begin{aligned}\nPr(E) &= \\sum_{k = 1}^K Pr(E \\cap H_k)\\\\ &= \\sum_{k = 1}^K Pr(E | H_k) Pr(H_k)\n\\end{aligned}\n\\end{equation}\\]\n\nBayes’ theorem:\n\n\\[\\begin{equation}\nPr(H_j | E) = \\frac{Pr(E|H_j) Pr(H_j)}{Pr(E)}\n\\end{equation}\\]\nNote it is often useful to replace the denominator, \\(Pr(E)\\), using the rule of marginal probability.\nIndependence\nTwo events \\(F\\) and \\(G\\) are conditionally independent given \\(H\\) if \\(Pr(F \\cap G |H) = Pr(F|H) Pr(G|H)\\)."
   },
   {
     "objectID": "hw/hw03.html",
@@ -593,5 +593,26 @@
     "title": "Exam notes",
     "section": "",
     "text": "A random variable \\(X \\in \\mathbb{R}\\) has a \\(N(\\theta, \\sigma^2)\\) distribution if \\(\\sigma^2 > 0\\) and\n\\(p(x | \\theta, \\sigma^2) = (2 \\pi \\sigma^2)^{-\\frac{1}{2}} e^{-\\frac{1}{2\\sigma^2}(x - \\theta)^2} \\ \\ \\ \\text{ for } -\\infty < x < \\infty.\\)\n\n\n\nA random variable \\(X \\in (0, \\infty)\\) has a gamma(a,b) distribution if \\(a > 0, b > 0\\) and\n\\(p(x |a,b) = \\frac{b^a}{\\Gamma(a)} x^{a - 1} e^{-bx} \\ \\ \\ \\text{ for } x > 0.\\)\n\\(E[X | a, b] = a/b\\), \\(Var[X | a,b] = a / b^2\\)\n\n\n\nA random variable \\(X \\in (0, \\infty)\\) has an inverse-gamma(a,b) distribution if 1/X has a gamma(a,b) distribution. If \\(X\\) is inverse-gamma(a,b) then the density of X is\n\\(p(x|a,b) = \\frac{b^a}{\\Gamma(a)} x^{-a-1} e^{-b/x} \\ \\ \\ \\text{ for } x > 0.\\)\n\\(E[X|a,b] = \\frac{b}{a-1}\\) if \\(a>=1\\), \\(\\infty\\) if \\(0<a<1\\)\n\\(Var[X|a,b] = \\frac{b^2}{(a-1)^2(a-2)}\\) if \\(a\\geq2\\), \\(\\infty\\) if \\(0<a<2\\)\n\n\n\nA random variable \\(X \\in \\{0, 1, \\ldots, n\\}\\) has a binomial\\((n, \\theta)\\) distribution if \\(\\theta \\in [0, 1]\\) and\n\\(p(X = x| \\theta, n) = {n \\choose x} \\theta^x (1- \\theta)^{n-x} \\ \\ \\ \\text{ for } x\\in \\{0, 1, \\ldots, n \\}\\)\n\\(E[X|\\theta] = n\\theta\\), \\(Var[X|\\theta] = n\\theta(1-\\theta)\\)\n\n\n\nA random variable \\(X \\in [0, 1]\\) has a beta(a,b) distribution if \\(a > 0, b > 0\\) and\n\\(p(x|a,b) = \\frac{\\Gamma(a + b)}{\\Gamma(a)\\Gamma(b)} x^{a-1} (1-x)^{b-1} \\ \\ \\ \\text{ for } 0 \\leq x \\leq 1.\\)\n\\(E[X|a,b] = \\frac{a}{a + b}\\), \\(Var[X|a,b] = \\frac{ab}{(a + b + 1)(a + b)^2}\\)\n\n\n\nA random variable \\(X \\in \\{0, 1, 2, \\ldots \\}\\) has a Poisson(\\(\\theta\\)) distribution if \\(\\theta > 0\\) and\n\\(p(X = x | \\theta) = \\theta^x \\frac{e^{-\\theta}}{x!} \\ \\ \\ \\text{ for } x \\in \\{0, 1, 2, \\ldots\\}\\)\n\\(E[X|\\theta] = \\theta\\), \\(Var[X|\\theta] = \\theta\\)\n\n\n\nA random variable \\(X \\in [0, \\infty)\\) has a exponential(\\(\\theta\\)) distribution if \\(\\theta >0\\) and\n\\(p(x | \\theta) = \\theta e^{-\\theta x}\\)\n\\(E[X|\\theta] = \\frac{1}{\\theta}\\), \\(Var[X|\\theta] = \\frac{1}{\\theta^2}\\)"
+  },
+  {
+    "objectID": "chapterSummaries.html#definitions-and-conjugacy",
+    "href": "chapterSummaries.html#definitions-and-conjugacy",
+    "title": "Chapter summaries",
+    "section": "Definitions and conjugacy",
+    "text": "Definitions and conjugacy\n\nBe able to define likelihood, prior, poserior, normalizing constant\n\n\n\n\n\n\n\nDefinition\n\n\n\nA prior \\(p(\\theta)\\) is said to be conjugate to the data generative model \\(p(y|\\theta)\\) if the family of the posterior is necessarily in the same family as the prior. In math, \\(p(\\theta)\\) is conjugate to \\(p(y|\\theta)\\) if\n\\[\np(\\theta) \\in \\mathcal{P} \\implies p(\\theta | y) \\in \\mathcal{P}\n\\]\n\n\n\nExamples of conjugate models: beta-binomial, gamma-Poisson."
+  },
+  {
+    "objectID": "chapterSummaries.html#reliability",
+    "href": "chapterSummaries.html#reliability",
+    "title": "Chapter summaries",
+    "section": "Reliability",
+    "text": "Reliability\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\(\\Phi\\) be the support of \\(\\theta\\). An interval \\((l(y), u(y)) \\subset \\Phi\\) has 95% posterior coverage if\n\\[\np(l(y) < \\theta < u(y) | y ) = 0.95\n\\]\nInterpretation: after observing \\(Y = y\\), our probability that \\(\\theta \\in (l(y), u(y))\\) is 95%.\nSuch an interval is called 95% posterior confidence interval (CI). It may also sometimes be referred to as a 95% “credible interval” to distinguish it from a frequentist CI.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nA \\(100 \\times (1-\\alpha)\\)% high posterior density (HPD) region is a set \\(s(y) \\subset \\Theta\\) such that\n\n\\(p(\\theta \\in s(y) | Y = y) = 1 - \\alpha\\)\nIf \\(\\theta_a \\in s(y)\\) and \\(\\theta_b \\not\\in s(y)\\), then \\(p(\\theta_a | Y = y) > p(\\theta_b | Y = y)\\)"
+  },
+  {
+    "objectID": "chapterSummaries.html#exponential-families",
+    "href": "chapterSummaries.html#exponential-families",
+    "title": "Chapter summaries",
+    "section": "Exponential families",
+    "text": "Exponential families\nIf density \\(p(y|\\theta)\\) can be written \\(h(y) c(\\phi) e^{\\phi t(y)}\\) for some transform \\(\\phi = f(\\theta)\\) we can say \\(p(y|\\theta)\\) belongs in the exponential family, and the conjugate prior is \\(p(\\phi) =c(\\phi)^{n_0} e^{n_0 t_0 \\phi}\\)."
   }
 ]
