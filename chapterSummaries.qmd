@@ -152,10 +152,18 @@ and Monte Carlo estimates converge at a rate $\mathcal{O}\left(\frac{1}{\sqrt{N}
 
 ### The sampling view
 
-If we have a posterior, $p(\theta | y_1, \ldots y_n)$ we can sample from and we want some summary of the posterior... e.g. $p(\theta > a)$, quantiles of the posterior, or the posterior of some transform $f(\theta)$, all of these can be mapped to some sort of integral e.g. $\int_{\infty}^a p(\theta) d\theta$ and Monte Carlo approximation can be used. In each of these cases, the procedure is the same.
+If we have a posterior $p(\theta | y_1, \ldots y_n)$ that we can sample from and we want some summary of the posterior... e.g. we want
 
-The procedure is:
+- $p(\theta < a)$
+- quantiles of the posterior , or 
+- the posterior of some transform $f(\theta)$, 
+
+then we can simply sample from the posterior to obtain an empirical approximation of the posterior and then report the empirical quantity of interest. This is also called Monte Carlo approximation.
+
+The procedure can be written:
 
 1. sample from the posterior $p(\theta |y_1, \ldots y_n)$ some large number of times and then 
 2. compute the quantity of interest
+
+
 

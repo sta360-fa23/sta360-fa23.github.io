@@ -289,8 +289,14 @@ p(\tilde{y}) = \int p(\tilde{y}|\theta) p(\theta)d\theta.
 </section>
 <section id="the-sampling-view" class="level3">
 <h3 class="anchored" data-anchor-id="the-sampling-view">The sampling view</h3>
-<p>If we have a posterior, <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span> we can sample from and we want some summary of the posterior… e.g.&nbsp;<span class="math inline">\(p(\theta &gt; a)\)</span>, quantiles of the posterior, or the posterior of some transform <span class="math inline">\(f(\theta)\)</span>, all of these can be mapped to some sort of integral e.g.&nbsp;<span class="math inline">\(\int_{\infty}^a p(\theta) d\theta\)</span> and Monte Carlo approximation can be used. In each of these cases, the procedure is the same.</p>
-<p>The procedure is:</p>
+<p>If we have a posterior <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span> that we can sample from and we want some summary of the posterior… e.g.&nbsp;we want</p>
+<ul>
+<li><span class="math inline">\(p(\theta &lt; a)\)</span></li>
+<li>quantiles of the posterior , or</li>
+<li>the posterior of some transform <span class="math inline">\(f(\theta)\)</span>,</li>
+</ul>
+<p>then we can simply sample from the posterior to obtain an empirical approximation of the posterior and then report the empirical quantity of interest. This is also called Monte Carlo approximation.</p>
+<p>The procedure can be written:</p>
 <ol type="1">
 <li>sample from the posterior <span class="math inline">\(p(\theta |y_1, \ldots y_n)\)</span> some large number of times and then</li>
 <li>compute the quantity of interest</li>
