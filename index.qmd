@@ -63,8 +63,8 @@ schedule %>%
 |      | Thu Sep 21 | the normal model                               | Ch. 5   |                     [💻](/notes/normalModel1.html)                     |                                |
 | 5    | Mon Sep 25 | practice and review                            |         |                               [💻](/slides/lab3-review.html)                                      |  |
 |      | Tue Sep 26 | catch up / review                              |         |                                                                        |                                |
-|      | Thu Sep 28 | Exam I                                         |         |                                                                        |                                |
-| 6    | Mon Oct 02 |                                                |         |                                                                        |                                |
+|      | Thu Sep 28 | [Exam I](/notes/exam-notes.html)                                         |         |                                                                        |                                |
+| 6    | Mon Oct 02 | NO LAB                                                |         |                                                                        |                                |
 |      | Tue Oct 03 | the normal model II                            | Ch. 5   |                                                                        | hw 4                           |
 |      | Thu Oct 05 | Gibbs sampling                                 | Ch. 6   |                                                                        |                                |
 | 7    | Mon Oct 09 |                                                |         |                                                                        |                                |
