@@ -110,7 +110,7 @@ If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some tr
 
 ## Chapter 4
 
-### predictive distributions
+### Predictive distributions
 
 The posterior predictive distribution,
 
