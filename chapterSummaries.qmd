@@ -6,7 +6,7 @@ format:
     toc: true
 ---
 
-### Chapter 2
+## Chapter 2
 
 *Axioms of probability*
 
@@ -50,11 +50,16 @@ Two events $F$ and $G$ are conditionally independent given $H$ if $Pr(F \cap G |
 ### Additional related content (Ch2)
 
 - *Law of total expectation* $E(X) = E(E(X|Y))$ 
-- *Law of total variance* $Var(X) = E(Var(X|Y) + Var(E(X|Y))$
+- *Law of total variance* $Var(X) = E(Var(X|Y)) + Var(E(X|Y))$
 
-### Chapter 3
+- Remember: we can always add conditioning statements e.g.
 
-## Definitions and conjugacy
+- *Law of total expectation* $E(X|Z) = E(E(X|Y)|Z)$ 
+- *Law of total variance* $Var(X|Z) = E(Var(X|Y)|Z) + Var(E(X|Y)|Z)$
+
+## Chapter 3
+
+### Definitions and conjugacy
 
 - Be able to define **likelihood**, **prior**, **poserior**, **normalizing constant**
 
@@ -69,7 +74,7 @@ $$
 
 - Examples of conjugate models: beta-binomial, gamma-Poisson.
 
-## Reliability 
+### Reliability 
 
 ::: callout-note
 ## Definition
@@ -96,6 +101,58 @@ A $100 \times (1-\alpha)$% **high posterior density** (HPD) region is a set $s(y
 2. If $\theta_a \in s(y)$ and $\theta_b \not\in s(y)$, then $p(\theta_a | Y = y) > p(\theta_b | Y = y)$
 :::
 
-## Exponential families
+### Exponential families
 
-If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some transform $\phi = f(\theta)$ we can say $p(y|\theta)$ belongs in the exponential family, and the conjugate prior is $p(\phi) =c(\phi)^{n_0} e^{n_0 t_0 \phi}$.
+If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some transform $\phi = f(\theta)$ we can say $p(y|\theta)$ belongs in the exponential family, and the conjugate prior is $p(\phi | n_0, t_0) =c(\phi)^{n_0} e^{n_0 t_0 \phi}$. Note: the conjugate prior is given over $\phi$ and we'd have to transform back if we care about $p(\theta)$.
+
+## Chapter 4
+
+### predictive distributions
+
+The posterior predictive distribution,
+
+$$
+p(\tilde{y} | y_1, \ldots y_n) = \int p(\tilde{y}|\theta) p(\theta|y_1, \ldots, y_n)d\theta
+$$
+
+when $Y | \theta$ conditionally iid.
+
+The prior predictive distribution,
+
+$$
+p(\tilde{y}) = \int p(\tilde{y}|\theta) p(\theta)d\theta.
+$$
+
+Notice both the posterior and prior predictive distributions are represented as **integrals**. Integrals are expectations. This means we can use Monte Carlo integration to approximate.
+
+To approximate the posterior predictive distribution:
+
+1. sample from the posterior of theta, $p(\theta|y_1,\ldots y_n)$
+2. sample from data generative model $p(\tilde{y}|\theta)$ for the values of theta sampled in (1).
+
+To approximate the prior predictive distribution:
+
+1. sample from the prior of theta, $p(\theta)$
+2. sample from the data generative model $p(\tilde{y}|\theta)$ for the values of theta sampled in (1).
+
+### Monte Carlo error
+
+Since Monte Carlo approximation can be viewed as a sample mean approximating an expected value, CLT applies. 
+
+More specifically, if $\theta_i |\vec{y}$ iid with mean $\theta$ and finite variance $\sigma^2$, for $i \in \{1, \ldots, N\}$, then the sample mean
+
+$$
+\bar{\theta} \sim N(\theta, \frac{\sigma^2}{N} ).
+$$
+
+and Monte Carlo estimates converge at a rate $\mathcal{O}\left(\frac{1}{\sqrt{N}}\right)$ regardless of the dimension of the integral!
+
+### The sampling view
+
+If we have a posterior, $p(\theta | y_1, \ldots y_n)$ we can sample from and we want some summary of the posterior... e.g. $p(\theta > a)$, quantiles of the posterior, or the posterior of some transform $f(\theta)$, all of these can be mapped to some sort of integral e.g. $\int_{\infty}^a p(\theta) d\theta$ and Monte Carlo approximation can be used. In each of these cases, the procedure is the same.
+
+The procedure is:
+
+1. sample from the posterior $p(\theta |y_1, \ldots y_n)$ some large number of times and then 
+2. compute the quantity of interest
+

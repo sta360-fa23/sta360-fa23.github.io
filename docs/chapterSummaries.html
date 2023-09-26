@@ -86,12 +86,22 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2">Chapter 2</a></li>
+  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2">Chapter 2</a>
+  <ul class="collapse">
   <li><a href="#additional-related-content-ch2" id="toc-additional-related-content-ch2" class="nav-link" data-scroll-target="#additional-related-content-ch2">Additional related content (Ch2)</a></li>
-  <li><a href="#chapter-3" id="toc-chapter-3" class="nav-link" data-scroll-target="#chapter-3">Chapter 3</a></li>
+  </ul></li>
+  <li><a href="#chapter-3" id="toc-chapter-3" class="nav-link" data-scroll-target="#chapter-3">Chapter 3</a>
+  <ul class="collapse">
   <li><a href="#definitions-and-conjugacy" id="toc-definitions-and-conjugacy" class="nav-link" data-scroll-target="#definitions-and-conjugacy">Definitions and conjugacy</a></li>
   <li><a href="#reliability" id="toc-reliability" class="nav-link" data-scroll-target="#reliability">Reliability</a></li>
   <li><a href="#exponential-families" id="toc-exponential-families" class="nav-link" data-scroll-target="#exponential-families">Exponential families</a></li>
+  </ul></li>
+  <li><a href="#chapter-4" id="toc-chapter-4" class="nav-link" data-scroll-target="#chapter-4">Chapter 4</a>
+  <ul class="collapse">
+  <li><a href="#predictive-distributions" id="toc-predictive-distributions" class="nav-link" data-scroll-target="#predictive-distributions">predictive distributions</a></li>
+  <li><a href="#monte-carlo-error" id="toc-monte-carlo-error" class="nav-link" data-scroll-target="#monte-carlo-error">Monte Carlo error</a></li>
+  <li><a href="#the-sampling-view" id="toc-the-sampling-view" class="nav-link" data-scroll-target="#the-sampling-view">The sampling view</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -114,8 +124,8 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="chapter-2" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-2">Chapter 2</h3>
+<section id="chapter-2" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-2">Chapter 2</h2>
 <p><em>Axioms of probability</em></p>
 <p>For all sets <span class="math inline">\(F\)</span>, <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span>,</p>
 <ul>
@@ -148,19 +158,21 @@ Pr(H_j | E) = \frac{Pr(E|H_j) Pr(H_j)}{Pr(E)}
 <p>Note it is often useful to replace the denominator, <span class="math inline">\(Pr(E)\)</span>, using the rule of marginal probability.</p>
 <p><em>Independence</em></p>
 <p>Two events <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are conditionally independent given <span class="math inline">\(H\)</span> if <span class="math inline">\(Pr(F \cap G |H) = Pr(F|H) Pr(G|H)\)</span>.</p>
-</section>
 <section id="additional-related-content-ch2" class="level3">
 <h3 class="anchored" data-anchor-id="additional-related-content-ch2">Additional related content (Ch2)</h3>
 <ul>
-<li><em>Law of total expectation</em> <span class="math inline">\(E(X) = E(E(X|Y))\)</span></li>
-<li><em>Law of total variance</em> <span class="math inline">\(Var(X) = E(Var(X|Y) + Var(E(X|Y))\)</span></li>
+<li><p><em>Law of total expectation</em> <span class="math inline">\(E(X) = E(E(X|Y))\)</span></p></li>
+<li><p><em>Law of total variance</em> <span class="math inline">\(Var(X) = E(Var(X|Y)) + Var(E(X|Y))\)</span></p></li>
+<li><p>Remember: we can always add conditioning statements e.g.</p></li>
+<li><p><em>Law of total expectation</em> <span class="math inline">\(E(X|Z) = E(E(X|Y)|Z)\)</span></p></li>
+<li><p><em>Law of total variance</em> <span class="math inline">\(Var(X|Z) = E(Var(X|Y)|Z) + Var(E(X|Y)|Z)\)</span></p></li>
 </ul>
 </section>
-<section id="chapter-3" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-3">Chapter 3</h3>
 </section>
-<section id="definitions-and-conjugacy" class="level2">
-<h2 class="anchored" data-anchor-id="definitions-and-conjugacy">Definitions and conjugacy</h2>
+<section id="chapter-3" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3">Chapter 3</h2>
+<section id="definitions-and-conjugacy" class="level3">
+<h3 class="anchored" data-anchor-id="definitions-and-conjugacy">Definitions and conjugacy</h3>
 <ul>
 <li>Be able to define <strong>likelihood</strong>, <strong>prior</strong>, <strong>poserior</strong>, <strong>normalizing constant</strong></li>
 </ul>
@@ -184,8 +196,8 @@ p(\theta) \in \mathcal{P} \implies p(\theta | y) \in \mathcal{P}
 <li>Examples of conjugate models: beta-binomial, gamma-Poisson.</li>
 </ul>
 </section>
-<section id="reliability" class="level2">
-<h2 class="anchored" data-anchor-id="reliability">Reliability</h2>
+<section id="reliability" class="level3">
+<h3 class="anchored" data-anchor-id="reliability">Reliability</h3>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -222,11 +234,56 @@ Definition
 </div>
 </div>
 </section>
-<section id="exponential-families" class="level2">
-<h2 class="anchored" data-anchor-id="exponential-families">Exponential families</h2>
-<p>If density <span class="math inline">\(p(y|\theta)\)</span> can be written <span class="math inline">\(h(y) c(\phi) e^{\phi t(y)}\)</span> for some transform <span class="math inline">\(\phi = f(\theta)\)</span> we can say <span class="math inline">\(p(y|\theta)\)</span> belongs in the exponential family, and the conjugate prior is <span class="math inline">\(p(\phi) =c(\phi)^{n_0} e^{n_0 t_0 \phi}\)</span>.</p>
+<section id="exponential-families" class="level3">
+<h3 class="anchored" data-anchor-id="exponential-families">Exponential families</h3>
+<p>If density <span class="math inline">\(p(y|\theta)\)</span> can be written <span class="math inline">\(h(y) c(\phi) e^{\phi t(y)}\)</span> for some transform <span class="math inline">\(\phi = f(\theta)\)</span> we can say <span class="math inline">\(p(y|\theta)\)</span> belongs in the exponential family, and the conjugate prior is <span class="math inline">\(p(\phi | n_0, t_0) =c(\phi)^{n_0} e^{n_0 t_0 \phi}\)</span>. Note: the conjugate prior is given over <span class="math inline">\(\phi\)</span> and we’d have to transform back if we care about <span class="math inline">\(p(\theta)\)</span>.</p>
+</section>
+</section>
+<section id="chapter-4" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-4">Chapter 4</h2>
+<section id="predictive-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="predictive-distributions">predictive distributions</h3>
+<p>The posterior predictive distribution,</p>
+<p><span class="math display">\[
+p(\tilde{y} | y_1, \ldots y_n) = \int p(\tilde{y}|\theta) p(\theta|y_1, \ldots, y_n)d\theta
+\]</span></p>
+<p>when <span class="math inline">\(Y | \theta\)</span> conditionally iid.</p>
+<p>The prior predictive distribution,</p>
+<p><span class="math display">\[
+p(\tilde{y}) = \int p(\tilde{y}|\theta) p(\theta)d\theta.
+\]</span></p>
+<p>Notice both the posterior and prior predictive distributions are represented as <strong>integrals</strong>. Integrals are expectations. This means we can use Monte Carlo integration to approximate.</p>
+<p>To approximate the posterior predictive distribution:</p>
+<ol type="1">
+<li>sample from the posterior of theta, <span class="math inline">\(p(\theta|y_1,\ldots y_n)\)</span></li>
+<li>sample from data generative model <span class="math inline">\(p(\tilde{y}|\theta)\)</span> for the values of theta sampled in (1).</li>
+</ol>
+<p>To approximate the prior predictive distribution:</p>
+<ol type="1">
+<li>sample from the prior of theta, <span class="math inline">\(p(\theta)\)</span></li>
+<li>sample from the data generative model <span class="math inline">\(p(\tilde{y}|\theta)\)</span> for the values of theta sampled in (1).</li>
+</ol>
+</section>
+<section id="monte-carlo-error" class="level3">
+<h3 class="anchored" data-anchor-id="monte-carlo-error">Monte Carlo error</h3>
+<p>Since Monte Carlo approximation can be viewed as a sample mean approximating an expected value, CLT applies.</p>
+<p>More specifically, if <span class="math inline">\(\theta_i |\vec{y}\)</span> iid with mean <span class="math inline">\(\theta\)</span> and finite variance <span class="math inline">\(\sigma^2\)</span>, for <span class="math inline">\(i \in \{1, \ldots, N\}\)</span>, then the sample mean</p>
+<p><span class="math display">\[
+\bar{\theta} \sim N(\theta, \frac{\sigma^2}{N} ).
+\]</span></p>
+<p>and Monte Carlo estimates converge at a rate <span class="math inline">\(\mathcal{O}\left(\frac{1}{\sqrt{N}}\right)\)</span> regardless of the dimension of the integral!</p>
+</section>
+<section id="the-sampling-view" class="level3">
+<h3 class="anchored" data-anchor-id="the-sampling-view">The sampling view</h3>
+<p>If we have a posterior, <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span> we can sample from and we want some summary of the posterior… e.g.&nbsp;<span class="math inline">\(p(\theta &gt; a)\)</span>, quantiles of the posterior, or the posterior of some transform <span class="math inline">\(f(\theta)\)</span>, all of these can be mapped to some sort of integral e.g.&nbsp;<span class="math inline">\(\int_{\infty}^a p(\theta) d\theta\)</span> and Monte Carlo approximation can be used. In each of these cases, the procedure is the same.</p>
+<p>The procedure is:</p>
+<ol type="1">
+<li>sample from the posterior <span class="math inline">\(p(\theta |y_1, \ldots y_n)\)</span> some large number of times and then</li>
+<li>compute the quantity of interest</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
