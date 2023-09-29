@@ -64,7 +64,7 @@ Remember we can always add conditioning statements e.g.
 
 ### Definitions and conjugacy
 
-- Be able to define **likelihood**, **prior**, **poserior**, **normalizing constant**
+- Be able to define **likelihood**, **prior**, **posterior**, **normalizing constant**
 
 ::: callout-note
 ## Definition

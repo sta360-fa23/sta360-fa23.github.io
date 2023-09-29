@@ -367,11 +367,8 @@ answer
 <p><span class="math display">\[
 p(\sigma^2 | \vec{y}) \propto p(\sigma^2)\int p(\vec{y} | \theta, \sigma^2) p(\theta|\sigma^2) d\theta
 \]</span></p>
-<p>But how do we choose <span class="math inline">\(p(\sigma^2)\)</span> to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see <a href="https://www.youtube.com/watch?v=IaSGqQa5O-M">this 3Blue1Brown video on convolutions</a>. Another way is perhaps more straightforward: consider <span class="math inline">\(\mu\)</span> fixed.</p>
+<p>But how do we choose <span class="math inline">\(p(\sigma^2)\)</span> to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals, (thereby a sum of normals) and is therefore a normal density.</p>
 <p>Upon inspection, we can see a suitable choice is <span class="math inline">\(\frac{1}{\sigma^2} \sim \text{gamma}(a, b)\)</span>.</p>
-<ul>
-<li>Let’s show this offline.</li>
-</ul>
 </section>
 <section id="the-inverse-gamma" class="level3">
 <h3 class="anchored" data-anchor-id="the-inverse-gamma">The inverse-gamma</h3>

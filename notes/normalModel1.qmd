@@ -196,11 +196,9 @@ $$
 p(\sigma^2 | \vec{y}) \propto p(\sigma^2)\int p(\vec{y} | \theta, \sigma^2) p(\theta|\sigma^2) d\theta
 $$
 
-But how do we choose $p(\sigma^2)$ to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals and is therefore a normal density (for some intution, see [this 3Blue1Brown video on convolutions](https://www.youtube.com/watch?v=IaSGqQa5O-M). Another way is perhaps more straightforward: consider $\mu$ fixed.
+But how do we choose $p(\sigma^2)$ to be conjugate? We can proceed in multiple ways: one is noting that the integral is really a convolution of normals, (thereby a sum of normals) and is therefore a normal density.
 
 Upon inspection, we can see a suitable choice is $\frac{1}{\sigma^2} \sim \text{gamma}(a, b)$. 
-
-- Let's show this offline.
 
 ### The inverse-gamma
 
