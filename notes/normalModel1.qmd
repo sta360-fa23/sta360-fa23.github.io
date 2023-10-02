@@ -165,7 +165,10 @@ i.e. the posterior mean is the weighted average of prior and sample mean, where 
 We can re-define $\lambda_0^2 = \kappa_0 \lambda^2$ (or equivalently $\tau_0^2 = \frac{\sigma^2}{\kappa_0}$) and obtain
 
 $$
-\mu_n = \frac{\kappa_0}{\kappa_0 + n} \mu_0 + \frac{n}{\kappa_0 + n} \bar{y}
+\begin{aligned}
+\mu_n &= \frac{\kappa_0}{\kappa_0 + n} \mu_0 + \frac{n}{\kappa_0 + n} \bar{y},\\
+\frac{1}{\tau_n^2} &= \frac{\kappa_0 + n}{\sigma^2}
+\end{aligned}
 $$
 
 where we can interpret $\kappa_0$ as the prior sample size.
@@ -241,8 +244,8 @@ $$
 \begin{aligned}
 \nu_n &= \nu_0 + n,\\
 \sigma^2_n &= \frac{1}{\nu_n} \left[ 
-\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_n}(\bar{y} - \mu_0)^2,
-\right]
+\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_0 + n}(\bar{y} - \mu_0)^2
+\right],
 \end{aligned}
 $$
 

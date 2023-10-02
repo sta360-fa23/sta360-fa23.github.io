@@ -107,6 +107,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -150,6 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   </ul>
 </nav>
     </div>
@@ -175,16 +177,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Exercise 5.1 from Hoff. You can read in the data from the three schools with the R code below.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>school1 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school1.csv"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>school2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school1.csv"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>school3 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Let</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
+\theta | \sigma^2 &amp;\sim N(\mu_0, \sigma^2/\kappa_0)\\
+1/ \sigma^2 &amp;\sim \text{gamma}(a, b)
+\end{aligned}
+\]</span></p>
+<ol type="a">
+<li><p>Derive and simplify the joint pdf <span class="math inline">\(p(y_1, \ldots y_n | \theta, \sigma^2)\)</span></p></li>
+<li><p>Derive the posterior of the <em>precision</em>, <span class="math inline">\(p(\frac{1}{\sigma^2}| y_1, \ldots y_n)\)</span>.</p></li>
+<li><p>Derive the posterior of <span class="math inline">\(\theta\)</span>, <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span></p></li>
+</ol>
+<p>Hint: it may be helpful (notation) to re-define <span class="math inline">\(\gamma = \frac{1}{\sigma^2}\)</span></p>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Exercise 5.1 from Hoff. You can read in the data from the three schools with the R code below. Hint: the problem specification is just like in exercise 1, except <span class="math inline">\(a = \nu_0/2\)</span> and <span class="math inline">\(b = \nu_0 \sigma_0^2/2\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>school1 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school1.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>school2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school2.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>school3 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school3.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
 
 
 </section>

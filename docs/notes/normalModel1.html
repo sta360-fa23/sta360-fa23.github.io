@@ -343,7 +343,10 @@ answer
 <p>i.e.&nbsp;the posterior mean is the weighted average of prior and sample mean, where the weights are the relative contribution of each precision!</p>
 <p>We can re-define <span class="math inline">\(\lambda_0^2 = \kappa_0 \lambda^2\)</span> (or equivalently <span class="math inline">\(\tau_0^2 = \frac{\sigma^2}{\kappa_0}\)</span>) and obtain</p>
 <p><span class="math display">\[
-\mu_n = \frac{\kappa_0}{\kappa_0 + n} \mu_0 + \frac{n}{\kappa_0 + n} \bar{y}
+\begin{aligned}
+\mu_n &amp;= \frac{\kappa_0}{\kappa_0 + n} \mu_0 + \frac{n}{\kappa_0 + n} \bar{y},\\
+\frac{1}{\tau_n^2} &amp;= \frac{\kappa_0 + n}{\sigma^2}
+\end{aligned}
 \]</span></p>
 <p>where we can interpret <span class="math inline">\(\kappa_0\)</span> as the prior sample size.</p>
 <!-- We can quickly write down the two terms of interest by remembering that any conditional, e.g. $p(\theta | \sigma^2, \vec{y})$ and $p(\sigma^2 | \theta, \vec{y})$ is proportional to the posterior (recall exercise 2.3 from Hoff on homework 1). -->
@@ -414,8 +417,8 @@ Y_i | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
 \begin{aligned}
 \nu_n &amp;= \nu_0 + n,\\
 \sigma^2_n &amp;= \frac{1}{\nu_n} \left[
-\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_n}(\bar{y} - \mu_0)^2,
-\right]
+\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_0 + n}(\bar{y} - \mu_0)^2
+\right],
 \end{aligned}
 \]</span></p>
 <p>and <span class="math inline">\(s^2\)</span> is the sample variance, <span class="math inline">\(\frac{1}{n-1} \sum_i (y_i - \bar{y})^2\)</span>.</p>
