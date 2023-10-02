@@ -14,8 +14,10 @@ Exercise 5.1 from Hoff. You can read in the data from the three schools with the
 ```{r}
 #| eval: false
 library(tidyverse)
-school1 = read_csv("sta360-fa23.github.io/data/school1.csv")
-school2 = read_csv("sta360-fa23.github.io/data/school1.csv")
-school3 = read_csv("sta360-fa23.github.io/data/school1.csv")
+school1 = read_csv("https://sta360-fa23.github.io/data/school1.csv")
+school2 = read_csv("https://sta360-fa23.github.io/data/school1.csv")
+school3 = read_csv("https://sta360-fa23.github.io/data/school1.csv")
 ```
+
+## Exercise 2
 

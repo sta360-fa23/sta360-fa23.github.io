@@ -163,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#the-inverse-gamma" id="toc-the-inverse-gamma" class="nav-link" data-scroll-target="#the-inverse-gamma">The inverse-gamma</a></li>
   <li><a href="#the-marginal-posterior-of-sigma2" id="toc-the-marginal-posterior-of-sigma2" class="nav-link" data-scroll-target="#the-marginal-posterior-of-sigma2">The marginal posterior of <span class="math inline">\(\sigma^2\)</span></a></li>
   </ul></li>
-  <li><a href="#computing-the-joint-posterior" id="toc-computing-the-joint-posterior" class="nav-link" data-scroll-target="#computing-the-joint-posterior">Computing the joint posterior</a>
+  <li><a href="#sampling-from-the-joint-posterior" id="toc-sampling-from-the-joint-posterior" class="nav-link" data-scroll-target="#sampling-from-the-joint-posterior">Sampling from the joint posterior</a>
   <ul class="collapse">
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul></li>
@@ -226,7 +226,7 @@ y &amp;\in \mathbb{R},\\
 </section>
 <section id="precision" class="level4">
 <h4 class="anchored" data-anchor-id="precision">precision</h4>
-<p>Notice that every time <span class="math inline">\(\sigma^2\)</span> appears in the density, it is inverted. For this reason, the inverse variance has a special name, <strong>precision</strong>. Mathematically we will call precision <span class="math inline">\(\lambda^2 = \frac{1}{\sigma^2}\)</span>. Intuitively, precision tells us how close <span class="math inline">\(y\)</span> is to the mean <span class="math inline">\(\theta\)</span>. (Large precision = small variance = closer).</p>
+<p>Notice that every time <span class="math inline">\(\sigma^2\)</span> appears in the density, it is inverted. For this reason, the inverse variance <span class="math inline">\((\frac{1}{\sigma^2})\)</span> has a special name, <strong>precision</strong>. Intuitively, precision tells us how close <span class="math inline">\(y\)</span> is to the mean <span class="math inline">\(\theta\)</span>. (Large precision = small variance = closer).</p>
 </section>
 </section>
 <section id="plots-of-normal-densities" class="level3">
@@ -331,15 +331,11 @@ answer
 </section>
 <section id="intuitive-posterior-parameters" class="level3">
 <h3 class="anchored" data-anchor-id="intuitive-posterior-parameters">Intuitive posterior parameters</h3>
-<p>If we consider the posterior precision <span class="math inline">\(\lambda_n^2 \equiv \frac{1}{\tau_n^2}\)</span>, we can re-arrange the terms above to illuminate how posterior information = prior information + data information;.</p>
+<p>If we consider the posterior precision, <span class="math inline">\(\frac{1}{\tau_n^2}\)</span>, we can re-arrange the terms above to illuminate how posterior information = prior information + data information;.</p>
 <p><span class="math display">\[
-{\lambda_n^2} = \lambda_0^2 + n \lambda^2
+\frac{1}{\tau_n^2}= \frac{1}{\tau_0^2} + \frac{n}{\sigma^2}
 \]</span></p>
-<ul>
-<li><span class="math inline">\({\lambda_n^2}\)</span>: posterior precision</li>
-<li><span class="math inline">\(\lambda_0^2\)</span>: prior precision</li>
-<li><span class="math inline">\(\lambda^2\)</span>: sampling precision</li>
-</ul>
+<p>In words, posterior precision is equivalent to prior precision plus sampling precision. If we name each precision term, <span class="math inline">\(\lambda_0 = \frac{1}{\tau_0}\)</span>, <span class="math inline">\(\lambda_n = \frac{1}{\tau_n}\)</span> and <span class="math inline">\(\lambda = \frac{1}{\sigma}\)</span> then</p>
 <p><span class="math display">\[
 \mu_n = \frac{\lambda_0^2}{\lambda_0^2 + n\lambda^2} \mu_0 +
 \frac{n\lambda^2}{\lambda_0^2 + n\lambda^2} \bar{y}
@@ -359,6 +355,19 @@ answer
 <!-- - $p(\theta| \sigma^2, \vec{y}) \propto p(\vec{y}| \theta, \sigma^2) p(\theta |\sigma^2)$ -->
 <!-- <!-- - $p(\sigma^2 | \vec{y}) \propto p(\vec{y}| \theta, \sigma^2) p(\sigma^2 |\theta)$ -->
 <!-- and for the variance, -->
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <span class="math inline">\(\tau_n^2\)</span> is the posterior variance of the full conditional posterior of <span class="math inline">\(\theta\)</span>. This is distinct from <span class="math inline">\(\sigma_n^2\)</span>, defined below.</p>
+</div>
+</div>
 </section>
 <section id="prior-on-sigma2" class="level3">
 <h3 class="anchored" data-anchor-id="prior-on-sigma2">Prior on <span class="math inline">\(\sigma^2\)</span></h3>
@@ -391,44 +400,45 @@ Mode(X) &amp;= \frac{b}{a +1}.
 <p>Taken all together, if we let our sampling model and prior distributions be such that</p>
 <p><span class="math display">\[
 \begin{aligned}
-Y_i &amp;\sim N(\theta, \sigma^2)\\
+Y_i | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
 \theta | \sigma^2 &amp; \sim N(\mu_0, \sigma^2/\kappa_0)\\
 \frac{1}{\sigma^2} &amp;\sim \text{gamma}(\frac{\nu_0}{2}, \frac{\nu_0}{2} \sigma_0^2)
 \end{aligned}
 \]</span></p>
-<p>then</p>
+<p>then the posterior</p>
 <p><span class="math display">\[
 \frac{1}{\sigma^2} | \vec{y} \sim \text{gamma}(\frac{\nu_n}{2}, \frac{\nu_n \sigma^2_n}{2}),
 \]</span></p>
 <p>where</p>
 <p><span class="math display">\[
 \begin{aligned}
-\nu_n &amp;= \nu_0 + n\\
+\nu_n &amp;= \nu_0 + n,\\
 \sigma^2_n &amp;= \frac{1}{\nu_n} \left[
-\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_n}(\bar{y} - \mu_0)^2
+\nu_0 \sigma^2_0 +(n-1)s^2 + \frac{\kappa_0 n}{\kappa_n}(\bar{y} - \mu_0)^2,
 \right]
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(s^2\)</span> is the sample variance.</p>
+<p>and <span class="math inline">\(s^2\)</span> is the sample variance, <span class="math inline">\(\frac{1}{n-1} \sum_i (y_i - \bar{y})^2\)</span>.</p>
 <hr>
 </section>
 </section>
-<section id="computing-the-joint-posterior" class="level2">
-<h2 class="anchored" data-anchor-id="computing-the-joint-posterior">Computing the joint posterior</h2>
-<p>Since <span class="math inline">\(p(\theta, \sigma^2 | \vec{y}) = p(\theta | \sigma^2, y_1, \ldots, y_n)p(\sigma^2|y_1, \ldots y_n)\)</span>, we can compute the joint posterior by sampling from <span class="math inline">\(p(\sigma^2|y_1, \ldots y_n)\)</span> and then sampling from <span class="math inline">\(p(\theta | \sigma^2, y_1, \ldots, y_n)\)</span> to draw samples from the joint posterior.</p>
+<section id="sampling-from-the-joint-posterior" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-from-the-joint-posterior">Sampling from the joint posterior</h2>
+<p>Since <span class="math inline">\(p(\theta, \sigma^2 | \vec{y}) = p(\theta | \sigma^2, y_1, \ldots, y_n)p(\sigma^2|y_1, \ldots y_n)\)</span>, we can sample from the joint posterior by first sampling from <span class="math inline">\(p(\sigma^2|y_1, \ldots y_n)\)</span> and then sampling from <span class="math inline">\(p(\theta | \sigma^2, y_1, \ldots, y_n)\)</span>.</p>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
 <p><strong>Proof of concept</strong></p>
 <p>We have some data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generating 10 samples from the population</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>true.theta <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>true.sigma <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, true.theta, true.sigma)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ybar <span class="ot">=</span> <span class="fu">mean</span>(y) <span class="co"># sample mean</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(y) <span class="co"># sample size</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">=</span> <span class="fu">var</span>(y) <span class="co"># sample variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>true.theta <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>true.sigma <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, true.theta, true.sigma)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ybar <span class="ot">=</span> <span class="fu">mean</span>(y) <span class="co"># sample mean</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(y) <span class="co"># sample size</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">=</span> <span class="fu">var</span>(y) <span class="co"># sample variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We make inference about <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\sigma^2\)</span>:</p>
 <div class="cell">
