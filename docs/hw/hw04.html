@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Homework 4</h1>
-<p class="subtitle lead">Due Wednesday October 11th at 5:00pm</p>
+<p class="subtitle lead">Due Thursday October 12th at 5:00pm</p>
 </div>
 
 
@@ -180,21 +180,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let</p>
 <p><span class="math display">\[
 \begin{aligned}
-Y | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
-\theta | \sigma^2 &amp;\sim N(\mu_0, \sigma^2/\kappa_0)\\
-1/ \sigma^2 &amp;\sim \text{gamma}(a, b)
+Y | \theta, \sigma^2 &amp;\sim N(\theta, 1/\gamma)\\
+\theta | \sigma^2 &amp;\sim N(\mu_0, 1/\gamma \kappa_0)\\
+\gamma &amp;\sim \text{gamma}(a, b)
 \end{aligned}
 \]</span></p>
+<p>so <span class="math inline">\(\gamma\)</span> is the precision (inverse-variance) of the normal distribution.</p>
 <ol type="a">
-<li><p>Derive and simplify the joint pdf <span class="math inline">\(p(y_1, \ldots y_n | \theta, \sigma^2)\)</span></p></li>
-<li><p>Derive the posterior of the <em>precision</em>, <span class="math inline">\(p(\frac{1}{\sigma^2}| y_1, \ldots y_n)\)</span>.</p></li>
+<li><p>Derive and simplify the joint pdf <span class="math inline">\(p(y_1, \ldots y_n | \theta, \gamma)\)</span></p></li>
+<li><p>Derive the posterior of the precision, <span class="math inline">\(p(\gamma| y_1, \ldots y_n)\)</span>.</p></li>
 <li><p>Derive the posterior of <span class="math inline">\(\theta\)</span>, <span class="math inline">\(p(\theta | y_1, \ldots y_n)\)</span></p></li>
 </ol>
-<p>Hint: it may be helpful (notation) to re-define <span class="math inline">\(\gamma = \frac{1}{\sigma^2}\)</span></p>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Exercise 5.1 from Hoff. You can read in the data from the three schools with the R code below. Hint: the problem specification is just like in exercise 1, except <span class="math inline">\(a = \nu_0/2\)</span> and <span class="math inline">\(b = \nu_0 \sigma_0^2/2\)</span>.</p>
+<p>Exercise 5.1 from Hoff. You can read in the data from the three schools with the R code below. Hint: the problem specification is the same as exercise 1, except <span class="math inline">\(a = \nu_0/2\)</span> and <span class="math inline">\(b = \nu_0 \sigma_0^2/2\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>school1 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/school1.csv"</span>)</span>
@@ -204,6 +204,7 @@ Y | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>3.12 from Hoff.</p>
 
 
 </section>

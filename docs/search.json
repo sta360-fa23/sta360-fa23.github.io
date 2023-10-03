@@ -634,14 +634,14 @@
     "href": "hw/hw04.html",
     "title": "Homework 4",
     "section": "",
-    "text": "Let\n\\[\n\\begin{aligned}\nY | \\theta, \\sigma^2 &\\sim N(\\theta, \\sigma^2)\\\\\n\\theta | \\sigma^2 &\\sim N(\\mu_0, \\sigma^2/\\kappa_0)\\\\\n1/ \\sigma^2 &\\sim \\text{gamma}(a, b)\n\\end{aligned}\n\\]\n\nDerive and simplify the joint pdf \\(p(y_1, \\ldots y_n | \\theta, \\sigma^2)\\)\nDerive the posterior of the precision, \\(p(\\frac{1}{\\sigma^2}| y_1, \\ldots y_n)\\).\nDerive the posterior of \\(\\theta\\), \\(p(\\theta | y_1, \\ldots y_n)\\)\n\nHint: it may be helpful (notation) to re-define \\(\\gamma = \\frac{1}{\\sigma^2}\\)"
+    "text": "Let\n\\[\n\\begin{aligned}\nY | \\theta, \\sigma^2 &\\sim N(\\theta, 1/\\gamma)\\\\\n\\theta | \\sigma^2 &\\sim N(\\mu_0, 1/\\gamma \\kappa_0)\\\\\n\\gamma &\\sim \\text{gamma}(a, b)\n\\end{aligned}\n\\]\nso \\(\\gamma\\) is the precision (inverse-variance) of the normal distribution.\n\nDerive and simplify the joint pdf \\(p(y_1, \\ldots y_n | \\theta, \\gamma)\\)\nDerive the posterior of the precision, \\(p(\\gamma| y_1, \\ldots y_n)\\).\nDerive the posterior of \\(\\theta\\), \\(p(\\theta | y_1, \\ldots y_n)\\)"
   },
   {
     "objectID": "hw/hw04.html#exercise-2",
     "href": "hw/hw04.html#exercise-2",
     "title": "Homework 4",
     "section": "Exercise 2",
-    "text": "Exercise 2\nExercise 5.1 from Hoff. You can read in the data from the three schools with the R code below. Hint: the problem specification is just like in exercise 1, except \\(a = \\nu_0/2\\) and \\(b = \\nu_0 \\sigma_0^2/2\\).\n\nlibrary(tidyverse)\nschool1 = read_csv(\"https://sta360-fa23.github.io/data/school1.csv\")\nschool2 = read_csv(\"https://sta360-fa23.github.io/data/school2.csv\")\nschool3 = read_csv(\"https://sta360-fa23.github.io/data/school3.csv\")"
+    "text": "Exercise 2\nExercise 5.1 from Hoff. You can read in the data from the three schools with the R code below. Hint: the problem specification is the same as exercise 1, except \\(a = \\nu_0/2\\) and \\(b = \\nu_0 \\sigma_0^2/2\\).\n\nlibrary(tidyverse)\nschool1 = read_csv(\"https://sta360-fa23.github.io/data/school1.csv\")\nschool2 = read_csv(\"https://sta360-fa23.github.io/data/school2.csv\")\nschool3 = read_csv(\"https://sta360-fa23.github.io/data/school3.csv\")"
   },
   {
     "objectID": "notes/normalModel1.html#sampling-from-the-joint-posterior",
@@ -655,6 +655,6 @@
     "href": "hw/hw04.html#exercise-3",
     "title": "Homework 4",
     "section": "Exercise 3",
-    "text": "Exercise 3"
+    "text": "Exercise 3\n3.12 from Hoff."
   }
 ]

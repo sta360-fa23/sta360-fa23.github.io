@@ -65,7 +65,7 @@ schedule %>%
 |      | Tue Sep 26 | catch up / review                              |         |                                                                        |                                |
 |      | Thu Sep 28 | [Exam I](/notes/exam-notes.html)                                         |         |                                                                        |                                |
 | 6    | Mon Oct 02 | NO LAB                                                |         |                                                                        |                                |
-|      | Tue Oct 03 | the normal model II                            | Ch. 5   |                                                                        | hw 4                           |
+|      | Tue Oct 03 | the normal model II                            | Ch. 5   |                                                                        | [hw 4](/hw/hw04.html)                            |
 |      | Thu Oct 05 | Gibbs sampling                                 | Ch. 6   |                                                                        |                                |
 | 7    | Mon Oct 09 |                                                |         |                                                                        |                                |
 |      | Tue Oct 10 | MCMC diagnostics                               | Ch. 6   |                                                                        | hw 5                           |
