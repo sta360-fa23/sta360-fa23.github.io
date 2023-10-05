@@ -66,18 +66,18 @@ schedule %>%
 |      | Thu Sep 28 | [Exam I](/notes/exam-notes.html)                                         |         |                                                                        |                                |
 | 6    | Mon Oct 02 | NO LAB                                                |         |                                                                        |                                |
 |      | Tue Oct 03 | the normal model II                            | Ch. 5   |                                                                        | [hw 4](/hw/hw04.html)                            |
-|      | Thu Oct 05 | estimators                                 | Ch. 6   |                          [💻](/notes/lec07-estimators.html)                                               |                                |
+|      | Thu Oct 05 | estimators                                 | Ch. 5   |                          [💻](/notes/lec07-estimators.html), [📝](/notes/estimator-notes.pdf)                                              |                                |
 | 7    | Mon Oct 09 |                                                |         |                                                                        |                                |
 |      | Tue Oct 10 | Gibbs sampling                                | Ch. 6   |                                                                        | hw 5                           |
-|      | Thu Oct 12 | MCMC diagnostics                    | Ch. 7   |                                                                        |                                |
+|      | Thu Oct 12 | MCMC diagnostics                    | Ch. 6   |                                                                        |                                |
 | 8    | Mon Oct 16 | NO LAB                                       |         |                                                                        |                                |
 |      | Tue Oct 17 | NO CLASS                                       |         |                                                                        |                                |
 |      | Thu Oct 19 | multivariate normal (mvn)                       | Ch. 7   |                                                                        | hw 6                           |
 | 9    | Mon Oct 23 |                                                |         |                                                                        |                                |
-|      | Tue Oct 24 | mvn parameter estimation                   | Ch. 8   |                                                                        |                                |
+|      | Tue Oct 24 | mvn parameter estimation                   | Ch. 7   |                                                                        |                                |
 |      | Thu Oct 26 | hierarchical modeling intro                           | Ch. 8   |                                                                        | hw 7                           |
 | 10   | Mon Oct 30 |                                                |         |                                                                        |                                |
-|      | Tue Oct 31 | hierarchical examples                           | Ch. 9   |                                                                        |                                |
+|      | Tue Oct 31 | hierarchical examples                           | Ch. 8   |                                                                        |                                |
 |      | Thu Nov 02 | Bayesian regression I                          | Ch. 9   |                                                                        | hw 8                           |
 | 11   | Mon Nov 06 |                                                |         |                                                                        |                                |
 |      | Tue Nov 07 | Bayesian regression II                                | Ch. 9   |                                                                        |                                |
