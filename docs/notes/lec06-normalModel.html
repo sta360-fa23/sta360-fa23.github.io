@@ -211,7 +211,7 @@ Y | \theta, \sigma^2  \sim N(\theta, \sigma^2).
 <p>The density</p>
 <p><span class="math display">\[
 \begin{aligned}
-p(y ~|~ \theta, \sigma^2 ) &amp;= (2\pi\sigma^2)^{-1/2} e^{-\frac{1}{2\sigma^2} (x-\theta)^2},\\
+p(y ~|~ \theta, \sigma^2 ) &amp;= (2\pi\sigma^2)^{-1/2} e^{-\frac{1}{2\sigma^2} (y-\theta)^2},\\
 y &amp;\in \mathbb{R},\\
 \theta &amp;\in \mathbb{R},\\
 \sigma &amp;\in \mathbb{R}^+.
@@ -250,7 +250,7 @@ Warning
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="normalModel1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="lec06-normalModel_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -437,7 +437,7 @@ Y_i | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>true.theta <span class="ot">=</span> <span class="dv">4</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>true.sigma <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, true.theta, true.sigma)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, true.theta, true.sigma)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ybar <span class="ot">=</span> <span class="fu">mean</span>(y) <span class="co"># sample mean</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(y) <span class="co"># sample size</span></span>
@@ -470,7 +470,7 @@ Y_i | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">TeX</span>(<span class="st">"$p(</span><span class="sc">\\</span><span class="st">theta, </span><span class="sc">\\</span><span class="st">sigma^2 | y_1, </span><span class="sc">\\</span><span class="st">ldots y_n)$"</span>)) <span class="sc">+</span></span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="normalModel1_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="lec06-normalModel_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
