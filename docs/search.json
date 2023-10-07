@@ -873,5 +873,33 @@
     "title": "Estimators",
     "section": "Extra practice",
     "text": "Extra practice\n\n\n\n\n\nSuppose you know that you know Gentoo penguins are closely related to Chinstrap penguins. Previously, you’ve measured the bill length of three Gentoo penguins and found their mean bill length to be 46.2. Accordingly, you set \\(\\mu_0 = 46.2\\).\n\n\n\n\n\n\n\n\nSuppose (for illustrative purposes) that you know the true population mean and variance for Chinstrap penguin bill length,\n\\[\n\\begin{aligned}\n\\theta_0 &= 48.8\\\\\n\\sigma^2 &= 3.3.\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\nCompute \\(MSE[\\hat{\\theta}_e|\\theta_0]\\) and \\(MSE[\\hat{\\theta_b}|\\theta_0]\\) and plot the ratio \\(MSE[\\hat{\\theta}_b]/MSE[\\hat{\\theta}_e|\\theta_0]\\) as a function of \\(n\\) for \\(\\kappa_0 = 0, 1, 2, 3\\)."
+  },
+  {
+    "objectID": "quizzes/quiz04.html",
+    "href": "quizzes/quiz04.html",
+    "title": "Quiz 4",
+    "section": "",
+    "text": "Exercise 1\n\\[\nY | \\theta, \\sigma^2 \\sim N(\\theta, \\sigma^2)\n\\]\nWhat is a conjugate class of priors for \\(\\theta | \\sigma^2\\)?\n\n\nExercise 2\nTRUE or FALSE\nAn estimator is a random variable.\n\n\nExercise 3\nLet \\(\\theta_0\\) be the true value of \\(\\theta\\).\nIf \\(E[\\hat{\\theta} = \\theta_0 | \\theta]\\), we say \\(\\hat{\\theta}\\) is a ____ estimator of \\(\\theta\\).\n\n\n\n03:00"
+  },
+  {
+    "objectID": "slides/lab4.html#exercise",
+    "href": "slides/lab4.html#exercise",
+    "title": "Extra practice",
+    "section": "Exercise",
+    "text": "Exercise\nA data scientist at a small subscriber-based tech company models the number of new subscribers in a day as \\(Y|\\theta \\sim \\text{Poisson}(\\theta)\\) with prior \\(\\theta \\sim \\text{gamma}(a,b)\\). A priori, the data scientist believes that there are on average 20 signups per day and 90% of the time there are between approximately 1 and 50 signups on a given day.\na\nFind suitable \\(a\\) and \\(b\\) that satisfy the data scientist’s prior beliefs.\nVerify how well your prior aligns with this belief using Monte Carlo sampling to generate the prior predictive distribution, \\(p(\\tilde{y}) = \\int p(\\tilde{y}, \\theta)d\\theta\\).\n\n\n\nb\nAfter one month the data scientist observes the following daily subscriber counts:\n\ny = c(10, 21, 19, 16, 20, 18, 35, 16, 23, 26, 20, 21, 23, 19, 18, 20, 23, 18, 21, 16, 15, 15, 20, 22, 19, 25)\n\nThe data scientist is fundamentally interested in the variance of subscriber counts per day. Is the Poisson model appropriate for this data?\nReport \\(p(\\tilde{S}^2 > s^2_{obs} | y_1,\\ldots y_n)\\) where \\(\\tilde{S}^2\\) is the posterior predictive sample variance and \\(s^2_{obs}\\) is the observed sample variance (\\(s^2_{obs} = 21.3\\)). To generate samples under the posterior predictive distribution, use the prior from part (a)."
+  },
+  {
+    "objectID": "slides/lab4.html#bias",
+    "href": "slides/lab4.html#bias",
+    "title": "Extra practice",
+    "section": "Bias",
+    "text": "Bias\nLet \\(Y_1,\\ldots Y_n\\) be iid random variables with expectation \\(\\theta\\) and variance \\(\\sigma^2\\).\nShow that \\(\\frac{1}{n} \\sum_{i = 1}^n (Y_i -\\bar{Y})\\) is a biased estimator of \\(\\sigma^2\\).\n\n\n🔗 sta360-fa23.github.io"
+  },
+  {
+    "objectID": "slides/lab4.html#exercise-1",
+    "href": "slides/lab4.html#exercise-1",
+    "title": "Extra practice",
+    "section": "Exercise",
+    "text": "Exercise\nLet \\(Y_1,\\ldots Y_n\\) be iid random variables with expectation \\(\\theta\\) and variance \\(\\sigma^2\\).\nShow that \\(\\frac{1}{n} \\sum_{i = 1}^n (Y_i -\\bar{Y})^2\\) is a biased estimator of \\(\\sigma^2\\).\n\n\n🔗 sta360-fa23.github.io"
   }
 ]
