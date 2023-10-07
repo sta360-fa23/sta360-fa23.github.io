@@ -10,7 +10,7 @@ format:
 
 ## Exercise
 
-A data scientist at a small subscriber-based tech company models the number of new subscribers in a day as $Y|\theta \sim \text{Poisson}(\theta)$ with prior $\theta \sim \text{gamma}(a,b)$. A priori, the data scientist believes that there are on average 20 signups per day and 90% of the time there are between approximately 1 and 50 signups on a given day.
+A data scientist at a small subscriber-based tech company models the number of new subscribers in a day as $Y|\theta \sim \text{Poisson}(\theta)$ with prior $\theta \sim \text{gamma}(a,b)$. A priori, the data scientist believes that there are on average 20 signups per day and 90% of the time there are between approximately 3 and 50 signups on a given day.
 
 #### a
 
@@ -67,8 +67,6 @@ tailProb
 # tail probability of 0.363
 # the Poisson model is probably suitable for making inference about the variance here
 ```
-
-
 
 
 # Estimator bias
