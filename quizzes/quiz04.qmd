@@ -23,7 +23,7 @@ An estimator is a random variable.
 
 Let $\theta_0$ be the true value of $\theta$.
 
-If $E[\hat{\theta} = \theta_0 | \theta]$, we say $\hat{\theta}$ is a ____ estimator of $\theta$.
+If $E[\hat{\theta}| \theta = \theta_0] = \theta_0$, we say $\hat{\theta}$ is a ____ estimator of $\theta$.
 
 
 ```{r}

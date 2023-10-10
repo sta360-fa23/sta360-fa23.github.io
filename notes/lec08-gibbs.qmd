@@ -173,6 +173,16 @@ df %>%
        fill = TeX("$p(\\theta, 1/\\sigma^2 | y_1, \\ldots y_n)$")) +
   theme_bw()
 ```
+
+```{r}
+#| echo: false
+#| eval: false
+hist(PHI[,1])
+
+# p(theta | y_1,...y_n) = int p(theta, sigma^2 | y_1...y_n) d sigma^2
+```
+
+
 ## code
 
 ```{r}
