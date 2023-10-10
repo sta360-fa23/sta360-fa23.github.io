@@ -68,8 +68,8 @@ schedule %>%
 |      | Tue Oct 03 | the normal model II                            | Ch. 5   |                                                                        | [hw 4](/hw/hw04.html)                            |
 |      | Thu Oct 05 | estimators                                 | Ch. 5   |                          [💻](/notes/lec07-estimators.html), [📝](/notes/estimator-notes.pdf)                                              |                                |
 | 7    | Mon Oct 09 | lab: predictive checks and bias                                            |        |       [💻](/slides/lab4.html)                                                                  |                                |
-|      | Tue Oct 10 | Gibbs sampling                                | Ch. 6   |                                                                        | hw 5                           |
-|      | Thu Oct 12 | MCMC diagnostics                    | Ch. 6   |                                                                        |                                |
+|      | Tue Oct 10 | Gibbs sampling                                | Ch. 6   |                                                                        | [ec](/hw/extra-credit.html)                           |
+|      | Thu Oct 12 | MCMC diagnostics                    | Ch. 6   |                                                                        |           hw 5                     |
 | 8    | Mon Oct 16 | NO LAB                                       |         |                                                                        |                                |
 |      | Tue Oct 17 | NO CLASS                                       |         |                                                                        |                                |
 |      | Thu Oct 19 | multivariate normal (mvn)                       | Ch. 7   |                                                                        | hw 6                           |
