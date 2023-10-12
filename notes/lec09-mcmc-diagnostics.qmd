@@ -137,7 +137,7 @@ mu = c(-3, 0, 3) # conditional means
 s2 = rep(1 / 3, 3) # conditional sds
 d = c(1, 2, 3) # sample space of delta
 N = 1000 # chain length
-w = c(.45, .1, .4) # delta probabilities
+w = c(.45, .1, .45) # delta probabilities
 
 ## Gibbs sampler ##
 set.seed(360)
@@ -215,41 +215,30 @@ The picture to visualize is that of a particle moving through parameter space.
 :::
 
 ```{r}
-# playground
 #| echo: false
 #| eval: false
-library(gganimate)
-set.seed(360)
 
-delta = sample(d, size = N, prob = c(.45, .1, .4), replace = TRUE)
-theta = rnorm(N, mean = mu[delta], sd = sd[delta])
+# library(gganimate)
+# set.seed(360)
+# 
+# delta = sample(d, size = N, prob = c(.45, .1, .4), replace = TRUE)
+# theta = rnorm(N, mean = mu[delta], sd = sd[delta])
+# 
+# df$transition_value = 1:1000
+# df_true = data.frame(delta, theta)
 
-df$transition_value = 1:1000
-df_true = data.frame(delta, theta)
-# df_true %>%
-#   ggplot(aes(x = theta, y = delta)) + 
-#   geom_bin2d(bins = 25) +
-#   theme_bw() + 
-#   labs(y = TeX("\\delta"), 
-#        x = TeX("\\theta")) +
-#   geom_point(data = df, aes(x = theta, y = delta), color = "red") +
-#   transition_time(transition_value) +
-#   ease_aes('linear')
+# a = df %>%
+#   slice_head(n = 5) %>%
+#   ggplot(aes(x = theta, y = delta)) +
+#   geom_bin2d(data = df_true, aes(x = theta, y = delta), bins = 25, alpha = 0.3) +
+#   geom_point(color = "red") + 
+#   # transition_time(time = transition_value) +
+#   transition_reveal(along = theta) +
+#   theme_bw()
 
-a = df %>%
-  slice_head(n = 5) %>%
-  ggplot(aes(x = theta, y = delta)) +
-  geom_bin2d(data = df_true, aes(x = theta, y = delta), bins = 25, alpha = 0.3) +
-  geom_point(color = "red") + 
-  # transition_time(time = transition_value) +
-  transition_reveal(along = theta) +
-  # shadow_wake(wake_length = 1, size = NULL, alpha = NULL, wrap = FALSE) +
-  # ease_aes("linear",) +
-  theme_bw()
-
-animate(a, 
-        duration = 3, # = 365 days/yr x 3 years x 0.25 sec/day = 274 seconds
-        fps  =  1)
+# animate(a, 
+#         duration = 3,
+#         fps  =  1)
 ```
 
 
