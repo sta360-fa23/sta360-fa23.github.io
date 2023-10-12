@@ -15,7 +15,7 @@ format:
 
 3. In general, the inferences we wish to make, e.g. $p(g(\boldsymbol{\theta}) \in A)$, are complicated or impossible to compute analytically. Here, **Monte Carlo** approximation helps. The key idea is that we use *independent samples from the posterior* as an empirical approximation to make inference.
 
-4. For non-conjugate models, obtaining samples from the posterior can be hard. We saw last time that **Gibbs sampling** lets us generate a series of *dependent samples from the posterior* as an empirical approximation to make inference. The key idea is that if we sample a *large number of samples* $S$, we should have, some number $N<S$ effectively independent samples.
+4. For non-conjugate models, obtaining samples from the posterior can be hard. We saw last time that **Gibbs sampling** lets us generate a series of *dependent samples from the posterior* as an empirical approximation to make inference. The key idea is that if we sample a *large number of samples* $S$, we should have some number $S_{eff}<S$ effectively independent samples.
 
 - Gibbs sampling is one of many methods (but not the only method) to **construct a Markov chain comprised of dependent samples from the target distribution**.
 
@@ -56,7 +56,6 @@ theta = rnorm(N, mean = mu[delta], sd = sd[delta])
 df = data.frame(delta, theta)
 df %>%
   ggplot(aes(x = theta, y = delta)) + 
-  # geom_point() + 
   geom_bin2d(bins = 25) +
   theme_bw() + 
   labs(y = TeX("\\delta"), 
@@ -73,18 +72,17 @@ set.seed(360)
 
 ## fixed values ## 
 mu = c(-3, 0, 3) # conditional means
-s2 = rep(1 / 3, 3) # conditional variance
+sd = rep(sqrt(1 / 3), 3) # conditional sds
 d = c(1, 2, 3) # sample space of delta
-N = 1000 # chain length
-w = c(.45, .1, .4) # delta probabilities
+N = 1000 # number of samples
 
-delta = sample(d, size = N, prob = w, replace = TRUE)
-theta = rnorm(N, mean = mu[delta], sd = sqrt(s2[delta]))
+delta = sample(d, size = N, prob = c(.45, .1, .4), replace = TRUE)
+theta = rnorm(N, mean = mu[delta], sd = sd[delta])
 
 df = data.frame(delta, theta)
 df %>%
   ggplot(aes(x = theta, y = delta)) + 
-  geom_point() + 
+  geom_bin2d(bins = 25) +
   theme_bw() + 
   labs(y = TeX("\\delta"), 
        x = TeX("\\theta"))
@@ -212,9 +210,48 @@ Exercise:
 - what do you notice from the traceplot above? Hint: you can imagine hopping from delta islands in the first figure of the joint target over parameter space.
 
 
+::: callout-important
 The picture to visualize is that of a particle moving through parameter space.
+:::
 
-- offline demo
+```{r}
+# playground
+#| echo: false
+#| eval: false
+library(gganimate)
+set.seed(360)
+
+delta = sample(d, size = N, prob = c(.45, .1, .4), replace = TRUE)
+theta = rnorm(N, mean = mu[delta], sd = sd[delta])
+
+df$transition_value = 1:1000
+df_true = data.frame(delta, theta)
+# df_true %>%
+#   ggplot(aes(x = theta, y = delta)) + 
+#   geom_bin2d(bins = 25) +
+#   theme_bw() + 
+#   labs(y = TeX("\\delta"), 
+#        x = TeX("\\theta")) +
+#   geom_point(data = df, aes(x = theta, y = delta), color = "red") +
+#   transition_time(transition_value) +
+#   ease_aes('linear')
+
+a = df %>%
+  slice_head(n = 5) %>%
+  ggplot(aes(x = theta, y = delta)) +
+  geom_bin2d(data = df_true, aes(x = theta, y = delta), bins = 25, alpha = 0.3) +
+  geom_point(color = "red") + 
+  # transition_time(time = transition_value) +
+  transition_reveal(along = theta) +
+  # shadow_wake(wake_length = 1, size = NULL, alpha = NULL, wrap = FALSE) +
+  # ease_aes("linear",) +
+  theme_bw()
+
+animate(a, 
+        duration = 3, # = 365 days/yr x 3 years x 0.25 sec/day = 274 seconds
+        fps  =  1)
+```
+
 
 Let's see how well our samples of $\theta$ approximate the true marginal $p(\theta)$.
 
@@ -273,11 +310,15 @@ More precisely, the **effective sample size** (ESS) is the value $S_{eff}$ such 
 $$
 Var_{MCMC}[\bar{\phi}] = \frac{Var[\phi]}{S_{eff}}.
 $$
-In words, it's the number of independent Monte Carlo samples necessary to give the same precision as the MCMC samples.
+In words, it's the number of independent Monte Carlo samples necessary to give the same precision as the MCMC samples. For comparison, recall $Var_{MC}[\bar{\phi}] = Var[\phi]/S$
 
-- **Stationarity**
+- **Stationarity** is when samples taken in one part of the chain have a similar distribution to samples taken from other parts of the chain. Intuitively, we want the particle to move from our arbitrary starting point to regions of higher probability$^*$, then we will say it has *achieved stationarity*. 
 
-- **Monte Carlo variance**
+Traceplots are a great way to visually inspect whether a chain has **converged**, or *achieved stationarity*. In the traceplot above we can see that samples from the beginning of the chain look very different than samples at the end.
+
+$^*$ recall that probability is really a volume in high dimensions of parameter space, and so it is not enough for a pdf to evaluate to a high value, there must also be sufficient volume.
+
+- **Mixing**: how well the particle moves between sets of high probability. Some might refer to this as how well the particle sojourns across the "typical set" (regions of high probability).
 
 ## Extra practice
 
