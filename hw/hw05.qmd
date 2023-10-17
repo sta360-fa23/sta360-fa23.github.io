@@ -11,7 +11,7 @@ format:
 
 Risk calculation: Let $Y_1, \ldots, Y_n | \theta \sim \text{ i.i.d. Poission}(\theta)$.
 
-a. For the case that $\theta \sim \text{gamma}(a, b)$, show that the posterior mean of $\theta$ given $Y_,1 \ldots Y_n$ can be written as $\hat{\theta}_w = w \bar{y} + (1-w)\mu$ for values $w$ and $\mu$ that depend on $n$, $a$ and $b$. 
+a. For the case that $\theta \sim \text{gamma}(a, b)$, show that the posterior mean of $\theta$ given $Y_1, \ldots, Y_n$ can be written as $\hat{\theta}_w = w \bar{y} + (1-w)\mu$ for values $w$ and $\mu$ that depend on $n$, $a$ and $b$. 
 
 b. Now consider how good this estimator is for a specific value of $\theta$. Compute $E[\hat{\theta}_w|\theta]$, $V[\hat{\theta}_w|\theta]$, and
 $E[\bar{y}|\theta]$ and $V[\bar{y}|\theta]$.
