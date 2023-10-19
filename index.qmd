@@ -72,7 +72,7 @@ schedule %>%
 |      | Thu Oct 12 | MCMC diagnostics                               | Ch. 6   |                   [💻](/notes/lec09-mcmc-diagnostics.html)                   | [hw 5](/hw/hw05.html)       |
 | 8    | Mon Oct 16 | NO LAB                                         |         |                                                                              |                             |
 |      | Tue Oct 17 | NO CLASS                                       |         |                                                                              |                             |
-|      | Thu Oct 19 | multivariate normal (mvn)                      | Ch. 7   |                                                                              |                             |
+|      | Thu Oct 19 | multivariate normal (mvn)                      | Ch. 7   | [💻](/notes/lec10-mvn.html)                                                                              |                             |
 | 9    | Mon Oct 23 |                                                |         |                                                                              |                             |
 |      | Tue Oct 24 | mvn parameter estimation                       | Ch. 7   |                                                                              | hw 6                        |
 |      | Thu Oct 26 | hierarchical modeling intro                    | Ch. 8   |                                                                              |                             |
