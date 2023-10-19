@@ -200,7 +200,7 @@
     "href": "index.html",
     "title": "Bayesian methods and modern statistics",
     "section": "",
-    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nlab: welcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO LAB\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\nlab: MLE and MAP estimator\n\n💻\n\n\n\n\nTue Sep 12\nreliability, exp. families\nCh. 3\n💻, 📝\n\n\n\n\nThu Sep 14\nprediction, Monte Carlo intro\nCh. 4\n💻, 📝\nhw 3\n\n\n4\nMon Sep 18\nlab: prior sensitivity and change of variables\n\n💻\n\n\n\n\nTue Sep 19\nMonte Carlo integration\nCh. 4\n💻\n\n\n\n\nThu Sep 21\nthe normal model\nCh. 5\n💻\n\n\n\n5\nMon Sep 25\npractice and review\n\n💻\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\nNO LAB\n\n\n\n\n\n\nTue Oct 03\nthe normal model II\nCh. 5\n\nhw 4\n\n\n\nThu Oct 05\nestimators\nCh. 5\n💻, 📝\n\n\n\n7\nMon Oct 09\nlab: predictive checks and bias\n\n💻\n\n\n\n\nTue Oct 10\nGibbs sampling\nCh. 6\n💻\nec\n\n\n\nThu Oct 12\nMCMC diagnostics\nCh. 6\n💻\nhw 5\n\n\n8\nMon Oct 16\nNO LAB\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\nmultivariate normal (mvn)\nCh. 7\n\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\nmvn parameter estimation\nCh. 7\n\nhw 6\n\n\n\nThu Oct 26\nhierarchical modeling intro\nCh. 8\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\nhierarchical examples\nCh. 8\n\nhw 7\n\n\n\nThu Nov 02\nBayesian regression I\nCh. 9\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\nBayesian regression II\nCh. 9\n\nhw 8\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\nreview\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\nNO LAB\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\nhw 9\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
+    "text": "Week\nDate\nTopic\nReading\nNotes\nAssignment\n\n\n\n\n1\nMon Aug 28\nlab: welcome\n\n💻\nhello R\n\n\n\nTue Aug 29\nintro, history, notation\nCh. 2\n\nhw 0\n\n\n\nThu Aug 31\nprobability, exchangeability\nCh. 2\n💻\nhw 1\n\n\n2\nMon Sep 04\nNO LAB\n\n\n\n\n\n\nTue Sep 05\nsingle parameter estimation\nCh. 3\n💻\n\n\n\n\nThu Sep 07\nPoisson model and conjugacy\nCh. 3\n\nhw 2\n\n\n3\nMon Sep 11\nlab: MLE and MAP estimator\n\n💻\n\n\n\n\nTue Sep 12\nreliability, exp. families\nCh. 3\n💻, 📝\n\n\n\n\nThu Sep 14\nprediction, Monte Carlo intro\nCh. 4\n💻, 📝\nhw 3\n\n\n4\nMon Sep 18\nlab: prior sensitivity and change of variables\n\n💻\n\n\n\n\nTue Sep 19\nMonte Carlo integration\nCh. 4\n💻\n\n\n\n\nThu Sep 21\nthe normal model\nCh. 5\n💻\n\n\n\n5\nMon Sep 25\npractice and review\n\n💻\n\n\n\n\nTue Sep 26\ncatch up / review\n\n\n\n\n\n\nThu Sep 28\nExam I\n\n\n\n\n\n6\nMon Oct 02\nNO LAB\n\n\n\n\n\n\nTue Oct 03\nthe normal model II\nCh. 5\n\nhw 4\n\n\n\nThu Oct 05\nestimators\nCh. 5\n💻, 📝\n\n\n\n7\nMon Oct 09\nlab: predictive checks and bias\n\n💻\n\n\n\n\nTue Oct 10\nGibbs sampling\nCh. 6\n💻\nec\n\n\n\nThu Oct 12\nMCMC diagnostics\nCh. 6\n💻\nhw 5\n\n\n8\nMon Oct 16\nNO LAB\n\n\n\n\n\n\nTue Oct 17\nNO CLASS\n\n\n\n\n\n\nThu Oct 19\nmultivariate normal (mvn)\nCh. 7\n💻\n\n\n\n9\nMon Oct 23\n\n\n\n\n\n\n\nTue Oct 24\nmvn parameter estimation\nCh. 7\n\nhw 6\n\n\n\nThu Oct 26\nhierarchical modeling intro\nCh. 8\n\n\n\n\n10\nMon Oct 30\n\n\n\n\n\n\n\nTue Oct 31\nhierarchical examples\nCh. 8\n\nhw 7\n\n\n\nThu Nov 02\nBayesian regression I\nCh. 9\n\n\n\n\n11\nMon Nov 06\n\n\n\n\n\n\n\nTue Nov 07\nBayesian regression II\nCh. 9\n\nhw 8\n\n\n\nThu Nov 09\n\n\n\n\n\n\n12\nMon Nov 13\n\n\n\n\n\n\n\nTue Nov 14\nreview\n\n\n\n\n\n\nThu Nov 16\nExam II\n\n\n\n\n\n13\nMon Nov 20\nNO LAB\n\n\n\n\n\n\nTue Nov 21\n\n\n\n\n\n\n\nThu Nov 23\nNO CLASS\n\n\n\n\n\n14\nMon Nov 27\n\n\n\n\n\n\n\nTue Nov 28\n\n\n\nhw 9\n\n\n\nThu Nov 30\n\n\n\n\n\n\n15\nMon Dec 04\n\n\n\n\n\n\n\nTue Dec 05\n\n\n\n\n\n\n\nThu Dec 07"
   },
   {
     "objectID": "slides/lab1.html#example-normal-likelihood",
@@ -1006,5 +1006,40 @@
     "title": "Homework 5",
     "section": "Exercise 3",
     "text": "Exercise 3\n6.2 from Hoff. Note the typo: \\(1/\\sigma_j^2\\) is gamma, not \\(1/\\sigma_j\\). Use the code below to load the data.\n\nglucose = readr::read_csv(\"https://sta360-fa23.github.io/data/glucose.csv\")"
+  },
+  {
+    "objectID": "hw/hw06.html",
+    "href": "hw/hw06.html",
+    "title": "Homework 6",
+    "section": "",
+    "text": "6.3 from Hoff. You can simulate from a constrained normal distribution with mean mean and standard deviation sd, constrained to lie in the interval \\((a,b)\\) using the following function:\n\nrcnorm<-function(n, mean=0, sd=1, a=-Inf, b=Inf){\n  u = runif(n, pnorm((a - mean) / sd), pnorm((b - mean) / sd))\n  mean + (sd * qnorm(u))\n}\n\nNote that you can use this function to simulate a vector of constrained normal random variables, each with a potentially different mean, standard deviation, and constraints."
+  },
+  {
+    "objectID": "hw/hw06.html#exercise-2",
+    "href": "hw/hw06.html#exercise-2",
+    "title": "Homework 6",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nShow that if \\(W \\sim \\text{Wishart}(m, S)\\) then \\(E[W] = mS\\)."
+  },
+  {
+    "objectID": "hw/hw06.html#exercise-3",
+    "href": "hw/hw06.html#exercise-3",
+    "title": "Homework 6",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nSuppose \\(Y\\) is a random normal vector \\(Y \\sim N_p(\\theta, \\Sigma)\\). Let \\(Y_A\\) be the first \\(p_1\\) elements of \\(Y\\) and \\(Y_B\\) be the last \\(p_2 = p - p_1\\) elements, so that \\(Y = (Y_A, Y_B)\\). Similarly, write \\(\\theta = (\\theta_A, \\theta_B)\\). Finally, let\n\\[\n\\Sigma^{-} \\equiv \\Psi = \\left[ {\\begin{array}{cc}\n   \\Psi_{AA} & \\Psi_{AB} \\\\\n   \\Psi_{BA} & \\Psi_{BB} \\\\\n  \\end{array} } \\right]\n\\]\nand note that \\(\\Psi_{AB} = \\Psi_{BA}^T\\). Find the conditional distribution of \\(Y_B\\) given \\(Y_A\\) in terms of \\(\\theta_A\\), \\(\\theta_B\\) and components of \\(\\Psi\\). Try to interpret how \\(E[Y_B|Y_A]\\) differs from \\(E[Y_B]\\) and how \\(V[Y_B|Y_A]\\) differs from \\(V[Y_B]\\).\n\nIdentities for exercise 3\nSome of the following identities will be helpful for interpretation.\nLet\n\\[\n\\Sigma = \\left[ {\\begin{array}{cc}\n   \\Sigma_{AA} & \\Sigma_{AB} \\\\\n   \\Sigma_{BA} & \\Sigma_{BB} \\\\\n  \\end{array} } \\right]\n\\]\nand\n\\[\n\\Psi = \\left[ {\\begin{array}{cc}\n   \\Psi_{AA} & \\Psi_{AB} \\\\\n   \\Psi_{BA} & \\Psi_{BB} \\\\\n  \\end{array} } \\right].\n\\]\nThen\n\\[\n\\begin{aligned}\n\\Psi_{AA}^- &= \\Sigma_{AA} - \\Sigma_{AB} \\Sigma_{BB}^- \\Sigma_{BA}\\\\\n\\Psi_{BB}^- &= \\Sigma_{BB} - \\Sigma_{BA} \\Sigma_{AA}^- \\Sigma_{AB}\\\\\n\\Psi_{AB} &= -\\Psi_{AA} \\Sigma_{AB} \\Sigma_{BB}^-\\\\\n\\Psi_{BA} &= -\\Psi_{BB} \\Sigma_{BA} \\Sigma_{AA}^-,\n\\end{aligned}\n\\]\nand note that \\(\\Sigma_{AB} = \\Sigma_{BA}^T\\) and \\(\\Psi_{AB} = \\Psi_{BA}^T\\)."
+  },
+  {
+    "objectID": "hw/hw06.html#useful-identities-for-exercise-3",
+    "href": "hw/hw06.html#useful-identities-for-exercise-3",
+    "title": "Homework 6",
+    "section": "Useful identities for exercise 3",
+    "text": "Useful identities for exercise 3\nLet\n\\[\n\\Sigma = \\left[ {\\begin{array}{cc}\n   \\Sigma_{AA} & \\Sigma_{AB} \\\\\n   \\Sigma_{BA} & \\Sigma_{BB} \\\\\n  \\end{array} } \\right]\n\\]\nand\n\\[\n\\Psi = \\left[ {\\begin{array}{cc}\n   \\Psi_{AA} & \\Psi_{AB} \\\\\n   \\Psi_{BA} & \\Psi_{BB} \\\\\n  \\end{array} } \\right].\n\\]\nThen\n\\[\n\\begin{aligned}\n\\Psi_{AA}^- &= \\Sigma_{AA} - \\Sigma_{AB} \\Sigma_{BB}^- \\Sigma_{BA}\\\\\n\\Psi_{BB}^- &= \\Sigma_{BB} - \\Sigma_{BA} \\Sigma_{AA}^- \\Sigma_{AB}\\\\\n\\Psi_{AB} &= -\\Psi_{AA} \\Sigma_{AB} \\Sigma_{BB}^-\\\\\n\\Psi_{BA} &= -\\Psi_{BB} \\Sigma_{BA} \\Sigma_{AA}^-,\n\\end{aligned}\n\\]\nand note that \\(\\Sigma_{AB} = \\Sigma_{BA}^T\\) and \\(\\Psi_{AB} = \\Psi_{BA}^T\\)."
+  },
+  {
+    "objectID": "notes/lec10-mvn.html",
+    "href": "notes/lec10-mvn.html",
+    "title": "Multivariate normal",
+    "section": "",
+    "text": "Motivating examples:\n\n\n\nTwenty two students take a reading comprehension test before and after receiving an instructional method. The result for each student is a bivariate vector \\(Y_i\\) that includes a pre- and post- instructional score.\n\n\n\n\n\n\n\n\n\n\n\n\\[\np(y)\n\\]"
   }
 ]
