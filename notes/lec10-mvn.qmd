@@ -269,7 +269,7 @@ eigen(Sigma)$values
 Sigma
 ```
 
-Exercise/show offline: why does this work? Hint: what is $cov(\boldsymbol{Z}^T \boldsymbol{Z})$?
+Exercise/show offline: why does this work? Hint: what is $cov[\bz]$?
 
 We can also use the `monomvn` package to simulate from a Wishart more succinctly,
 
