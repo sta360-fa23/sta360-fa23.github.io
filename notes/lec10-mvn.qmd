@@ -135,8 +135,7 @@ $$
 
 Exercise: 
 
-- simplify $\boldsymbol{b}^T A \bt + \bt ^T A \boldsymbol{b}$
-- if $\bt$ is a $p \times 1$ vector, what is the dimension of the result?
+- $\bt$ and $\boldsymbol{b}$ are $p \times 1$ vectors, simplify $\boldsymbol{b}^T A \bt + \bt ^T A \boldsymbol{b}$ what is the dimension of the result?
 - what's the dimension of $V[\by]$?
 
 ### matrix operations in R
