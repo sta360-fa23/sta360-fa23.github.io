@@ -271,9 +271,10 @@ Sigma
 
 Exercise/show offline: why does this work? Hint: what is $cov(\boldsymbol{Z}^T \boldsymbol{Z})$?
 
-We can automate the above with
+We can also use the `monomvn` package to simulate from a Wishart more succinctly,
 
 ```{r}
+#| warning: false
 library(monomvn)
 
 set.seed(360)
