@@ -73,7 +73,7 @@ schedule %>%
 | 8    | Mon Oct 16 | NO LAB                                         |         |                                                                              |                             |
 |      | Tue Oct 17 | NO CLASS                                       |         |                                                                              |                             |
 |      | Thu Oct 19 | multivariate normal (mvn)                      | Ch. 7   | [💻](/notes/lec10-mvn.html)                                                                              |                             |
-| 9    | Mon Oct 23 |                                                |         |                                                                              |                             |
+| 9    | Mon Oct 23 | full conditional review                                               |         |                                                                              |                             |
 |      | Tue Oct 24 | mvn parameter estimation                       | Ch. 7   |                                                                              | hw 6                        |
 |      | Thu Oct 26 | hierarchical modeling intro                    | Ch. 8   |                                                                              |                             |
 | 10   | Mon Oct 30 |                                                |         |                                                                              |                             |
