@@ -20,6 +20,14 @@ rcnorm<-function(n, mean=0, sd=1, a=-Inf, b=Inf){
 
 Note that you can use this function to simulate a vector of constrained normal random variables, each with a potentially different mean, standard deviation, and constraints.
 
+To load the data for this exercise, run the code below
+
+```{r}
+#| eval: false
+divorce = readr::read_csv("https://sta360-fa23.github.io/data/divorce.csv")
+```
+
+
 ## Exercise 2
 
 Show that if $W \sim \text{Wishart}(m, S)$ then $E[W] = mS$.
