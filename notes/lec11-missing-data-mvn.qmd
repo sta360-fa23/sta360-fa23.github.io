@@ -96,7 +96,7 @@ for(s in 1:1000) {
     iSa <- solve(Sigma[a, a])
     beta.j <- Sigma[b, a] %*% iSa
     s2.j   <- Sigma[b, b] - Sigma[b, a] %*% iSa %*% Sigma[a, b]
-    theta.j <- theta[b] + beta.j %*% t((t(Y.full[i, a]) - theta[a]))
+    theta.j <- theta[b] + beta.j %*% (as.matrix(Y.full[i, a]) - theta[a])
     Y.full[i, b] <- rmvnorm(1, theta.j, s2.j)
     }
   }
@@ -111,9 +111,15 @@ for(s in 1:1000) {
   }
 }
 
-#### Posterior mean and correlation matrix
+#### Posterior mean
 apply(THETA,2,mean)
+```
 
+```{r}
+#| echo: false
+#| eval: false
+
+# posterior mean correlation matrix
 COR <- array( dim=c(p,p,1000) )
 for(s in 1:1000)
 {
@@ -123,6 +129,7 @@ for(s in 1:1000)
 
 apply(COR,c(1,2),mean)
 ```
+
 
 Effective sample size of `THETA`
 

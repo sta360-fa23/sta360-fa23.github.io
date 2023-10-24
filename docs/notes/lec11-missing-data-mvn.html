@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    iSa <span class="ot">&lt;-</span> <span class="fu">solve</span>(Sigma[a, a])</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    beta.j <span class="ot">&lt;-</span> Sigma[b, a] <span class="sc">%*%</span> iSa</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    s2.j   <span class="ot">&lt;-</span> Sigma[b, b] <span class="sc">-</span> Sigma[b, a] <span class="sc">%*%</span> iSa <span class="sc">%*%</span> Sigma[a, b]</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    theta.j <span class="ot">&lt;-</span> theta[b] <span class="sc">+</span> beta.j <span class="sc">%*%</span> <span class="fu">t</span>((<span class="fu">t</span>(Y.full[i, a]) <span class="sc">-</span> theta[a]))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    theta.j <span class="ot">&lt;-</span> theta[b] <span class="sc">+</span> beta.j <span class="sc">%*%</span> (<span class="fu">as.matrix</span>(Y.full[i, a]) <span class="sc">-</span> theta[a])</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    Y.full[i, b] <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(<span class="dv">1</span>, theta.j, s2.j)</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  }</span>
@@ -278,31 +278,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 750 123.6179 70.78825 29.29216 30.90945 
 1000 123.6017 70.15369 29.22685 31.08064 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Posterior mean and correlation matrix</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Posterior mean</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(THETA,<span class="dv">2</span>,mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 123.60189  70.57085  29.16132  31.79352</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>COR <span class="ot">&lt;-</span> <span class="fu">array</span>( <span class="at">dim=</span><span class="fu">c</span>(p,p,<span class="dv">1000</span>) )</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(s <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  Sig<span class="ot">&lt;-</span><span class="fu">matrix</span>( SIGMA[s,] ,<span class="at">nrow=</span>p,<span class="at">ncol=</span>p)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  COR[,,s] <span class="ot">&lt;-</span> Sig<span class="sc">/</span><span class="fu">sqrt</span>( <span class="fu">outer</span>( <span class="fu">diag</span>(Sig),<span class="fu">diag</span>(Sig) ) )</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(COR,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            [,1]        [,2]        [,3]        [,4]
-[1,]  1.00000000 -0.05304617 -0.02145301 -0.02476015
-[2,] -0.05304617  1.00000000 -0.05261611 -0.05542203
-[3,] -0.02145301 -0.05261611  1.00000000 -0.24354650
-[4,] -0.02476015 -0.05542203 -0.24354650  1.00000000</code></pre>
 </div>
+<div class="cell">
+
 </div>
 <p>Effective sample size of <code>THETA</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># effective sample size of THETA </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(THETA, <span class="dv">2</span>, effectiveSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># effective sample size of THETA </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(THETA, <span class="dv">2</span>, effectiveSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  879.4569 3680.4806 4411.2164 7721.7664</code></pre>
 </div>
