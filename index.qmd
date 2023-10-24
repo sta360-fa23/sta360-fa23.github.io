@@ -74,7 +74,7 @@ schedule %>%
 |      | Tue Oct 17 | NO CLASS                                       |         |                                                                              |                             |
 |      | Thu Oct 19 | multivariate normal (mvn)                      | Ch. 7   | [💻](/notes/lec10-mvn.html)                                                                              |                             |
 | 9    | Mon Oct 23 | full conditional review                                               |         |                                                                              |                             |
-|      | Tue Oct 24 | mvn parameter estimation                       | Ch. 7   |                                                                              | [hw 6](/hw/hw06.html)                        |
+|      | Tue Oct 24 | mvn parameter estimation                       | Ch. 7   |  [💻](/notes/lec11-missing-data-mvn.html)                                                                             | [hw 6](/hw/hw06.html)                        |
 |      | Thu Oct 26 | hierarchical modeling intro                    | Ch. 8   |                                                                              |                             |
 | 10   | Mon Oct 30 |                                                |         |                                                                              |                             |
 |      | Tue Oct 31 | hierarchical examples                          | Ch. 8   |                                                                              | hw 7                        |
