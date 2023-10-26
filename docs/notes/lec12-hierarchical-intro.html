@@ -217,8 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mathScores = read_csv("https://sta360-fa23.github.io/data/mathScores.csv")</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mathScores <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"../data/mathScores.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mathScores <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/mathScores.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mathScores, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -260,6 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="questions-about-the-data">Questions about the data</h2>
 <ul>
 <li>How are the schools ranked?</li>
+<li>What is the probability the mean score of school 51 is higher than the mean score of school 41?</li>
 <li>What is the probability a single student randomly selected from school 51 performs better on the exam than a single student randomly selected from school 41?</li>
 </ul>
 </section>
@@ -276,10 +276,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \]</span></p>
 <p>In words, school-specific parameters are conditionally i.i.d. given some population specific parameters <span class="math inline">\(\psi\)</span>. This describes our <em>between-group</em> sampling variability.</p>
 <p>Finally, if our hierarchy stops there, then to complete model specification, we may describe our prior beliefs about <span class="math inline">\(\psi\)</span> according to some prior density <span class="math inline">\(p(\psi)\)</span>.</p>
-<p>Exercise: Imagine variability among scores is the same across all schools, but there does exist heterogeneity in the mean scores of the schools. Write down a model for to describe this using the normal distribution.</p>
-<p>Solution:</p>
-<p>$$</p>
-<p>$$</p>
+<p>Exercise: Imagine variability among scores is the same across all schools, but there does exist heterogeneity in the mean scores of the schools. Write down the mathemtical form of a model that describes this using the normal distribution. What are some priors you could pick on relevant parameters to make sure full conditionals are easy to compute for Gibbs sampling? What are the full conditionals?</p>
+<!-- Solution:  -->
+<!-- - sampling distributions: -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(y_j | \theta_j, \sigma^2) &\sim N(\theta_j, \sigma^2)\\ -->
+<!-- p(\theta_j | \mu, \tau^2) &\sim N(\mu, \tau^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- - priors distributions:  -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(1/\sigma^2) &\sim \text{ gamma}(\nu_0/2, \nu_0 \sigma_0^2/2)\\ -->
+<!-- p(1/\tau^2) &\sim \text{ gamma}(\eta_0/2, \eta_0 \tau_0^2/2)\\ -->
+<!-- \mu &\sim N(\mu_0, \gamma_0^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+<!-- --- -->
+<!-- To facilitate Gibbs sampling, notice -->
+<!-- $$ -->
+<!-- p(\theta_1, \ldots \theta_m, \mu, \tau^2, \sigma^2 | \mathbf{y}_1, \ldots \mathbf{y}_m) \propto  -->
+<!-- p(\mu, \tau^2, \sigma^2) p(\theta_1, \ldots \theta_m | \mu, \tau^2, \sigma^2) \times p(\mathbf{y}_1, \ldots \mathbf{y}_m| \theta_1, \ldots \theta_m, \mu, \tau^2, \sigma^2) -->
+<!-- $$ -->
+<!-- It follows that the full conditionals are: -->
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(\mu | \cdot) &\propto p(\mu) \prod_{j = 1}^m p(\theta_j| \mu, \tau^2)\\ -->
+<!-- p(\tau^2 | \cdot) &\propto p(\tau^2) \prod_{j = 1}^m p(\theta_j| \mu, \tau^2)\\ -->
+<!-- p(\sigma^2|\cdot) &\propto p(\sigma^2)\prod_{j =1}^m \prod_{i = 1}^{n_j} p(y_{i,j}|\theta_j, \sigma^2)\\ -->
+<!-- p(\theta_j | \cdot) &\propto p(\theta_j | \mu, \tau^2) \prod_{i = 1}^m p(y_{i,j}|\theta_j, \sigma^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
 </section>
 <section id="gibbs-sampling" class="level2">
 <h2 class="anchored" data-anchor-id="gibbs-sampling">Gibbs sampling</h2>
@@ -490,20 +518,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <ul>
+<li>What’s <span class="math inline">\(p(\theta_{51} &gt; \theta_{41} | \text{data})\)</span>?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(THETA[,<span class="dv">51</span>] <span class="sc">&gt;</span> THETA[,<span class="dv">41</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9892</code></pre>
+</div>
+</div>
+<ul>
 <li>What’s the probability a student randomly selected from school 51 performs better than a student selected randomly from school 41?</li>
 </ul>
 <p>Before looking at the solution below, how would you answer this problem?</p>
 <div class="cell">
 <details>
 <summary>Solution</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(predictiveY[,<span class="dv">1</span>] <span class="sc">&gt;</span> predictiveY[,<span class="dv">2</span>])</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># output:</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 0.685</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(predictiveY[,<span class="dv">1</span>] <span class="sc">&gt;</span> predictiveY[,<span class="dv">2</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># output:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 0.685</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<div class="cell">
-
 </div>
 
 

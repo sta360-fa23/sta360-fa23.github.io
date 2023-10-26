@@ -26,8 +26,7 @@ library(coda)
 ```{r}
 #| warning: false
 # load data
-# mathScores = read_csv("https://sta360-fa23.github.io/data/mathScores.csv")
-mathScores = read_csv("../data/mathScores.csv")
+mathScores = read_csv("https://sta360-fa23.github.io/data/mathScores.csv")
 ```
 
 ```{r}
@@ -69,6 +68,7 @@ for (j in 1:J) {
 ## Questions about the data
 
 - How are the schools ranked?
+- What is the probability the mean score of school 51 is higher than the mean score of school 41?
 - What is the probability a single student randomly selected from school 51 performs better on the exam than a single student randomly selected from school 41?
 
 ## Model
@@ -90,13 +90,48 @@ In words, school-specific parameters are conditionally i.i.d. given some populat
 
 Finally, if our hierarchy stops there, then to complete model specification, we may describe our prior beliefs about $\psi$ according to some prior density $p(\psi)$.
 
-Exercise: Imagine variability among scores is the same across all schools, but there does exist heterogeneity in the mean scores of the schools. Write down a model for to describe this using the normal distribution.
+Exercise: Imagine variability among scores is the same across all schools, but there does exist heterogeneity in the mean scores of the schools. Write down the mathemtical form of a  model that describes this using the normal distribution. What are some priors you could pick on relevant parameters to make sure full conditionals are easy to compute for Gibbs sampling? What are the full conditionals?
 
-Solution: 
+<!-- Solution:  -->
 
-$$
+<!-- - sampling distributions: -->
 
-$$
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(y_j | \theta_j, \sigma^2) &\sim N(\theta_j, \sigma^2)\\ -->
+<!-- p(\theta_j | \mu, \tau^2) &\sim N(\mu, \tau^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+
+<!-- - priors distributions:  -->
+
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(1/\sigma^2) &\sim \text{ gamma}(\nu_0/2, \nu_0 \sigma_0^2/2)\\ -->
+<!-- p(1/\tau^2) &\sim \text{ gamma}(\eta_0/2, \eta_0 \tau_0^2/2)\\ -->
+<!-- \mu &\sim N(\mu_0, \gamma_0^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+
+<!-- --- -->
+
+<!-- To facilitate Gibbs sampling, notice -->
+
+<!-- $$ -->
+<!-- p(\theta_1, \ldots \theta_m, \mu, \tau^2, \sigma^2 | \mathbf{y}_1, \ldots \mathbf{y}_m) \propto  -->
+<!-- p(\mu, \tau^2, \sigma^2) p(\theta_1, \ldots \theta_m | \mu, \tau^2, \sigma^2) \times p(\mathbf{y}_1, \ldots \mathbf{y}_m| \theta_1, \ldots \theta_m, \mu, \tau^2, \sigma^2) -->
+<!-- $$ -->
+<!-- It follows that the full conditionals are: -->
+
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- p(\mu | \cdot) &\propto p(\mu) \prod_{j = 1}^m p(\theta_j| \mu, \tau^2)\\ -->
+<!-- p(\tau^2 | \cdot) &\propto p(\tau^2) \prod_{j = 1}^m p(\theta_j| \mu, \tau^2)\\ -->
+<!-- p(\sigma^2|\cdot) &\propto p(\sigma^2)\prod_{j =1}^m \prod_{i = 1}^{n_j} p(y_{i,j}|\theta_j, \sigma^2)\\ -->
+<!-- p(\theta_j | \cdot) &\propto p(\theta_j | \mu, \tau^2) \prod_{i = 1}^m p(y_{i,j}|\theta_j, \sigma^2) -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+
 
 ## Gibbs sampling
 ```{r}
@@ -307,6 +342,12 @@ sum(postOrdering == ybarOrdering)
 ```
 :::
 
+- What's $p(\theta_{51} > \theta_{41} | \text{data})$?
+
+```{r}
+mean(THETA[,51] > THETA[,41])
+```
+
 - What's the probability a student randomly selected from school 51 performs better than a student selected randomly from school 41? 
 
 Before looking at the solution below, how would you answer this problem? 
@@ -319,13 +360,5 @@ mean(predictiveY[,1] > predictiveY[,2])
 
 # output:
 # [1] 0.685
-```
-
-
-```{r}
-#| echo: false
-#| eval: false
-# note this is very different from p(theta51 > theta41 | data): 
-mean(THETA[,51] > THETA[,41])
 ```
 

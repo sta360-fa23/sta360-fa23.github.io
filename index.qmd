@@ -75,7 +75,7 @@ schedule %>%
 |      | Thu Oct 19 | multivariate normal (mvn)                      | Ch. 7   | [💻](/notes/lec10-mvn.html)                                                                              |                             |
 | 9    | Mon Oct 23 | full conditional review                                               |         |                                                                              |                             |
 |      | Tue Oct 24 | mvn parameter estimation                       | Ch. 7   |  [💻](/notes/lec11-missing-data-mvn.html), [📝](/notes/missingDataOffline.pdf)                                                                             | [hw 6](/hw/hw06.html)                        |
-|      | Thu Oct 26 | hierarchical modeling intro                    | Ch. 8   |                                                                              |                             |
+|      | Thu Oct 26 | hierarchical modeling intro                    | Ch. 8   | [💻](/notes/lec12-hierarchical-intro.html)                                                                            |                             |
 | 10   | Mon Oct 30 |                                                |         |                                                                              |                             |
 |      | Tue Oct 31 | hierarchical examples                          | Ch. 8   |                                                                              | hw 7                        |
 |      | Thu Nov 02 | Bayesian regression I                          | Ch. 9   |                                                                              |                             |
