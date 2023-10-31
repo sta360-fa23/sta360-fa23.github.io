@@ -285,8 +285,8 @@ acf(thd.mcmc[,1], plot = FALSE)
 ```
 The higher the autocorrelation, the more samples we need to obtain a given level of precision for our approximation. One way to state how precise our approximation is, is with *effective sample size*.
 
-- **effective sample size**: intuitively this is the effective number of exact samples
-"contained" in the Markov chain (see [Betancourt 2018](https://arxiv.org/pdf/1701.02434.pdf)). In practice we use `coda::effectiveSize()` function to compute. Example:
+- **effective sample size** (ESS): intuitively this is the effective number of exact samples
+"contained" in the Markov chain (see [Betancourt 2018](https://arxiv.org/pdf/1701.02434.pdf)). For further reading on ESS, see [the stan manual](https://mc-stan.org/docs/reference-manual/effective-sample-size.html). In practice we use `coda::effectiveSize()` function to compute. Example:
 
 ```{r}
 #| warning: false

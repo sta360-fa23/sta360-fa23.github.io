@@ -223,7 +223,7 @@ Definition
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -301,7 +301,7 @@ solution
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -366,7 +366,7 @@ Important
 <p>Let’s see how well our samples of <span class="math inline">\(\theta\)</span> approximate the true marginal <span class="math inline">\(p(\theta)\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<p><img src="lec09-mcmc-diagnostics_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -398,7 +398,7 @@ Autocorrelations of series 'thd.mcmc[, 1]', by lag
 </div>
 <p>The higher the autocorrelation, the more samples we need to obtain a given level of precision for our approximation. One way to state how precise our approximation is, is with <em>effective sample size</em>.</p>
 <ul>
-<li><strong>effective sample size</strong>: intuitively this is the effective number of exact samples “contained” in the Markov chain (see <a href="https://arxiv.org/pdf/1701.02434.pdf">Betancourt 2018</a>). In practice we use <code>coda::effectiveSize()</code> function to compute. Example:</li>
+<li><strong>effective sample size</strong> (ESS): intuitively this is the effective number of exact samples “contained” in the Markov chain (see <a href="https://arxiv.org/pdf/1701.02434.pdf">Betancourt 2018</a>). For further reading on ESS, see <a href="https://mc-stan.org/docs/reference-manual/effective-sample-size.html">the stan manual</a>. In practice we use <code>coda::effectiveSize()</code> function to compute. Example:</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
