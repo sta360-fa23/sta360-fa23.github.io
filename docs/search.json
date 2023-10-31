@@ -1229,20 +1229,20 @@
     "href": "hw/hw07.html",
     "title": "Homework 7",
     "section": "",
-    "text": "7.3 from Hoff."
+    "text": "7.3 from Hoff.\nRun the code below to load the data.\n\n\n\n\nlibrary(readr)\nbluecrab = read_csv(\"https://sta360-fa23.github.io/data/bluecrab.csv\")\norangecrab = read_csv(\"https://sta360-fa23.github.io/data/orangecrab.csv\")"
   },
   {
     "objectID": "hw/hw07.html#exercise-2",
     "href": "hw/hw07.html#exercise-2",
     "title": "Homework 7",
     "section": "Exercise 2",
-    "text": "Exercise 2\n8.1 from Hoff."
+    "text": "Exercise 2\n8.1 from Hoff. Note there is a typo in this exercise. Every \\(\\theta_i\\) in the exercise prompt should be replaced by \\(\\theta_j\\)."
   },
   {
     "objectID": "hw/hw07.html#exercise-3",
     "href": "hw/hw07.html#exercise-3",
     "title": "Homework 7",
     "section": "Exercise 3",
-    "text": "Exercise 3\n8.3 from Hoff"
+    "text": "Exercise 3\n\n\n\n8.3 from Hoff\nRun the code below to load the data.\n\nlibrary(readr)\nlibrary(glue)\n\nfor(i in 1:8) {\nassign(paste0(\"school\", i), \n       read_csv(glue(\"https://sta360-fa23.github.io/data/school{i}.csv\")))\n}"
   }
 ]
