@@ -109,9 +109,9 @@ p1 + p2
 1. update $\beta$:
   - compute $V$ and $\mathbf{m}$
   - sample $\beta^{(s+1)} \sim MVN(\mathbf{m}, V)$
-2. update $\sigma^2$:
+2. update $\sigma^{2(s+1)}$:
   - compute $SSR(\beta^{(s+1)})$
-  - sample $1/\sigma^2 \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta)]/2)$
+  - sample $1/\sigma^2 \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta^{s+1})]/2)$
 3. save the states of $\beta$ and $\sigma^2$.
 :::
 
@@ -302,7 +302,7 @@ Separately, in the case of multicollinearity, where the columns of $X$ are highl
 Frequentists call this sort of algebraic fix "ridge regression" and define the problem thus:
 
 $$
-\hat{\beta}_{ridge} = \underset{\beta}{\mathrm{argmin}} \underbrace{(\mathbf{y} - X\beta)^T (\mathbf{y} - X \beta)}_{\text{SSR}(\beta)} + \underbrace{\lambda \beta^T \beta}_{L_2 ~\text{penalty}}
+\hat{\beta}_{ridge} = \underset{\beta}{\mathrm{argmin}} \underbrace{(\mathbf{y} - X\beta)^T (\mathbf{y} - X \beta)}_{\text{SSR}(\beta)} + \underbrace{\lambda \beta^T \beta}_{L_2^2 ~\text{penalty}}
 $$
 where $\lambda$ is a tuning parameter called the "ridge coefficient".
 

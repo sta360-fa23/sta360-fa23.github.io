@@ -279,11 +279,11 @@ pseudo-code
 <li>sample <span class="math inline">\(\beta^{(s+1)} \sim MVN(\mathbf{m}, V)\)</span></li>
 </ul>
 <ol start="2" type="1">
-<li>update <span class="math inline">\(\sigma^2\)</span>:</li>
+<li>update <span class="math inline">\(\sigma^{2(s+1)}\)</span>:</li>
 </ol>
 <ul>
 <li>compute <span class="math inline">\(SSR(\beta^{(s+1)})\)</span></li>
-<li>sample <span class="math inline">\(1/\sigma^2 \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta)]/2)\)</span></li>
+<li>sample <span class="math inline">\(1/\sigma^2 \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta^{s+1})]/2)\)</span></li>
 </ul>
 <ol start="3" type="1">
 <li>save the states of <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\sigma^2\)</span>.</li>
@@ -422,7 +422,7 @@ posteriorMean   -5.723741        0.04801443    0.006336029</code></pre>
 </ul>
 <p>Frequentists call this sort of algebraic fix “ridge regression” and define the problem thus:</p>
 <p><span class="math display">\[
-\hat{\beta}_{ridge} = \underset{\beta}{\mathrm{argmin}} \underbrace{(\mathbf{y} - X\beta)^T (\mathbf{y} - X \beta)}_{\text{SSR}(\beta)} + \underbrace{\lambda \beta^T \beta}_{L_2 ~\text{penalty}}
+\hat{\beta}_{ridge} = \underset{\beta}{\mathrm{argmin}} \underbrace{(\mathbf{y} - X\beta)^T (\mathbf{y} - X \beta)}_{\text{SSR}(\beta)} + \underbrace{\lambda \beta^T \beta}_{L_2^2 ~\text{penalty}}
 \]</span></p>
 <p>where <span class="math inline">\(\lambda\)</span> is a tuning parameter called the “ridge coefficient”.</p>
 <p>Bayesians obtain the same objective via the following prior on <span class="math inline">\(\beta\)</span>,</p>
