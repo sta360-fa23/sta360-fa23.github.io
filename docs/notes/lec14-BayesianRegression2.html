@@ -388,7 +388,7 @@ OLS             -5.736897        0.04814486    0.006047488
 posteriorMean   -5.723741        0.04801443    0.006336029</code></pre>
 </div>
 </div>
-<p>We might have figured out this is what we were going to see already based on the the fact that the expressions for <span class="math inline">\(E[\beta | \mathbf{y}, X]\)</span> and <span class="math inline">\(Var[\beta | \mathbf{y}, X]\)</span> look just like OLS when the prior information is diffuse.</p>
+<p>We might have figured out this is what we were going to see already based on the the fact that the expressions for <span class="math inline">\(E[\beta | \mathbf{y}, X]\)</span> and <span class="math inline">\(Var[\beta | \mathbf{y}, X]\)</span> look just like <span class="math inline">\(E[\hat{\beta}_{OLS} | \beta]\)</span> and <span class="math inline">\(Var[\hat{\beta}_{OLS} | \beta]\)</span> when the prior information is diffuse.</p>
 <p>What was the point of all that extra work? Well, we don’t just have a point estimate and a confidence interval, we have a whole posterior! We can quantify uncertainty about <span class="math inline">\(\beta\)</span> in an easy and intuitive way.</p>
 <p>Using the posterior, we may find 95% posterior CI, compute <span class="math inline">\(p(\beta_i &gt; 0 | \mathbf{y}, X)\)</span>, compute <span class="math inline">\(p(\beta_i &gt; \beta_j | \mathbf{y}, X)\)</span>, compute the posterior median, and a whole host of additional queries quickly and intuitively.</p>
 <p>Let’s take a look at the marginal posteriors.</p>
@@ -429,7 +429,7 @@ posteriorMean   -5.723741        0.04801443    0.006336029</code></pre>
 <p><span class="math display">\[
 \beta \sim MVN(0, \sigma^2 I /\lambda)
 \]</span></p>
-<p>Exercise: show that <span class="math inline">\(\hat{\beta}_{ridge} = E[\beta | \mathbf{y}, X] = (X^TX)^{-1} + \lambda I)^{-1} X^T \mathbf{y}\)</span>.</p>
+<p>Exercise: show that <span class="math inline">\(\hat{\beta}_{ridge} = E[\beta | \mathbf{y}, X, \sigma^2] = ((X^TX) + \lambda I)^{-1} X^T \mathbf{y}\)</span>.</p>
 
 
 </section>

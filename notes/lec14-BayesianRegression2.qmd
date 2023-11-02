@@ -203,7 +203,7 @@ OLS = OLS$coefficients
 rbind(OLS, posteriorMean)
 ```
 
-We might have figured out this is what we were going to see already based on the the fact that the expressions for $E[\beta | \mathbf{y}, X]$ and $Var[\beta | \mathbf{y}, X]$ look just like OLS when the prior information is diffuse.
+We might have figured out this is what we were going to see already based on the the fact that the expressions for $E[\beta | \mathbf{y}, X]$ and $Var[\beta | \mathbf{y}, X]$ look just like $E[\hat{\beta}_{OLS} | \beta]$ and $Var[\hat{\beta}_{OLS} | \beta]$ when the prior information is diffuse.
 
 What was the point of all that extra work? Well, we don't just have a point estimate and a confidence interval, we have a whole posterior! We can quantify uncertainty about $\beta$ in an easy and intuitive way.
 
@@ -311,4 +311,4 @@ Bayesians obtain the same objective via the following prior on $\beta$,
 $$
 \beta \sim MVN(0, \sigma^2 I /\lambda)
 $$
-Exercise: show that $\hat{\beta}_{ridge} = E[\beta | \mathbf{y}, X] = (X^TX)^{-1} + \lambda I)^{-1} X^T \mathbf{y}$.
+Exercise: show that $\hat{\beta}_{ridge} = E[\beta | \mathbf{y}, X, \sigma^2] = ((X^TX) + \lambda I)^{-1} X^T \mathbf{y}$.
