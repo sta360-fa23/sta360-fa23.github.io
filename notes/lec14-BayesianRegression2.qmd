@@ -109,9 +109,9 @@ p1 + p2
 1. update $\beta$:
   - compute $V$ and $\mathbf{m}$
   - sample $\beta^{(s+1)} \sim MVN(\mathbf{m}, V)$
-2. update $\sigma^{2(s+1)}$:
+2. update $\sigma^{2}$:
   - compute $SSR(\beta^{(s+1)})$
-  - sample $1/\sigma^2 \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta^{s+1})]/2)$
+  - sample $1/\sigma^{2(s+1)} \sim \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta^{s+1})]/2)$
 3. save the states of $\beta$ and $\sigma^2$.
 :::
 
