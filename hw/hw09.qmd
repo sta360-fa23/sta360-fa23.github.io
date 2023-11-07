@@ -1,0 +1,21 @@
+---
+title: "Homework 9"
+subtitle: "Due Thursday December 7 at 5:00pm"
+mainfont: Lato
+format: 
+  html:
+    toc: true
+---
+
+## Exercise 1
+
+Hierarchical Poisson
+
+## Exercise 2
+
+`stan`
+
+## Exercise 3
+
+decrypt a secret message
+
