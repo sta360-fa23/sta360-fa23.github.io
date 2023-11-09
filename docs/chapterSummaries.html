@@ -102,6 +102,24 @@ ul.task-list{list-style: none;}
   <li><a href="#monte-carlo-error" id="toc-monte-carlo-error" class="nav-link" data-scroll-target="#monte-carlo-error">Monte Carlo error</a></li>
   <li><a href="#the-sampling-view" id="toc-the-sampling-view" class="nav-link" data-scroll-target="#the-sampling-view">The sampling view</a></li>
   </ul></li>
+  <li><a href="#chapter-5" id="toc-chapter-5" class="nav-link" data-scroll-target="#chapter-5">Chapter 5</a>
+  <ul class="collapse">
+  <li><a href="#conjugate-prior-to-the-normal-model" id="toc-conjugate-prior-to-the-normal-model" class="nav-link" data-scroll-target="#conjugate-prior-to-the-normal-model">Conjugate prior to the normal model</a></li>
+  <li><a href="#estimators" id="toc-estimators" class="nav-link" data-scroll-target="#estimators">Estimators</a></li>
+  </ul></li>
+  <li><a href="#chapter-6" id="toc-chapter-6" class="nav-link" data-scroll-target="#chapter-6">Chapter 6</a>
+  <ul class="collapse">
+  <li><a href="#gibbs-sampling-procedure" id="toc-gibbs-sampling-procedure" class="nav-link" data-scroll-target="#gibbs-sampling-procedure">Gibbs sampling procedure</a></li>
+  <li><a href="#mcmc-diagnostics" id="toc-mcmc-diagnostics" class="nav-link" data-scroll-target="#mcmc-diagnostics">MCMC diagnostics</a></li>
+  </ul></li>
+  <li><a href="#chapter-7" id="toc-chapter-7" class="nav-link" data-scroll-target="#chapter-7">Chapter 7</a>
+  <ul class="collapse">
+  <li><a href="#density" id="toc-density" class="nav-link" data-scroll-target="#density">Density</a></li>
+  <li><a href="#semi-conjugate-prior-for-boldsymboltheta" id="toc-semi-conjugate-prior-for-boldsymboltheta" class="nav-link" data-scroll-target="#semi-conjugate-prior-for-boldsymboltheta">semi-conjugate prior for <span class="math inline">\(\boldsymbol{\theta}\)</span></a></li>
+  <li><a href="#semiconjugate-prior-for-sigma" id="toc-semiconjugate-prior-for-sigma" class="nav-link" data-scroll-target="#semiconjugate-prior-for-sigma">semiconjugate prior for <span class="math inline">\(\Sigma\)</span></a></li>
+  <li><a href="#wishart-as-sum-of-squares-matrix" id="toc-wishart-as-sum-of-squares-matrix" class="nav-link" data-scroll-target="#wishart-as-sum-of-squares-matrix">Wishart as sum of squares matrix</a></li>
+  </ul></li>
+  <li><a href="#chapter-8" id="toc-chapter-8" class="nav-link" data-scroll-target="#chapter-8">Chapter 8</a></li>
   </ul>
 </nav>
     </div>
@@ -301,9 +319,210 @@ p(\tilde{y}) = \int p(\tilde{y}|\theta) p(\theta)d\theta.
 <li>sample from the posterior <span class="math inline">\(p(\theta |y_1, \ldots y_n)\)</span> some large number of times and then</li>
 <li>compute the quantity of interest</li>
 </ol>
-
-
 </section>
+</section>
+<section id="chapter-5" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-5">Chapter 5</h2>
+<section id="conjugate-prior-to-the-normal-model" class="level3">
+<h3 class="anchored" data-anchor-id="conjugate-prior-to-the-normal-model">Conjugate prior to the normal model</h3>
+<p>If</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y_i | \theta, \sigma^2 &amp;\sim N(\theta, \sigma^2)\\
+\theta | \sigma^2 &amp; \sim N(\mu_0, \sigma^2/\kappa_0)\\
+\frac{1}{\sigma^2} &amp;\sim \text{gamma}(\frac{\nu_0}{2}, \frac{\nu_0}{2} \sigma_0^2)
+\end{aligned}
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\begin{aligned}
+\theta | \sigma^2, y_1,\ldots y_n &amp;\sim \text{normal}\\
+\sigma^2 | y_1,\ldots y_n &amp;\sim \text{gamma}
+\end{aligned}
+\]</span></p>
+<p>and since</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(\theta, \sigma^2 | y_1, \ldots y_n) &amp;= p(\theta |\sigma^2, y_1,\ldots y_n) p(\sigma^2 | y_1,\ldots y_n),
+\end{aligned}
+\]</span></p>
+<p>we can sample <strong>directly</strong> from the joint posterior by sampling from <span class="math inline">\(p(\sigma^2 | y_1,\ldots y_n)\)</span> and then from <span class="math inline">\(p(\theta | \sigma^2, y_1,\ldots y_n)\)</span>.</p>
+</section>
+<section id="estimators" class="level3">
+<h3 class="anchored" data-anchor-id="estimators">Estimators</h3>
+<p>Be able to define and compute the bias, variance and MSE of an estimator.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Bias</strong> is the the difference between the expected value of the estimator and the true value of the parameter.</p>
+<ul>
+<li><p><span class="math inline">\(E[\hat{\theta} | \theta = \theta_ 0] - \theta_0\)</span> is the bias of <span class="math inline">\(\hat{\theta}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(E[\hat{\theta} | \theta = \theta_0] = \theta_0\)</span>, then we say <span class="math inline">\(\hat{\theta}\)</span> is an <strong>unbiased estimator</strong> of <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>If <span class="math inline">\(E[\hat{\theta} | \theta = \theta_0] \neq \theta_0\)</span>, then we say <span class="math inline">\(\hat{\theta}\)</span> is a <strong>biased estimator</strong> of <span class="math inline">\(\theta\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall: <strong>variance</strong> is average squared distance from the mean. In this context, the variance of an estimator refers to the variance of the sampling distribution of <span class="math inline">\(\hat{\theta}\)</span>. We write this mathematically,</p>
+<p><span class="math display">\[
+Var[\hat{\theta} | \theta_0] = E[(\hat{\theta} - m)^2 |\theta_0]
+\]</span></p>
+<p>where <span class="math inline">\(m = E[\hat{\theta}|\theta_0]\)</span>.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Mean squared error</strong> (MSE) is (as the name suggests) the expected value of the squared difference between the estimator and true parameter value. Equivalently, MSE is the variance plus the square bias of the estimator.</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE[\hat{\theta}|\theta_0] &amp;= E[(\hat{\theta} - \theta_0)^2 | \theta_0]\\
+&amp;= Var[\hat{\theta} | \theta_0] + Bias^2[\hat{\theta}|\theta_0]
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="chapter-6" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-6">Chapter 6</h2>
+<section id="gibbs-sampling-procedure" class="level3">
+<h3 class="anchored" data-anchor-id="gibbs-sampling-procedure">Gibbs sampling procedure</h3>
+<p>How can we look at a joint posterior, e.g.&nbsp;<span class="math inline">\(p(\theta_1,\ldots \theta_p | y_1,\ldots y_n)\)</span>, if we have non-conjugate priors?</p>
+<p>Well if we <em>do</em> have the full conditionals, <span class="math inline">\(p(\theta_i | \theta_{-i}, y_1,\ldots y_n)\)</span> then we can sample from the joint posterior via Gibbs sampling. Note: <span class="math inline">\(\theta_{-i}\)</span> denotes <span class="math inline">\(\{\theta\} \backslash \theta_i\)</span>, i.e.&nbsp;the set of all theta except <span class="math inline">\(\theta_i\)</span>.</p>
+<p>Gibbs sampling proceeds:</p>
+<p>Pick a starting point <span class="math inline">\(\theta_2^{(0)}, \ldots \theta_p^{(0)}\)</span>, then for s in 1:S,</p>
+<ol type="1">
+<li><p>Sample <span class="math inline">\(\theta_1^{(s)} \sim p(\theta_1 | \theta_{2}^{(s-1)}, \ldots, \theta_{p}^{(s-1)}, y_1,\ldots y_n)\)</span></p></li>
+<li><p>Sample <span class="math inline">\(\theta_2^{(s)} \sim p(\theta_2 | \theta_{1}^{(s)}, \theta_{3}^{(s-1)} \ldots, \theta_{p}^{(s-1)}, y_1,\ldots y_n)\)</span></p></li>
+</ol>
+<p><span class="math inline">\(\vdots\)</span></p>
+<ol start="16" type="a">
+<li>Sample <span class="math inline">\(\theta_p^{(s)} \sim p(\theta_2 | \theta_{1}^{(s)}, \ldots, \theta_{p-1}^{(s)}, y_1,\ldots y_n)\)</span></li>
+</ol>
+<p>It follows that we have a sequence of <em>dependent</em> samples from the joint posterior. The sequence <span class="math inline">\(\{\theta^{(s)}\}\)</span> is called a Markov chain.</p>
+<p><span class="math display">\[
+\frac{1}{S} \sum_{s=1}^S g(\theta^{(s)})  \rightarrow E[g(\theta)]
+\]</span></p>
+<p>Gibbs sampling is a form of Markov chain Monte Carlo (MCMC).</p>
+</section>
+<section id="mcmc-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="mcmc-diagnostics">MCMC diagnostics</h3>
+<p>Effective sample size (ESS), autocorrelation, and traceplots are diagnostic tools we use to assess how well our Markov chain approximates the posterior. You should be able to define these terms and interpret their output. See <a href="./notes/lec09-mcmc-diagnostics.html">this lecture</a> for details.</p>
+<p>Specifically, ESS is the number of independent Monte Carlo samples necessary to give the same precision as the MCMC samples. Typically, ESS is a criterion used to figure out how many samples to generate, i.e.&nbsp;how long to run your Markov chain.</p>
+</section>
+</section>
+<section id="chapter-7" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-7">Chapter 7</h2>
+<section id="density" class="level3">
+<h3 class="anchored" data-anchor-id="density">Density</h3>
+<p>We say a <span class="math inline">\(p\)</span> dimensional vector <span class="math inline">\(\boldsymbol{Y}\)</span> has a multivariate normal distribution if its sampling density is given by</p>
+<p><span class="math display">\[
+p(\boldsymbol{y}| \boldsymbol{\theta}, \Sigma) = (2\pi)^{-p/2} |\Sigma|^{-1/2} \exp\{
+-\frac{1}{2}(\boldsymbol{y}-\boldsymbol{\theta})^T \Sigma^{-1} (\boldsymbol{y}- \boldsymbol{\theta})
+\}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\boldsymbol{y}=  \left[ {\begin{array}{cc}
+   y_1 \\
+   y_2\\
+   \vdots\\
+   y_p
+  \end{array} } \right]
+  ~~~
+   \boldsymbol{\theta}= \left[ {\begin{array}{cc}
+   \theta_1 \\
+   \theta_2\\
+   \vdots\\
+   \theta_p
+  \end{array} } \right]
+  ~~~
+  \Sigma =
+  \left[ {\begin{array}{cc}
+   \sigma_1^2 &amp; \sigma_{12}&amp; \ldots &amp; \sigma_{1p}\\
+   \sigma_{12} &amp; \sigma_2^2 &amp;\ldots &amp; \sigma_{2p}\\
+   \vdots &amp; \vdots &amp; &amp; \vdots\\
+   \sigma_{1p} &amp; \ldots &amp; \ldots &amp; \sigma_p^2
+  \end{array} } \right].
+\]</span></p>
+<section id="key-facts" class="level4">
+<h4 class="anchored" data-anchor-id="key-facts">Key facts</h4>
+<ul>
+<li><span class="math inline">\(\boldsymbol{y}\in \mathbb{R}^p\)</span> ; <span class="math inline">\(\boldsymbol{\theta}\in \mathbb{R}^p\)</span>; <span class="math inline">\(\Sigma &gt; 0\)</span></li>
+<li><span class="math inline">\(E[\boldsymbol{y}] = \boldsymbol{\theta}\)</span></li>
+<li><span class="math inline">\(V[\boldsymbol{y}] = E[(\boldsymbol{y}- \boldsymbol{\theta})(\boldsymbol{y}- \boldsymbol{\theta})^T] = \Sigma\)</span></li>
+<li>Marginally, <span class="math inline">\(y_i \sim N(\theta_i, \sigma_i^2)\)</span>.</li>
+<li>If <span class="math inline">\(\boldsymbol{\theta}\)</span> is a MVN random vector, then the kernel is <span class="math inline">\(\exp\{-\frac{1}{2} \boldsymbol{\theta}^T A \boldsymbol{\theta}+ \boldsymbol{\theta}^T \boldsymbol{b} \}\)</span>. The mean is <span class="math inline">\(A^{-1}\boldsymbol{b}\)</span> and the covariance is <span class="math inline">\(A^{-1}\)</span>.</li>
+</ul>
+</section>
+</section>
+<section id="semi-conjugate-prior-for-boldsymboltheta" class="level3">
+<h3 class="anchored" data-anchor-id="semi-conjugate-prior-for-boldsymboltheta">semi-conjugate prior for <span class="math inline">\(\boldsymbol{\theta}\)</span></h3>
+<p>If</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{y}| \boldsymbol{\theta}, \Sigma &amp;\sim MVN(\boldsymbol{\theta}, \Sigma),\\
+\boldsymbol{\theta}&amp;\sim MVN(\mu_0, \Lambda_0),
+\end{aligned}
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\boldsymbol{\theta}| \boldsymbol{y}, \Sigma \sim MVN
+\]</span></p>
+</section>
+<section id="semiconjugate-prior-for-sigma" class="level3">
+<h3 class="anchored" data-anchor-id="semiconjugate-prior-for-sigma">semiconjugate prior for <span class="math inline">\(\Sigma\)</span></h3>
+<p>If</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{y}| \boldsymbol{\theta}, \Sigma &amp;\sim MVN(\boldsymbol{\theta}, \Sigma),\\
+\Sigma &amp;\sim \text{inverse-Wishart}(\nu_0, S_0^{-1}),
+\end{aligned}
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\Sigma | \boldsymbol{y}, \boldsymbol{\theta}\sim \text{inverse-Wishart}
+\]</span></p>
+</section>
+<section id="wishart-as-sum-of-squares-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="wishart-as-sum-of-squares-matrix">Wishart as sum of squares matrix</h3>
+<p>For a given <span class="math inline">\(\nu_0\)</span> and and a <span class="math inline">\(p \times p\)</span> covariance matrix <span class="math inline">\(S_0\)</span>, we can generate samples from a MVN by the following procedure:</p>
+<ol type="1">
+<li>sample <span class="math inline">\(\boldsymbol{z}_1, \ldots \boldsymbol{z}_{\nu_0} \sim \text{ i.i.d. } MVN(\mathbf{0}, S_0)\)</span></li>
+<li>calculate <span class="math inline">\(\mathbf{Z}^T \mathbf{Z} = \sum_{i =1}^{\nu_0} \boldsymbol{z}_i \boldsymbol{z}_i^T\)</span>.</li>
+</ol>
+<p>It follows that <span class="math inline">\(\mathbf{Z}^T \mathbf{Z} &gt; 0\)</span> and symmetric. <span class="math inline">\(E[\mathbf{Z}^T \mathbf{Z}] = \nu_0 S_0\)</span></p>
+</section>
+</section>
+<section id="chapter-8" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-8">Chapter 8</h2>
+<p>Be able to write a hierarchical model. Review and be able to explain all aspects of the example <a href="./notes/lec12-hierarchical-intro.html">here</a>.</p>
+
+
 </section>
 
 </main> <!-- /main -->

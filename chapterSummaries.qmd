@@ -166,4 +166,205 @@ The procedure can be written:
 2. compute the quantity of interest
 
 
+## Chapter 5
 
+### Conjugate prior to the normal model
+
+If 
+
+$$
+\begin{aligned}
+Y_i | \theta, \sigma^2 &\sim N(\theta, \sigma^2)\\
+\theta | \sigma^2 & \sim N(\mu_0, \sigma^2/\kappa_0)\\
+\frac{1}{\sigma^2} &\sim \text{gamma}(\frac{\nu_0}{2}, \frac{\nu_0}{2} \sigma_0^2)
+\end{aligned}
+$$
+then 
+
+$$
+\begin{aligned}
+\theta | \sigma^2, y_1,\ldots y_n &\sim \text{normal}\\
+\sigma^2 | y_1,\ldots y_n &\sim \text{gamma}
+\end{aligned}
+$$
+
+and since
+
+$$
+\begin{aligned}
+p(\theta, \sigma^2 | y_1, \ldots y_n) &= p(\theta |\sigma^2, y_1,\ldots y_n) p(\sigma^2 | y_1,\ldots y_n),
+\end{aligned}
+$$
+we can sample **directly** from the joint posterior by sampling from $p(\sigma^2 | y_1,\ldots y_n)$ and then from $p(\theta | \sigma^2, y_1,\ldots y_n)$.
+
+### Estimators
+
+Be able to define and compute the bias, variance and MSE of an estimator.
+
+::: callout-note
+## Definition
+
+**Bias** is the the difference between the expected value of the estimator and the true value of the parameter.
+
+- $E[\hat{\theta} | \theta = \theta_ 0] - \theta_0$ is the bias of $\hat{\theta}$.
+
+- If $E[\hat{\theta} | \theta = \theta_0] = \theta_0$, then we say $\hat{\theta}$ is an **unbiased estimator** of $\theta$.
+- If $E[\hat{\theta} | \theta = \theta_0] \neq \theta_0$, then we say $\hat{\theta}$ is a **biased estimator** of $\theta$.
+
+:::
+
+::: callout-note
+## Definition
+Recall: **variance** is average squared distance from the mean. In this context, the variance of an estimator refers to the variance of the sampling distribution of $\hat{\theta}$. We write this mathematically, 
+
+$$
+Var[\hat{\theta} | \theta_0] = E[(\hat{\theta} - m)^2 |\theta_0]
+$$
+where $m = E[\hat{\theta}|\theta_0]$.
+
+:::
+
+::: callout-note
+## Definition
+**Mean squared error** (MSE) is (as the name suggests) the expected value of the squared difference between the estimator and true parameter value. Equivalently, MSE is the variance plus the square bias of the estimator.
+
+$$
+\begin{aligned}
+MSE[\hat{\theta}|\theta_0] &= E[(\hat{\theta} - \theta_0)^2 | \theta_0]\\
+&= Var[\hat{\theta} | \theta_0] + Bias^2[\hat{\theta}|\theta_0]
+\end{aligned}
+$$
+:::
+
+## Chapter 6
+
+### Gibbs sampling procedure
+
+How can we look at a joint posterior, e.g. $p(\theta_1,\ldots \theta_p | y_1,\ldots y_n)$, if we have non-conjugate priors?
+
+Well if we *do* have the full conditionals, $p(\theta_i | \theta_{-i}, y_1,\ldots y_n)$ then we can sample from the joint posterior via Gibbs sampling. Note: $\theta_{-i}$ denotes $\{\theta\} \backslash \theta_i$, i.e. the set of all theta except $\theta_i$.
+
+Gibbs sampling proceeds:
+
+Pick a starting point $\theta_2^{(0)}, \ldots \theta_p^{(0)}$, then for s in 1:S,
+
+1. Sample $\theta_1^{(s)} \sim p(\theta_1 | \theta_{2}^{(s-1)}, \ldots, \theta_{p}^{(s-1)}, y_1,\ldots y_n)$
+
+2. Sample $\theta_2^{(s)} \sim p(\theta_2 | \theta_{1}^{(s)}, \theta_{3}^{(s-1)} \ldots, \theta_{p}^{(s-1)}, y_1,\ldots y_n)$
+
+$\vdots$
+
+p. Sample $\theta_p^{(s)} \sim p(\theta_2 | \theta_{1}^{(s)}, \ldots, \theta_{p-1}^{(s)}, y_1,\ldots y_n)$
+
+
+It follows that we have a sequence of *dependent* samples from the joint posterior. The sequence $\{\theta^{(s)}\}$ is called a Markov chain.
+
+$$
+\frac{1}{S} \sum_{s=1}^S g(\theta^{(s)})  \rightarrow E[g(\theta)]
+$$
+Gibbs sampling is a form of Markov chain Monte Carlo (MCMC).
+
+### MCMC diagnostics
+
+Effective sample size (ESS), autocorrelation, and traceplots are diagnostic tools we use to assess how well our Markov chain approximates the posterior. You should be able to define these terms and interpret their output. See [this lecture](/notes/lec09-mcmc-diagnostics.html) for details.
+
+Specifically, ESS is the number of independent Monte Carlo samples necessary to give the same precision as the MCMC samples. Typically, ESS is a criterion used to figure out how many samples to generate, i.e. how long to run your Markov chain.
+
+## Chapter 7
+
+\newcommand{\bt}{\boldsymbol{\theta}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\identity}{\boldsymbol{I}}
+\newcommand{\bz}{\boldsymbol{z}}
+
+### Density
+
+We say a $p$ dimensional vector $\boldsymbol{Y}$ has a multivariate normal distribution if its sampling density is given by
+
+$$
+p(\by | \bt, \Sigma) = (2\pi)^{-p/2} |\Sigma|^{-1/2} \exp\{
+-\frac{1}{2}(\by -\bt)^T \Sigma^{-1} (\by - \bt)
+\}
+$$
+
+where
+
+$$
+\by =  \left[ {\begin{array}{cc}
+   y_1 \\
+   y_2\\
+   \vdots\\
+   y_p 
+  \end{array} } \right]
+  ~~~
+   \bt = \left[ {\begin{array}{cc}
+   \theta_1 \\
+   \theta_2\\
+   \vdots\\
+   \theta_p 
+  \end{array} } \right]
+  ~~~
+  \Sigma =
+  \left[ {\begin{array}{cc}
+   \sigma_1^2 & \sigma_{12}& \ldots & \sigma_{1p}\\
+   \sigma_{12} & \sigma_2^2 &\ldots & \sigma_{2p}\\
+   \vdots & \vdots & & \vdots\\
+   \sigma_{1p} & \ldots & \ldots & \sigma_p^2
+  \end{array} } \right].
+$$
+
+#### Key facts
+
+- $\by \in \mathbb{R}^p$ ; $\bt \in \mathbb{R}^p$; $\Sigma > 0$
+- $E[\by] = \bt$
+- $V[\by] = E[(\by - \bt)(\by - \bt)^T] =  \Sigma$
+- Marginally, $y_i \sim N(\theta_i, \sigma_i^2)$.
+- If $\bt$ is a MVN random vector, then the kernel is $\exp\{-\frac{1}{2} \bt^T A \bt + \bt^T \boldsymbol{b} \}$. The mean is $A^{-1}\boldsymbol{b}$ and the covariance is $A^{-1}$.
+
+### semi-conjugate prior for $\bt$
+
+If
+
+$$
+\begin{aligned}
+\by | \bt, \Sigma &\sim MVN(\bt, \Sigma),\\
+\bt &\sim MVN(\mu_0, \Lambda_0),
+\end{aligned}
+$$
+
+then
+
+$$
+\bt | \by, \Sigma \sim MVN
+$$
+
+
+### semiconjugate prior for $\Sigma$
+
+If
+
+$$
+\begin{aligned}
+\by | \bt, \Sigma &\sim MVN(\bt, \Sigma),\\
+\Sigma &\sim \text{inverse-Wishart}(\nu_0, S_0^{-1}),
+\end{aligned}
+$$
+
+then
+
+$$
+\Sigma | \by, \bt \sim \text{inverse-Wishart}
+$$
+
+### Wishart as sum of squares matrix
+
+For a given $\nu_0$ and and a $p \times p$ covariance matrix $S_0$, we can generate samples from a MVN by the following procedure:
+
+1. sample $\bz_1, \ldots \bz_{\nu_0} \sim \text{ i.i.d. } MVN(\mathbf{0}, S_0)$
+2. calculate $\mathbf{Z}^T \mathbf{Z} = \sum_{i =1}^{\nu_0} \bz_i \bz_i^T$.
+
+It follows that $\mathbf{Z}^T \mathbf{Z} > 0$ and symmetric. $E[\mathbf{Z}^T \mathbf{Z}] = \nu_0 S_0$
+
+## Chapter 8
+
+Be able to write a hierarchical model. Review and be able to explain all aspects of the example [here](/notes/lec12-hierarchical-intro.html).
