@@ -221,7 +221,7 @@ then
 $$
 \Sigma | \by, \bt \sim \text{inverse-Wishart} (\nu_0 + n, (S_0 + S_{\theta})^{-1}),
 $$
-where $S_\theta = \sum_{i=1}^n (\by_i - \bt)(\by_i - \by)^T$ is the residual sum of squares matrix for the vectors $\by_1, \ldots \by_n$ if the population mean is $\bt$.
+where $S_\theta = \sum_{i=1}^n (\by_i - \bt)(\by_i - \bt)^T$ is the residual sum of squares matrix for the vectors $\by_1, \ldots \by_n$ if the population mean is $\bt$.
 
 ---
 
