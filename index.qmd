@@ -82,7 +82,7 @@ schedule %>%
 | 11   | Mon Nov 06 | Hierarchical modeling and Gibbs sampling practice                                              |         |                                                                              |                             |
 |      | Tue Nov 07 | Bayesian regression III <br> *Guest lecture:* Prof. Peter Hoff                     | Ch. 9   |                                                                              | [hw 8](/hw/hw08.html)                        |
 |      | Thu Nov 09 | NO CLASS: read [chapter summaries](/chapterSummaries.html)                                               |         |                                                                              |                             |
-| 12   | Mon Nov 13 |  exam practice                                              |         |                                                                              |                             |
+| 12   | Mon Nov 13 |  exam practice                                              |         |                [💻](/slides/lab7-exam2-prep.html)                                                                |                             |
 |      | Tue Nov 14 | review                                         |         |                                                                              |                             |
 |      | Thu Nov 16 | Exam II                                        |         |                                                                              |                             |
 | 13   | Mon Nov 20 | NO LAB                                         |         |                                                                              |                             |
