@@ -84,7 +84,7 @@ schedule %>%
 |      | Thu Nov 09 | NO CLASS: read [chapter summaries](/chapterSummaries.html)                                               |         |                                                                              |                             |
 | 12   | Mon Nov 13 |  exam practice                                              |         |                [💻](/slides/lab7-exam2-prep.html)                                                                |                             |
 |      | Tue Nov 14 | review                                         |         |                                                                              |                             |
-|      | Thu Nov 16 | Exam II                                        |         |                                                                              |                             |
+|      | Thu Nov 16 |  [Exam II](/notes/exam-notes-2.pdf)                                       |         |                                                                              |                             |
 | 13   | Mon Nov 20 | NO LAB                                         |         |                                                                              |                             |
 |      | Tue Nov 21 |                                                |         |                                                                              |                             |
 |      | Thu Nov 23 | NO CLASS                                       |         |                                                                              |                             |
