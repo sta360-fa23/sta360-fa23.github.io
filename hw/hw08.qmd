@@ -36,7 +36,7 @@ yX<-dget(url("https://www2.stat.duke.edu/~pdh10/FCBS/Inline/yX.diabetes.train"))
 
 a. For each value of $\lambda \in \{0, 1,  \ldots, 99, 100 \}$ compute the estimator $\hat{\beta}_{\lambda}$ and plot this in some way (maybe using `matplot`).
 
-b. Load tha data set `yX.diabetes.test` using the code below
+b. Load the data set `yX.diabetes.test` using the code below
 
 ```{r}
 #| eval: false
@@ -61,7 +61,7 @@ yX = readRDS(
 
 Source separation: The first column y of the dataset `yXSS.rds` is the vectorization of a spectroscopy image of a water sample taken from the Neuse River in North Carolina. You can view the image with the following code: `y<-yX[,1] ; image(matrix(y,151,43))`. The water sample is of unknown origin, but it is assumed that it is a mix of water from 9 different categories, whose average spectroscopy images are given by the remaining 9 columns $X$ of `yX`. You can view these images with the same code above, applied to each column of $X$.
 
-a. From $y$ and $X$, infer the sources of the water sample using the linear model $E[y|X, \beta] = X\beta$. Assuming the normal linear model and with priors $\beta \sim N_9(1/9, \ldots 1/9), I_9)$, $1/\sigma^2 \sim \text{gamma}(1, 1)$, use a Gibbs sampler to obtain a posterior distribution of $\beta$ and $\sigma^2$ given $y$. Plot the posterior density of σ2, and obtain posterior 95% confidence intervals for each element of $\beta$. Which of the nine categories are the main sources of the water sample?
+a. From $y$ and $X$, infer the sources of the water sample using the linear model $E[y|X, \beta] = X\beta$. Assuming the normal linear model and with priors $\beta \sim N_9(1/9, \ldots 1/9), I_9)$, $1/\sigma^2 \sim \text{gamma}(1, 1)$, use a Gibbs sampler to obtain a posterior distribution of $\beta$ and $\sigma^2$ given $y$. Plot the posterior density of $\sigma^2$, and obtain posterior 95% confidence intervals for each element of $\beta$. Which of the nine categories are the main sources of the water sample?
 
 c. Evaluate the assumptions of the normal linear model using some residual plots, addressing the assumption that the entries of $y$ have constant variance, are uncorrelated, and are normally distributed.
 
