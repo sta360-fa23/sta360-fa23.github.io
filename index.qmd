@@ -86,7 +86,7 @@ schedule %>%
 |      | Tue Nov 14 | review                                         |         |                                                                              |                             |
 |      | Thu Nov 16 |  [Exam II](/notes/exam-notes-2.pdf)                                       |         |                                                                              |                             |
 | 13   | Mon Nov 20 | NO LAB                                         |         |                                                                              |                             |
-|      | Tue Nov 21 |  Bayesian regression example + stan intro                                          |         |                                                                              |                             |
+|      | Tue Nov 21 |  Bayesian regression example + stan intro                                          |       |                                                                           |                             |
 |      | Thu Nov 23 | NO CLASS                                       |         |                                                                              |                             |
 | 14   | Mon Nov 27 |                                                |         |                                                                              |                             |
 |      | Tue Nov 28 | Intro to Metropolis-Hastings                                              |   Ch. 10      |                                                                              | hw 9                        |
