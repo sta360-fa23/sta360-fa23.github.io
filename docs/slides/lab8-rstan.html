@@ -408,7 +408,11 @@
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
 <ul>
-<li><p><code>rstanarm</code> contains a host of functions to make Bayesian R model fitting easy. See <a href="https://mc-stan.org/rstanarm/articles/">https://mc-stan.org/rstanarm/articles/</a> for a full list of tutorials.</p></li>
+<li><p><code>rstanarm</code> contains a host of functions to make Bayesian linear modeling in R easy. See <a href="https://mc-stan.org/rstanarm/articles/">https://mc-stan.org/rstanarm/articles/</a> for a variety of tutorials.</p>
+<ul>
+<li><p>pros: fast and easy to test Bayesian linear models</p></li>
+<li><p>cons: limited in scope, e.g.&nbsp;requires differentiable objective and small model adjustments can be cumbersome to implement, e.g.&nbsp;placing a prior on variance versus standard deviation of normal model.</p></li>
+</ul></li>
 <li><p><code>bayesplot</code> contains many useful plotting wrappers that work out of the box with objects created by <code>rstanarm</code> in an intuitive way.</p></li>
 </ul>
 </section>
