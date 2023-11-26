@@ -88,7 +88,7 @@ schedule %>%
 | 13   | Mon Nov 20 | NO LAB                                         |         |                                                                              |                             |
 |      | Tue Nov 21 |  Bayesian regression example + stan intro                                          |       |                                                                           |                             |
 |      | Thu Nov 23 | NO CLASS                                       |         |                                                                              |                             |
-| 14   | Mon Nov 27 |                                                |         |                                                                              |                             |
+| 14   | Mon Nov 27 |  rstanarm                                            |         |                                               [💻](/slides/lab8-rstan.html)                                 |                             |
 |      | Tue Nov 28 | Intro to Metropolis-Hastings                                              |   Ch. 10      |                                                                              | hw 9                        |
 |      | Thu Nov 30 |  Metropolis-Hastings II                                              |  Ch. 10        |                                                                          |                             |
 | 15   | Mon Dec 04 |                                                |         |                                                                              |                             |
