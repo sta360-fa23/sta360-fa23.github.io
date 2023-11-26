@@ -245,6 +245,7 @@ posteriorMean = apply(chain_draws, 2, mean)
 posteriorCI = posterior_interval(fit1, prob = 0.80)
 cbind(posteriorMean, posteriorCI) %>%
   head(n = 3)
+
 ```
 
 
