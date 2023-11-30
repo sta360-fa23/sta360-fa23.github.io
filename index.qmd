@@ -90,7 +90,7 @@ schedule %>%
 |      | Thu Nov 23 | NO CLASS                                       |         |                                                                              |                             |
 | 14   | Mon Nov 27 |  rstanarm                                            |         |                                               [💻](/slides/lab8-rstan.html)                                 |                             |
 |      | Tue Nov 28 | intro to Metropolis algorithm                                             |   Ch. 10      | [📝](/notes/Metropolis-intro.pdf)                                                                             | [hw 9](/hw/hw09.html)                        |
-|      | Thu Nov 30 |  Metropolis-Hastings                                              |  Ch. 10        |                                                                         |                             |
+|      | Thu Nov 30 |  Metropolis-Hastings                                              |  Ch. 10        |  [💻](/notes/lec15-MetropolisHastings.html)                                                                         |                             |
 | 15   | Mon Dec 04 |                                                |         |                                                                              |                             |
 |      | Tue Dec 05 |                                                | Ch. 10         |                                                                              |                             |
 |      | Thu Dec 07 |   Final review                                             |         |                                                                              |                             |
