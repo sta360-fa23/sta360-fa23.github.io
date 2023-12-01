@@ -132,6 +132,7 @@ df %>%
   theme_bw() +
   labs(x = "iteration", y = TeX("\\theta"))
 ```
+:::
 
 ```{r}
 #| echo: false
@@ -497,7 +498,7 @@ acf(BETA[,3])
 
 ## Metropolis-Hastings
 
-If we have a vector of parameters $\theta = \theta_1, \ldots \theta_p$ then we can  choose a proposal $J(\theta | \theta^{(s)}$ that updates all $\theta$ elements simultaneously (as seen above with $J(\beta | \beta^{(s)})$.
+If we have a vector of parameters $\theta = \theta_1, \ldots \theta_p$ then we can  choose a proposal $J(\theta | \theta^{(s)})$ that updates all $\theta$ elements simultaneously (as seen above with $J(\beta | \beta^{(s)})$.
 
 Alternatively, we could update blocks of $\theta$, e.g. propose an update for the first $j$ elements of $\theta$, $J_1(\theta_1,\ldots \theta_j | \theta_1^{(s)}, \ldots \theta_j^{(s)})$ and then an update for the $p-j$ remaining elements, $J(\theta_{j+1}, \ldots, \theta_{p} | \theta_{j+1}^{(s)}, \ldots, \theta_{p}^{(s)})$.
 
