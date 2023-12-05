@@ -462,8 +462,6 @@ df %>%
 <!-- $$ -->
 
 
-
-
 ### Further reading
 
 Great it works... but how do I know this is producing an ergodic Markov chain?
