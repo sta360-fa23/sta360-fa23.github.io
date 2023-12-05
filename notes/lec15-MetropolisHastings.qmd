@@ -15,8 +15,6 @@ library(tidyverse)
 library(latex2exp)
 library(patchwork)
 library(tidymodels)
-library(scatterplot3d)
-library(palmerpenguins)
 library(mvtnorm)
 library(coda)
 library(animation)
@@ -524,7 +522,7 @@ r = \frac{\pi(\theta_1^*, \theta_2^{(s)})}{\pi(\theta_1^{(s)}, \theta_2^{(s)})} 
 J_1(\theta_1^{*}| \theta_1^{(s)}, \theta_2^{(s)})
 }
 $$
-3. set $\theta_1^{(s+1)}$ to $\theta_1^*$ with probability $\min(1, r)$ and $\max(0, 1-r)$.
+3. set $\theta_1^{(s+1)}$ to $\theta_1^*$ with probability $\min(1, r)$, otherwise set $\theta_1^{(s+1)}$ to $\theta_1^{(s)}$.
 
 - Repeat the above to update $\theta_2$ given $\theta_1^{(s+1)}$.
 

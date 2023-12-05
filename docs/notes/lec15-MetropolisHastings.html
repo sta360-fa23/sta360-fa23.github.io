@@ -195,11 +195,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scatterplot3d)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(animation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(animation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="notation" class="level2">
@@ -474,7 +472,7 @@ J_1(\theta_1^{*}| \theta_1^{(s)}, \theta_2^{(s)})
 }
 \]</span></p>
 <ol start="3" type="1">
-<li>set <span class="math inline">\(\theta_1^{(s+1)}\)</span> to <span class="math inline">\(\theta_1^*\)</span> with probability <span class="math inline">\(\min(1, r)\)</span> and <span class="math inline">\(\max(0, 1-r)\)</span>.</li>
+<li>set <span class="math inline">\(\theta_1^{(s+1)}\)</span> to <span class="math inline">\(\theta_1^*\)</span> with probability <span class="math inline">\(\min(1, r)\)</span>, otherwise set <span class="math inline">\(\theta_1^{(s+1)}\)</span> to <span class="math inline">\(\theta_1^{(s)}\)</span>.</li>
 </ol>
 <ul>
 <li>Repeat the above to update <span class="math inline">\(\theta_2\)</span> given <span class="math inline">\(\theta_1^{(s+1)}\)</span>.</li>
