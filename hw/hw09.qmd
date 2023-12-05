@@ -57,10 +57,10 @@ Code for this exercise is provided below,
 trans.prob.mat = readRDS(url("https://sta360-fa23.github.io/data/trans-prob-mat.rds"))
 cipher_text = readLines("https://sta360-fa23.github.io/data/ciphertext.txt")
 
-pl = function(mapping, message) {
+pl = function(decoded) {
   logprob = 0
   prevletter = "SPACE"
-  for (i in 1:nchar(message)) {
+  for (i in 1:nchar(decoded)) {
     curletter = substring(decoded, i, i)
     if(curletter == " ") {
       curletter = "SPACE"

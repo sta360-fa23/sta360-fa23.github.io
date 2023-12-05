@@ -208,10 +208,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>trans.prob.mat <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="st">"https://sta360-fa23.github.io/data/trans-prob-mat.rds"</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cipher_text <span class="ot">=</span> <span class="fu">readLines</span>(<span class="st">"https://sta360-fa23.github.io/data/ciphertext.txt"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pl <span class="ot">=</span> <span class="cf">function</span>(mapping, message) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pl <span class="ot">=</span> <span class="cf">function</span>(decoded) {</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  logprob <span class="ot">=</span> <span class="dv">0</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  prevletter <span class="ot">=</span> <span class="st">"SPACE"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(message)) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nchar</span>(decoded)) {</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    curletter <span class="ot">=</span> <span class="fu">substring</span>(decoded, i, i)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(curletter <span class="sc">==</span> <span class="st">" "</span>) {</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      curletter <span class="ot">=</span> <span class="st">"SPACE"</span></span>
