@@ -34,7 +34,7 @@ The file `azdiabetes-train.csv` contains data on health-related variables of a p
 
 (b) Fit a MVN linear model using `rstanarm` with priors $\beta_i \sim N(0, 1)$ and a flat prior on $\sigma$. Report the posterior mean and 95% confidence intervals for all parameters.
 
-(c) Perform the model selection and averaging procedure described in section 9.3. Obtain $Pr(\beta_j \neq 0 | y)$, as well as posterior confidence intervals for all of the parameters. Compare to the results in part (a) and (b). Additionally, compare the average squared error of predictions using the data set `azdiabetes-test.csv` under all three fitted models.
+(c) Perform the model selection and averaging procedure described in section 9.3. See secton 9.3.1 for the model and pg 168 for sample code to sample $\mathbf{z}$. Obtain $Pr(\beta_j \neq 0 | y)$, as well as posterior confidence intervals for all of the parameters. Compare to the results in part (a) and (b). Additionally, compare the average squared error of predictions using the data set `azdiabetes-test.csv` under all three fitted models.
 
 ## Exercise 2
 
