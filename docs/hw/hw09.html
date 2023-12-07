@@ -199,6 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>yXsparrow <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/yXsparrow.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Instead of <code>1000</code>, please run your chain until you reach at least <code>100</code> effective sample size.</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
@@ -226,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this exercise we will re-create the cryptanalysis tool described <a href="../readings/MCMCRev.pdf">here</a> to decrypt a secret message. Read pages 1-3 of the article by Persi Diaconis linked above.</p>
 <ol type="a">
 <li><p>Load the object <code>trans.prob.matrix</code> using the code above and examine. Based on your reading of the article, how can you interpret the entries of this matrix? Is it symmetric or not? Why does this make sense? The function <code>pl()</code>, given above, computes the “plausibility” score for a given decoding. Explain in detail what the code comprising <code>pl()</code> does.</p></li>
-<li><p>Follow the pseudo-code outlined on page 2 of the article to write a MCMC algorithm and decrypt the secret message. Run your Markov chain for 1000 iterations and report the decoding with the highest plausibility score.</p></li>
+<li><p>Follow the pseudo-code outlined on page 2 of the article to write a MCMC algorithm and decrypt the secret message. Run your Markov chain for at least 1000 iterations and report the decoding with the highest plausibility score.</p></li>
 </ol>
 
 

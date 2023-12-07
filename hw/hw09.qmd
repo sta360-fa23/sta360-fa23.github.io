@@ -47,6 +47,8 @@ To load the data for this exercise, run the code below,
 yXsparrow = readr::read_csv("https://sta360-fa23.github.io/data/yXsparrow.csv")
 ```
 
+Instead of `1000`, please run your chain until you reach at least `100` effective sample size.
+
 ## Exercise 3
 
 Code for this exercise is provided below,
@@ -78,7 +80,7 @@ In this exercise we will re-create the cryptanalysis tool described [here](../re
 
 (a) Load the object `trans.prob.matrix` using the code above and examine. Based on your reading of the article, how can you interpret the entries of this matrix? Is it symmetric or not? Why does this make sense? The function `pl()`, given above, computes the "plausibility" score for a given decoding. Explain in detail what the code comprising `pl()` does. 
 
-(b) Follow the pseudo-code outlined on page 2 of the article to write a MCMC algorithm and decrypt the secret message. Run your Markov chain for 1000 iterations and report the decoding with the highest plausibility score. 
+(b) Follow the pseudo-code outlined on page 2 of the article to write a MCMC algorithm and decrypt the secret message. Run your Markov chain for at least 1000 iterations and report the decoding with the highest plausibility score. 
 
 
 
